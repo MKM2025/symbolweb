@@ -6,28 +6,26 @@
 1.1 ✅ Create Next.js project
 - Modified command used: `npx create-next-app@latest . --ts --tailwind --app --eslint`
 - Status: Completed
-- Working directly in root folder instead of nested directory
 
-1.2 🔄 Install core dependencies (In Progress)
-- Command: `npm install @headlessui/react lucide-react @heroicons/react clsx tailwind-merge`
-- Status: Pending
+1.2 ✅ Install core dependencies
+- Installed: @headlessui/react, lucide-react, @heroicons/react, clsx, tailwind-merge
+- Status: Completed
 
-1.3 ⏳ Git initialization (Pending)
-- Commands pending:
-  ```bash
-  git init
-  git branch -M main
-  git add .
-  git commit -m "Initial commit"
-  ```
+1.3 🔄 Git initialization (In Progress)
+- Initializing Git repository
+- Creating main branch
+- Adding initial commit
 
-### Next Major Step
-Step 2: Project Structure Setup
-- Will create the complete directory structure
-- Set up all necessary files and folders
+### Next Step (Step 2: Project Structure Setup)
+Will create the following structure:
+- src/
+  - app/ (with marketing, blog, about, contact sections)
+  - components/ (layout, sections, ui)
+  - config/
+  - content/
+  - public/
 
 ### Notes
-- Modified approach: Working directly in root folder instead of nested directory
-- All configurations set for TypeScript and Tailwind CSS
-- App Router enabled
-- ESLint configured
+- Working directly in root folder
+- All core dependencies installed
+- Ready for project structure setup
