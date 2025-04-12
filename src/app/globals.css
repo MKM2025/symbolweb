@@ -27,3 +27,17 @@ body {
   min-height: 100vh;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Add these styles to ensure proper dropdown behavior */
+.group:hover .group-hover\:visible {
+  visibility: visible;
+}
+
+.group .invisible {
+  visibility: hidden;
+}
+
+/* Add these styles to ensure proper hover behavior */
+.group:hover .group-hover\:block {
+  display: block;
+}

@@ -1,5 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import HeroSection from '@/components/home/HeroSection';
+import CustomersSection from '@/components/home/CustomersSection';
 
 export default function Home() {
   const partners = [
@@ -10,42 +12,8 @@ export default function Home() {
 
   return (
     <main>
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-blue-900 to-blue-700 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:16px_16px]" />
-        <div className="container mx-auto px-4 py-24 relative">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="relative z-10">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                Shape Your Future with AI-Driven ICT & Cybersecurity Solutions
-              </h1>
-              <p className="text-xl text-blue-100 mb-8 leading-relaxed">
-                In an era of rapid digital transformation, Symbol Technologies empowers organizations 
-                across Africa to navigate complexity, mitigate risk, and unlock growth.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Link 
-                  href="/contact-us"
-                  className="bg-white text-blue-900 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors inline-block"
-                >
-                  Get Started
-                </Link>
-                <Link 
-                  href="/services"
-                  className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/10 transition-colors inline-block"
-                >
-                  Our Solutions
-                </Link>
-              </div>
-            </div>
-            <div className="relative h-[400px] hidden md:block">
-              <div className="absolute inset-0 bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden">
-                {/* Add hero image here once available */}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <HeroSection />
+      <CustomersSection />
 
       {/* Intro Section */}
       <section className="py-16 bg-gray-50">
@@ -149,6 +117,6 @@ export default function Home() {
           </Link>
         </div>
       </section>
-    </main>
+      </main>
   );
 }
