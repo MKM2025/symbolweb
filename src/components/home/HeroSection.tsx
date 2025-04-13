@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function HeroSection() {
   return (
@@ -30,18 +31,33 @@ export default function HeroSection() {
       />
 
       {/* Content Container */}
-      <div className="relative h-full">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="w-full lg:w-2/3">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
-              Shape Your Future with AI-Driven ICT & Cybersecurity Solutions
-            </h1>
-            <p className="text-lg md:text-xl text-blue-100 mb-8 max-w-2xl">
-              Empowering organizations worldwide to navigate complexity, mitigate risk, and unlock growth in the digital age
-            </p>
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full text-lg font-semibold transition-all">
-              Learn More
-            </button>
+      <div className="relative h-full flex items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="w-full lg:w-2/3 space-y-8">
+            <div className="space-y-8">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
+                Shape Your Future with AI-Driven ICT & Cybersecurity Solutions
+              </h1>
+              <p className="text-lg md:text-xl text-blue-100 max-w-2xl">
+                Empowering organizations worldwide to navigate complexity, mitigate risk, and unlock growth in the digital age
+              </p>
+            </div>
+            
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-6 pt-8">
+              <Link 
+                href="/contact"
+                className="inline-flex items-center justify-center px-10 py-4 border border-transparent text-base font-medium rounded-full text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-200 shadow-lg hover:shadow-xl h-[56px]"
+              >
+                Talk to Our Experts
+              </Link>
+              <Link 
+                href="/services"
+                className="inline-flex items-center justify-center px-10 py-4 border-2 border-white text-base font-medium rounded-full text-white hover:bg-white hover:text-blue-900 transition-colors duration-200 h-[56px]"
+              >
+                Explore our Solutions
+              </Link>
+            </div>
           </div>
         </div>
       </div>
