@@ -7,23 +7,14 @@ import Logo from '@/components/common/Logo';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
 
-  // Function to close both menu and submenu
   const closeAll = useCallback(() => {
     setIsOpen(false);
-    setActiveSubmenu(null);
   }, []);
 
-  // Handle menu item click
   const handleMenuItemClick = useCallback(() => {
     closeAll();
   }, [closeAll]);
-
-  // Add this new handler for Services menu
-  const handleServicesClick = useCallback(() => {
-    setActiveSubmenu(activeSubmenu === 'services' ? null : 'services');
-  }, [activeSubmenu]);
 
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
@@ -138,42 +129,32 @@ export default function Navbar() {
               Home
             </Link>
             
-            {/* Services Dropdown - Updated version */}
-            <div>
-              <button
-                onClick={handleServicesClick}
-                className="w-full text-left px-3 py-2 text-gray-700 hover:bg-gray-100 rounded flex justify-between items-center"
-              >
+            {/* Services Menu - Updated to match Insights style */}
+            <div className="space-y-1">
+              <Link href="/services" onClick={handleMenuItemClick} className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded">
                 Services
-                <svg className={`w-4 h-4 transition-transform ${activeSubmenu === 'services' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              {activeSubmenu === 'services' && (
-                <div className="pl-4">
-                  <Link 
-                    href="/services/cybersecurity" 
-                    onClick={handleMenuItemClick} // This will close everything
-                    className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded"
-                  >
-                    Cybersecurity
-                  </Link>
-                  <Link 
-                    href="/services/cloud-infrastructure" 
-                    onClick={handleMenuItemClick} // This will close everything
-                    className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded"
-                  >
-                    Cloud Infrastructure
-                  </Link>
-                  <Link 
-                    href="/services/managed-services" 
-                    onClick={handleMenuItemClick} // This will close everything
-                    className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded"
-                  >
-                    Managed Services
-                  </Link>
-                </div>
-              )}
+              </Link>
+              <Link 
+                href="/services/cybersecurity" 
+                onClick={handleMenuItemClick}
+                className="block pl-6 py-2 text-gray-700 hover:bg-gray-100 rounded"
+              >
+                Cybersecurity
+              </Link>
+              <Link 
+                href="/services/cloud-infrastructure" 
+                onClick={handleMenuItemClick}
+                className="block pl-6 py-2 text-gray-700 hover:bg-gray-100 rounded"
+              >
+                Cloud Infrastructure
+              </Link>
+              <Link 
+                href="/services/managed-services" 
+                onClick={handleMenuItemClick}
+                className="block pl-6 py-2 text-gray-700 hover:bg-gray-100 rounded"
+              >
+                Managed Services
+              </Link>
             </div>
 
             <Link href="/clients" onClick={handleMenuItemClick} className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded">
@@ -182,7 +163,8 @@ export default function Navbar() {
             <Link href="/partners" onClick={handleMenuItemClick} className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded">
               Partners
             </Link>
-            {/* Mobile Insights Menu */}
+
+            {/* Keep existing Insights Menu as is */}
             <div className="space-y-1">
               <Link href="/insights" onClick={handleMenuItemClick} className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded">
                 Insights
@@ -197,6 +179,7 @@ export default function Navbar() {
                 White Papers
               </Link>
             </div>
+
             <Link href="/about" onClick={handleMenuItemClick} className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded">
               About Us
             </Link>
