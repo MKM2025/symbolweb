@@ -20,14 +20,20 @@ export default function ServicesHero() {
             Enterprise IT Solutions & Services
           </h1>
           <p className="text-xl text-gray-100 mb-8">
-            Comprehensive technology solutions tailored to transform your business.
+            Comprehensive technology solutions tailored to transform your business with enhanced security, scalability, and efficiency.
           </p>
           <div className="flex flex-wrap gap-4">
             <Link 
-              href="/services"
+              href="/services/cybersecurity"
               className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors"
             >
               Explore Services
+            </Link>
+            <Link 
+              href="/contact"
+              className="bg-white text-blue-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors"
+            >
+              Contact Us
             </Link>
           </div>
         </div>

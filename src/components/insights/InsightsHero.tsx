@@ -20,14 +20,20 @@ export default function InsightsHero() {
             Technology Insights & Resources
           </h1>
           <p className="text-xl text-gray-100 mb-8">
-            Stay ahead with our latest technology insights and expert perspectives.
+            Stay ahead with our latest technology insights, industry trends, and expert perspectives.
           </p>
           <div className="flex flex-wrap gap-4">
             <Link 
-              href="/insights"
+              href="/insights/blogs"
               className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors"
             >
-              Explore Insights
+              Read Latest Insights
+            </Link>
+            <Link 
+              href="/insights/case-studies"
+              className="bg-white text-blue-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors"
+            >
+              View Case Studies
             </Link>
           </div>
         </div>
