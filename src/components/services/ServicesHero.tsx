@@ -1,0 +1,37 @@
+'use client';
+
+import Image from 'next/image';
+import Link from 'next/link';
+
+export default function ServicesHero() {
+  return (
+    <section className="relative h-[600px] flex items-center">
+      <Image
+        src="/images/hero/services-hero.jpg"
+        alt="IT Services"
+        fill
+        className="object-cover"
+        priority
+      />
+      <div className="absolute inset-0 bg-black/50" />
+      <div className="relative container mx-auto px-4">
+        <div className="max-w-3xl">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Enterprise IT Solutions & Services
+          </h1>
+          <p className="text-xl text-gray-100 mb-8">
+            Comprehensive technology solutions tailored to transform your business.
+          </p>
+          <div className="flex flex-wrap gap-4">
+            <Link 
+              href="/services"
+              className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              Explore Services
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+} 
