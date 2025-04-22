@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Logo from '../common/Logo';
+import Logo from '@/components/common/Logo';
 
 export default function Footer() {
   return (
