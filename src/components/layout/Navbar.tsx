@@ -20,6 +20,11 @@ export default function Navbar() {
     closeAll();
   }, [closeAll]);
 
+  // Add this new handler for Services menu
+  const handleServicesClick = useCallback(() => {
+    setActiveSubmenu(activeSubmenu === 'services' ? null : 'services');
+  }, [activeSubmenu]);
+
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -133,10 +138,10 @@ export default function Navbar() {
               Home
             </Link>
             
-            {/* Services Dropdown */}
+            {/* Services Dropdown - Updated version */}
             <div>
               <button
-                onClick={() => setActiveSubmenu(activeSubmenu === 'services' ? null : 'services')}
+                onClick={handleServicesClick}
                 className="w-full text-left px-3 py-2 text-gray-700 hover:bg-gray-100 rounded flex justify-between items-center"
               >
                 Services
@@ -146,13 +151,25 @@ export default function Navbar() {
               </button>
               {activeSubmenu === 'services' && (
                 <div className="pl-4">
-                  <Link href="/services/cybersecurity" onClick={handleMenuItemClick} className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded">
+                  <Link 
+                    href="/services/cybersecurity" 
+                    onClick={handleMenuItemClick} // This will close everything
+                    className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded"
+                  >
                     Cybersecurity
                   </Link>
-                  <Link href="/services/cloud-infrastructure" onClick={handleMenuItemClick} className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded">
+                  <Link 
+                    href="/services/cloud-infrastructure" 
+                    onClick={handleMenuItemClick} // This will close everything
+                    className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded"
+                  >
                     Cloud Infrastructure
                   </Link>
-                  <Link href="/services/managed-services" onClick={handleMenuItemClick} className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded">
+                  <Link 
+                    href="/services/managed-services" 
+                    onClick={handleMenuItemClick} // This will close everything
+                    className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded"
+                  >
                     Managed Services
                   </Link>
                 </div>
