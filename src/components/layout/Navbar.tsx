@@ -1,11 +1,24 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import Logo from '@/components/common/Logo';
 
 export default function Navbar() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
+
+  // Function to close both menu and submenu
+  const closeAll = useCallback(() => {
+    setIsOpen(false);
+    setActiveSubmenu(null);
+  }, []);
+
+  // Handle menu item click
+  const handleMenuItemClick = useCallback(() => {
+    closeAll();
+  }, [closeAll]);
 
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
@@ -92,7 +105,7 @@ export default function Navbar() {
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center">
             <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              onClick={() => setIsOpen(!isOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-100"
             >
               <svg
@@ -101,7 +114,7 @@ export default function Navbar() {
                 fill="none"
                 viewBox="0 0 24 24"
               >
-                {isMobileMenuOpen ? (
+                {isOpen ? (
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 ) : (
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
@@ -113,51 +126,64 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Menu */}
-      {isMobileMenuOpen && (
+      {isOpen && (
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <Link href="/" className="block px-3 py-2 text-gray-700 hover:bg-gray-100">
+            <Link href="/" onClick={handleMenuItemClick} className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded">
               Home
             </Link>
-            <div className="space-y-1">
-              <Link href="/services" className="block px-3 py-2 text-gray-700 hover:bg-gray-100">
+            
+            {/* Services Dropdown */}
+            <div>
+              <button
+                onClick={() => setActiveSubmenu(activeSubmenu === 'services' ? null : 'services')}
+                className="w-full text-left px-3 py-2 text-gray-700 hover:bg-gray-100 rounded flex justify-between items-center"
+              >
                 Services
-              </Link>
-              <Link href="/services/cybersecurity" className="block pl-6 py-2 text-gray-700 hover:bg-gray-100">
-                Cybersecurity
-              </Link>
-              <Link href="/services/cloud-infrastructure" className="block pl-6 py-2 text-gray-700 hover:bg-gray-100">
-                Cloud Infrastructure
-              </Link>
-              <Link href="/services/managed-services" className="block pl-6 py-2 text-gray-700 hover:bg-gray-100">
-                Managed Services
-              </Link>
+                <svg className={`w-4 h-4 transition-transform ${activeSubmenu === 'services' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {activeSubmenu === 'services' && (
+                <div className="pl-4">
+                  <Link href="/services/cybersecurity" onClick={handleMenuItemClick} className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded">
+                    Cybersecurity
+                  </Link>
+                  <Link href="/services/cloud-infrastructure" onClick={handleMenuItemClick} className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded">
+                    Cloud Infrastructure
+                  </Link>
+                  <Link href="/services/managed-services" onClick={handleMenuItemClick} className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded">
+                    Managed Services
+                  </Link>
+                </div>
+              )}
             </div>
-            <Link href="/clients" className="block px-3 py-2 text-gray-700 hover:bg-gray-100">
+
+            <Link href="/clients" onClick={handleMenuItemClick} className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded">
               Our Clients
             </Link>
-            <Link href="/partners" className="block px-3 py-2 text-gray-700 hover:bg-gray-100">
+            <Link href="/partners" onClick={handleMenuItemClick} className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded">
               Partners
             </Link>
             {/* Mobile Insights Menu */}
             <div className="space-y-1">
-              <Link href="/insights" className="block px-3 py-2 text-gray-700 hover:bg-gray-100">
+              <Link href="/insights" onClick={handleMenuItemClick} className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded">
                 Insights
               </Link>
-              <Link href="/insights/blogs" className="block pl-6 py-2 text-gray-700 hover:bg-gray-100">
+              <Link href="/insights/blogs" onClick={handleMenuItemClick} className="block pl-6 py-2 text-gray-700 hover:bg-gray-100 rounded">
                 Blogs
               </Link>
-              <Link href="/insights/case-studies" className="block pl-6 py-2 text-gray-700 hover:bg-gray-100">
+              <Link href="/insights/case-studies" onClick={handleMenuItemClick} className="block pl-6 py-2 text-gray-700 hover:bg-gray-100 rounded">
                 Case Studies
               </Link>
-              <Link href="/insights/white-papers" className="block pl-6 py-2 text-gray-700 hover:bg-gray-100">
+              <Link href="/insights/white-papers" onClick={handleMenuItemClick} className="block pl-6 py-2 text-gray-700 hover:bg-gray-100 rounded">
                 White Papers
               </Link>
             </div>
-            <Link href="/about" className="block px-3 py-2 text-gray-700 hover:bg-gray-100">
+            <Link href="/about" onClick={handleMenuItemClick} className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded">
               About Us
             </Link>
-            <Link href="/contact" className="block px-3 py-2 text-gray-700 hover:bg-gray-100">
+            <Link href="/contact" onClick={handleMenuItemClick} className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded">
               Contact
             </Link>
           </div>
