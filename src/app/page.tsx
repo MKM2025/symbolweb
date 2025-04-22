@@ -1,19 +1,15 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import HeroSection from '@/components/home/HeroSection';
-import CustomersSection from '@/components/home/CustomersSection';
+import RotatingHero from '@/components/home/RotatingHero';
+import TechnologyPartnersSection from '@/components/home/TechnologyPartnersSection';
+import ClientsSection from '@/components/home/ClientsSection';
 
 export default function Home() {
-  const partners = [
-    'Cisco', 'Fortinet', 'HPE', 'Microsoft', 'VMware', 'F5', 'Tenable', 
-    'Imperva', 'Veeam', 'Eaton', 'Vertiv', 'Dell', 'Mitel', 'Arista', 
-    'Rapid7', 'Symantec', 'ForcePoint'
-  ];
-
   return (
     <main>
-      <HeroSection />
-      <CustomersSection />
+      <RotatingHero />
+      <TechnologyPartnersSection />
+      <ClientsSection />
 
       {/* Intro Section */}
       <section className="py-16 bg-gray-50">
@@ -28,23 +24,6 @@ export default function Home() {
               cybersecurity defenses and advanced FinTech solutions to cloud transformation and 
               resilient infrastructure, we provide the end-to-end capabilities you need to thrive.
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Partners Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-2xl font-bold text-center mb-12">Trusted by Global Technology Leaders</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
-            {partners.map((partner, index) => (
-              <div 
-                key={index} 
-                className="flex items-center justify-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
-              >
-                <span className="text-gray-600 font-semibold">{partner}</span>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -117,6 +96,6 @@ export default function Home() {
           </Link>
         </div>
       </section>
-      </main>
+    </main>
   );
 }
