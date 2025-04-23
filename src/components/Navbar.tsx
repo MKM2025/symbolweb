@@ -174,9 +174,123 @@ function Navbar() {
       {/* Mobile menu */}
       {isOpen && (
         <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1">
-            {/* Add mobile menu items with nested submenus */}
-            {/* You can expand this section if needed */}
+          <div className="px-2 pt-2 pb-3 space-y-1 bg-white">
+            <Link 
+              href="/" 
+              className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+              onClick={() => setIsOpen(false)}
+            >
+              Home
+            </Link>
+
+            <div className="relative">
+              <button
+                onClick={() => setShowServices(!showServices)}
+                className="w-full text-left px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 flex items-center justify-between"
+              >
+                Services
+                <svg 
+                  className={`ml-1 w-4 h-4 transition-transform duration-200 ${showServices ? 'rotate-180' : ''}`}
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {showServices && (
+                <div className="pl-4 space-y-1">
+                  {menuItems.services.map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-gray-50"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <div className="relative">
+              <button
+                onClick={() => setShowPartners(!showPartners)}
+                className="w-full text-left px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 flex items-center justify-between"
+              >
+                Partners
+                <svg 
+                  className={`ml-1 w-4 h-4 transition-transform duration-200 ${showPartners ? 'rotate-180' : ''}`}
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {showPartners && (
+                <div className="pl-4 space-y-1">
+                  {menuItems.partners.map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-gray-50"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <Link 
+              href="/about-us" 
+              className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+              onClick={() => setIsOpen(false)}
+            >
+              About Us
+            </Link>
+
+            <div className="relative">
+              <button
+                onClick={() => setShowInsights(!showInsights)}
+                className="w-full text-left px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 flex items-center justify-between"
+              >
+                Insights
+                <svg 
+                  className={`ml-1 w-4 h-4 transition-transform duration-200 ${showInsights ? 'rotate-180' : ''}`}
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {showInsights && (
+                <div className="pl-4 space-y-1">
+                  {menuItems.insights.map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-gray-50"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <Link 
+              href="/contact" 
+              className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+              onClick={() => setIsOpen(false)}
+            >
+              Contact
+            </Link>
           </div>
         </div>
       )}

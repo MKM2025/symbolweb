@@ -23,7 +23,12 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <Link href="/">
-              <Image src="/images/logo.svg" alt="Symbol Logo" width={150} height={40} />
+              <Image 
+                src="/images/symbollogo.svg" 
+                alt="Symbol Logo" 
+                width={150} 
+                height={40} 
+              />
             </Link>
           </div>
 

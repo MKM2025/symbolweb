@@ -4,8 +4,8 @@ export default function ServicesLayout({
   children: React.ReactNode
 }) {
   return (
-    <div className="min-h-screen bg-white">
-      <div className="pt-16">{children}</div>
+    <div className="pt-0">
+      {children}
     </div>
   );
 } 

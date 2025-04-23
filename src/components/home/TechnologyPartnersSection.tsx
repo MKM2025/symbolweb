@@ -2,9 +2,12 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
+import React from 'react';
 
 export default function TechnologyPartnersSection() {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
   const partners = [
     { name: 'Cisco', logo: '/images/partners/cisco.png' },
     { name: 'Fortinet', logo: '/images/partners/fortinet.png' },
@@ -44,40 +47,37 @@ export default function TechnologyPartnersSection() {
     );
   };
 
-  return (
-    <section className="bg-gray-50 overflow-hidden relative">
-      <div className="container mx-auto">
-        <div className="relative">
-          <div className="flex animate-scroll whitespace-nowrap py-4">
-            {partners.map((partner, index) => (
-              <div 
-                key={`partner-1-${index}`} 
-                className="flex-shrink-0 w-40 h-16 bg-white/90 backdrop-blur-sm flex items-center justify-center px-4"
-              >
-                <PartnerLogo partner={partner} />
-              </div>
-            ))}
-            {partners.map((partner, index) => (
-              <div 
-                key={`partner-2-${index}`} 
-                className="flex-shrink-0 w-40 h-16 bg-white/90 backdrop-blur-sm flex items-center justify-center px-4"
-              >
-                <PartnerLogo partner={partner} />
-              </div>
-            ))}
-          </div>
-        </div>
+  // Create an array that's double the size of partners for seamless scrolling
+  const doubledPartners = [...partners, ...partners];
 
-        <div className="text-center pb-2">
-          <Link 
-            href="/partners"
-            className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium"
+  return (
+    <section className="bg-gray-50 overflow-hidden relative w-full">
+      <div className="w-full">
+        <div className="relative">
+          <div 
+            ref={scrollContainerRef}
+            className="flex whitespace-nowrap py-4 overflow-x-hidden"
           >
-            View All Partners
-            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </Link>
+            <div className="flex animate-scroll">
+              {doubledPartners.map((partner, index) => (
+                <div 
+                  key={`partner-${index}`} 
+                  className="inline-flex flex-shrink-0 w-40 h-16 bg-white/90 backdrop-blur-sm items-center justify-center px-4"
+                >
+                  <PartnerLogo partner={partner} />
+                </div>
+              ))}
+              {/* Add first few logos again at the end to ensure smooth transition */}
+              {partners.slice(0, 3).map((partner, index) => (
+                <div 
+                  key={`partner-extra-${index}`} 
+                  className="inline-flex flex-shrink-0 w-40 h-16 bg-white/90 backdrop-blur-sm items-center justify-center px-4"
+                >
+                  <PartnerLogo partner={partner} />
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

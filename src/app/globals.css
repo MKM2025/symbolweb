@@ -2,6 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 120px)); /* Account for the two sets plus extra logos */
+  }
+}
+
+@keyframes scrollFast {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 40s linear infinite;
+  will-change: transform;
+}
+
+.animate-scroll-fast {
+  animation: scrollFast 10s linear infinite;
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-rgb: 255, 255, 255;

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Logo from '@/components/common/Logo';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -7,7 +7,13 @@ export default function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <Logo className="mb-4 invert" width={160} height={48} />
+            <Image 
+              src="/images/symbollogo.svg" 
+              alt="Symbol Logo" 
+              width={160} 
+              height={48} 
+              className="mb-4 invert"
+            />
             <p className="text-gray-400">Professional IT Services and Solutions</p>
           </div>
           <div>

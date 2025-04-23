@@ -2,14 +2,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import RotatingHero from '@/components/home/RotatingHero';
 import TechnologyPartnersSection from '@/components/home/TechnologyPartnersSection';
-import ClientsSection from '@/components/home/ClientsSection';
 
 export default function Home() {
   return (
-    <main>
+    <main className="relative">
       <RotatingHero />
       <TechnologyPartnersSection />
-      <ClientsSection />
 
       {/* Intro Section */}
       <section className="py-16 bg-gray-50">
@@ -96,6 +94,6 @@ export default function Home() {
           </Link>
         </div>
       </section>
-      </main>
+    </main>
   );
 }
