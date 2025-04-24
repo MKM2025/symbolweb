@@ -3,18 +3,82 @@
 import { useState, useCallback } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import Logo from '@/components/common/Logo';
+
+interface MenuItem {
+  name: string;
+  href: string;
+}
+
+interface DropdownMenuProps {
+  title: string;
+  items: MenuItem[];
+  isShow: boolean;
+  setShow: (show: boolean) => void;
+  href: string;
+}
+
+// Generic dropdown menu component
+const DropdownMenu = ({ title, items, isShow, setShow, href }: DropdownMenuProps) => (
+  <div 
+    className="relative group"
+    onMouseEnter={() => setShow(true)}
+    onMouseLeave={() => setTimeout(() => setShow(false), 100)}
+  >
+    <div className="text-gray-700 group-hover:text-blue-600 px-3 py-2 text-sm font-medium inline-flex items-center cursor-pointer">
+      <Link href={href} className="inline-flex items-center">
+        {title}
+        <svg 
+          className="ml-1 w-4 h-4 transition-transform duration-200 group-hover:rotate-180" 
+          fill="none" 
+          stroke="currentColor" 
+          viewBox="0 0 24 24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+        </svg>
+      </Link>
+    </div>
+
+    {isShow && (
+      <div 
+        className="absolute left-0 mt-0 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5"
+        onMouseEnter={() => setShow(true)}
+        onMouseLeave={() => setShow(false)}
+      >
+        <div className="py-1" role="menu" aria-orientation="vertical">
+          {items.map((item) => (
+            <Link 
+              key={item.name}
+              href={item.href}
+              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-blue-600"
+              role="menuitem"
+              onClick={() => setShow(false)}
+            >
+              {item.name}
+            </Link>
+          ))}
+        </div>
+      </div>
+    )}
+  </div>
+);
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [showServices, setShowServices] = useState(false);
+  const [showInsights, setShowInsights] = useState(false);
 
-  const closeAll = useCallback(() => {
-    setIsOpen(false);
-  }, []);
-
-  const handleMenuItemClick = useCallback(() => {
-    closeAll();
-  }, [closeAll]);
+  const menuItems = {
+    services: [
+      { name: 'Cybersecurity', href: '/services/cybersecurity' },
+      { name: 'Cloud Infrastructure', href: '/services/cloud-infrastructure' },
+      { name: 'Managed Services', href: '/services/managed-services' }
+    ],
+    insights: [
+      { name: 'Blogs', href: '/insights/blogs' },
+      { name: 'Case Studies', href: '/insights/case-studies' },
+      { name: 'White Papers', href: '/insights/white-papers' }
+    ]
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
@@ -38,62 +102,33 @@ export default function Navbar() {
               Home
             </Link>
             
-            {/* Services Dropdown */}
-            <div className="relative group">
-              <div className="flex items-center">
-                <Link href="/services" className="text-gray-700 group-hover:text-blue-600">
-                  Services
-                </Link>
-                <button className="ml-2 text-gray-700 group-hover:text-blue-600 focus:outline-none">
-                  <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                  </svg>
-                </button>
-              </div>
-              <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-                <Link href="/services/cybersecurity" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                  Cybersecurity
-                </Link>
-                <Link href="/services/cloud-infrastructure" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                  Cloud Infrastructure
-                </Link>
-                <Link href="/services/managed-services" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                  Managed Services
-                </Link>
-              </div>
-            </div>
+            <DropdownMenu 
+              title="Services"
+              items={menuItems.services}
+              isShow={showServices}
+              setShow={setShowServices}
+              href="/services"
+            />
+
+            <Link href="/bpo" className="text-gray-700 hover:text-blue-600">
+              BPO
+            </Link>
 
             <Link href="/clients" className="text-gray-700 hover:text-blue-600">
               Our Clients
             </Link>
+
             <Link href="/partners" className="text-gray-700 hover:text-blue-600">
               Partners
             </Link>
 
-            {/* Insights Dropdown */}
-            <div className="relative group">
-              <div className="flex items-center">
-                <Link href="/insights" className="text-gray-700 group-hover:text-blue-600">
-                  Insights
-                </Link>
-                <button className="ml-2 text-gray-700 group-hover:text-blue-600 focus:outline-none">
-                  <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                  </svg>
-                </button>
-              </div>
-              <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-                <Link href="/insights/blogs" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                  Blogs
-                </Link>
-                <Link href="/insights/case-studies" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                  Case Studies
-                </Link>
-                <Link href="/insights/white-papers" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                  White Papers
-                </Link>
-              </div>
-            </div>
+            <DropdownMenu 
+              title="Insights"
+              items={menuItems.insights}
+              isShow={showInsights}
+              setShow={setShowInsights}
+              href="/insights"
+            />
 
             <Link href="/about" className="text-gray-700 hover:text-blue-600">
               About Us
@@ -129,66 +164,113 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <Link href="/" onClick={handleMenuItemClick} className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded">
+          <div className="px-2 pt-2 pb-3 space-y-1">
+            <Link 
+              href="/" 
+              className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+              onClick={() => setIsOpen(false)}
+            >
               Home
             </Link>
-            
-            {/* Services Menu - Updated to match Insights style */}
-            <div className="space-y-1">
-              <Link href="/services" onClick={handleMenuItemClick} className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded">
+
+            <div className="relative">
+              <button
+                onClick={() => setShowServices(!showServices)}
+                className="w-full text-left px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 flex items-center justify-between"
+              >
                 Services
-              </Link>
-              <Link 
-                href="/services/cybersecurity" 
-                onClick={handleMenuItemClick}
-                className="block pl-6 py-2 text-gray-700 hover:bg-gray-100 rounded"
-              >
-                Cybersecurity
-              </Link>
-              <Link 
-                href="/services/cloud-infrastructure" 
-                onClick={handleMenuItemClick}
-                className="block pl-6 py-2 text-gray-700 hover:bg-gray-100 rounded"
-              >
-                Cloud Infrastructure
-              </Link>
-              <Link 
-                href="/services/managed-services" 
-                onClick={handleMenuItemClick}
-                className="block pl-6 py-2 text-gray-700 hover:bg-gray-100 rounded"
-              >
-                Managed Services
-              </Link>
+                <svg 
+                  className={`ml-1 w-4 h-4 transition-transform duration-200 ${showServices ? 'rotate-180' : ''}`}
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {showServices && (
+                <div className="pl-4 space-y-1">
+                  {menuItems.services.map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-gray-50"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
             </div>
 
-            <Link href="/clients" onClick={handleMenuItemClick} className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded">
+            <Link 
+              href="/bpo" 
+              className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+              onClick={() => setIsOpen(false)}
+            >
+              BPO
+            </Link>
+
+            <Link 
+              href="/clients" 
+              className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+              onClick={() => setIsOpen(false)}
+            >
               Our Clients
             </Link>
-            <Link href="/partners" onClick={handleMenuItemClick} className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded">
+
+            <Link 
+              href="/partners" 
+              className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+              onClick={() => setIsOpen(false)}
+            >
               Partners
             </Link>
 
-            {/* Keep existing Insights Menu as is */}
-            <div className="space-y-1">
-              <Link href="/insights" onClick={handleMenuItemClick} className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded">
+            <div className="relative">
+              <button
+                onClick={() => setShowInsights(!showInsights)}
+                className="w-full text-left px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 flex items-center justify-between"
+              >
                 Insights
-              </Link>
-              <Link href="/insights/blogs" onClick={handleMenuItemClick} className="block pl-6 py-2 text-gray-700 hover:bg-gray-100 rounded">
-                Blogs
-              </Link>
-              <Link href="/insights/case-studies" onClick={handleMenuItemClick} className="block pl-6 py-2 text-gray-700 hover:bg-gray-100 rounded">
-                Case Studies
-              </Link>
-              <Link href="/insights/white-papers" onClick={handleMenuItemClick} className="block pl-6 py-2 text-gray-700 hover:bg-gray-100 rounded">
-                White Papers
-              </Link>
+                <svg 
+                  className={`ml-1 w-4 h-4 transition-transform duration-200 ${showInsights ? 'rotate-180' : ''}`}
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {showInsights && (
+                <div className="pl-4 space-y-1">
+                  {menuItems.insights.map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-gray-50"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
             </div>
 
-            <Link href="/about" onClick={handleMenuItemClick} className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded">
+            <Link 
+              href="/about" 
+              className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+              onClick={() => setIsOpen(false)}
+            >
               About Us
             </Link>
-            <Link href="/contact" onClick={handleMenuItemClick} className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded">
+            <Link 
+              href="/contact" 
+              className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+              onClick={() => setIsOpen(false)}
+            >
               Contact
             </Link>
           </div>
