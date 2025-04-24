@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const metadata = {
   title: 'Our Partners | Symbol Technologies',
@@ -39,11 +40,21 @@ export default function PartnersPage() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Strategic Partners</h1>
-            <p className="text-xl text-blue-100">
+      <section className="relative w-full h-[400px] md:h-[500px] flex items-center -mt-[80px]">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/hero/partners-hero.jpg"
+            alt="Our Partners"
+            fill
+            priority
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50" />
+        </div>
+        <div className="relative h-full w-full container mx-auto px-4 flex flex-col justify-center">
+          <div className="max-w-2xl">
+            <h1 className="text-3xl md:text-5xl font-bold text-white mb-6">Our Strategic Partners</h1>
+            <p className="text-lg md:text-xl text-gray-100 mb-8">
               Symbol Technologies collaborates with industry-leading technology providers to deliver comprehensive ICT and cybersecurity solutions across Africa.
             </p>
           </div>
@@ -51,8 +62,8 @@ export default function PartnersPage() {
       </section>
 
       {/* Partners Grid */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
+      <section className="bg-gray-50">
+        <div className="container mx-auto px-4 py-12">
           {Object.entries(partnersByCategory).map(([category, categoryPartners]) => (
             <div key={category} className="mb-16">
               <h2 className="text-2xl font-bold mb-8 text-gray-900">{category}</h2>

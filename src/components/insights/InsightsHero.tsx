@@ -5,21 +5,23 @@ import Link from 'next/link';
 
 export default function InsightsHero() {
   return (
-    <section className="relative h-[500px] md:h-[600px] flex items-center">
-      <Image
-        src="/images/hero/insights-hero.jpg"
-        alt="Technology Insights"
-        fill
-        className="object-cover"
-        priority
-      />
-      <div className="absolute inset-0 bg-black/50" />
+    <section className="relative h-[400px] md:h-[500px] flex items-center">
+      <div className="absolute inset-0">
+        <Image
+          src="/images/hero/insights-hero.jpg"
+          alt="Technology Insights"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50" />
+      </div>
       <div className="relative container mx-auto px-4">
-        <div className="max-w-3xl">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+        <div className="max-w-2xl">
+          <h1 className="text-3xl md:text-5xl font-bold text-white mb-6">
             Technology Insights & Resources
           </h1>
-          <p className="text-xl text-gray-100 mb-8">
+          <p className="text-lg md:text-xl text-gray-100 mb-8">
             Stay ahead with our latest technology insights, industry trends, and expert perspectives.
           </p>
           <div className="flex flex-wrap gap-4">
