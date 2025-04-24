@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export default function ServicesHero() {
   return (
-    <section className="relative h-[400px] sm:h-[500px] md:h-[600px] flex items-center">
+    <section className="relative h-[500px] md:h-[600px] flex items-center">
       <Image
         src="/images/hero/services-hero.jpg"
         alt="IT Services"

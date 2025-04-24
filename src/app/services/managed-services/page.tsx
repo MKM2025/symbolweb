@@ -11,7 +11,7 @@ export default function ManagedServicesPage() {
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <section className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] bg-gradient-to-r from-blue-600 to-blue-800">
+      <section className="relative h-[500px] md:h-[600px]">
         <div className="absolute inset-0">
           <Image
             src="/images/managed/hero_desktop.jpg"
@@ -19,34 +19,32 @@ export default function ManagedServicesPage() {
             fill
             priority
             className="object-cover"
-            sizes="100vw"
+            quality={100}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50" />
         </div>
         
-        <div className="relative h-full flex flex-col justify-center">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-2xl">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">
-                Managed IT Services
-              </h1>
-              <p className="text-base sm:text-lg md:text-xl text-gray-100 mb-6 sm:mb-8">
-                Comprehensive IT management and support to keep your business running smoothly and efficiently.
-              </p>
-              <div className="flex flex-wrap gap-3 sm:gap-4">
-                <Link
-                  href="/contact"
-                  className="bg-blue-600 text-white px-6 sm:px-8 py-2 sm:py-3 rounded-lg hover:bg-blue-700 transition-colors text-sm sm:text-base"
-                >
-                  Get Started
-                </Link>
-                <Link
-                  href="#services"
-                  className="bg-white text-blue-600 px-6 sm:px-8 py-2 sm:py-3 rounded-lg hover:bg-gray-100 transition-colors text-sm sm:text-base"
-                >
-                  Our Services
-                </Link>
-              </div>
+        <div className="relative h-full container mx-auto px-4 flex flex-col justify-center">
+          <div className="max-w-2xl">
+            <h1 className="text-3xl md:text-5xl font-bold text-white mb-6">
+              Managed IT Services
+            </h1>
+            <p className="text-lg md:text-xl text-gray-100 mb-8">
+              Comprehensive IT management and support to keep your business running smoothly and efficiently.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Link
+                href="/contact"
+                className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+              >
+                Get Started
+              </Link>
+              <Link
+                href="#services"
+                className="bg-white text-blue-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors"
+              >
+                Our Services
+              </Link>
             </div>
           </div>
         </div>

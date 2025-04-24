@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export default function InsightsHero() {
   return (
-    <section className="relative h-[400px] md:h-[500px] flex items-center">
+    <section className="relative h-[500px] md:h-[600px] flex items-center">
       <div className="absolute inset-0">
         <Image
           src="/images/hero/insights-hero.jpg"

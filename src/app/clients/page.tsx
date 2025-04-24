@@ -1,5 +1,8 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const clientCategories = {
   Financial: [
@@ -29,7 +32,7 @@ export default function ClientsPage() {
   return (
     <main className="w-full">
       {/* Hero Section */}
-      <section className="relative w-full h-[400px] md:h-[500px] flex items-center">
+      <section className="relative h-[500px] md:h-[600px]">
         <div className="absolute inset-0">
           <Image
             src="/images/hero/clients-hero.jpg"
@@ -37,15 +40,33 @@ export default function ClientsPage() {
             fill
             priority
             className="object-cover"
+            quality={100}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50" />
         </div>
-        <div className="relative h-full w-full container mx-auto px-4 flex flex-col justify-center">
+        
+        <div className="relative h-full container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center">
           <div className="max-w-2xl">
-            <h1 className="text-3xl md:text-5xl font-bold text-white mb-6">Our Clients</h1>
-            <p className="text-lg md:text-xl text-gray-100 mb-8">
+            <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 md:mb-6">
+              Our Clients
+            </h1>
+            <p className="text-base md:text-lg lg:text-xl text-gray-100 mb-6 md:mb-8">
               Trusted by leading organizations across Ethiopia, delivering innovative solutions that drive success.
             </p>
+            <div className="flex flex-wrap gap-3 md:gap-4">
+              <Link
+                href="/contact"
+                className="bg-blue-600 text-white px-6 md:px-8 py-2 md:py-3 rounded-lg hover:bg-blue-700 transition-colors text-sm md:text-base"
+              >
+                Get Started
+              </Link>
+              <Link
+                href="#clients"
+                className="bg-white text-blue-600 px-6 md:px-8 py-2 md:py-3 rounded-lg hover:bg-gray-100 transition-colors text-sm md:text-base"
+              >
+                View Clients
+              </Link>
+            </div>
           </div>
         </div>
       </section>
