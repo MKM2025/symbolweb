@@ -184,20 +184,29 @@ function Navbar() {
             </Link>
 
             <div className="relative">
-              <button
-                onClick={() => setShowServices(!showServices)}
-                className="w-full text-left px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 flex items-center justify-between"
-              >
-                Services
-                <svg 
-                  className={`ml-1 w-4 h-4 transition-transform duration-200 ${showServices ? 'rotate-180' : ''}`}
-                  fill="none" 
-                  stroke="currentColor" 
-                  viewBox="0 0 24 24"
+              <div className="flex flex-col">
+                <Link
+                  href="/services"
+                  className="px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+                  onClick={() => setIsOpen(false)}
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
+                  Services
+                </Link>
+                <button
+                  onClick={() => setShowServices(!showServices)}
+                  className="w-full text-left px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 flex items-center justify-between"
+                >
+                  View All Services
+                  <svg 
+                    className={`ml-1 w-4 h-4 transition-transform duration-200 ${showServices ? 'rotate-180' : ''}`}
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+              </div>
               {showServices && (
                 <div className="pl-4 space-y-1">
                   {menuItems.services.map((item) => (
