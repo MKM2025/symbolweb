@@ -112,7 +112,7 @@ export default function Navbar() {
 
             <Link href="/bpo" className="text-gray-700 hover:text-blue-600">
               BPO
-            </Link>
+                </Link>
 
             <Link href="/clients" className="text-gray-700 hover:text-blue-600">
               Our Clients
@@ -172,7 +172,7 @@ export default function Navbar() {
             >
               Home
             </Link>
-
+            
             <div className="relative">
               <button
                 onClick={() => setShowServices(!showServices)}
@@ -191,14 +191,14 @@ export default function Navbar() {
               {showServices && (
                 <div className="pl-4 space-y-1">
                   {menuItems.services.map((item) => (
-                    <Link
+              <Link 
                       key={item.name}
                       href={item.href}
                       className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-gray-50"
                       onClick={() => setIsOpen(false)}
                     >
                       {item.name}
-                    </Link>
+              </Link>
                   ))}
                 </div>
               )}
@@ -253,7 +253,7 @@ export default function Navbar() {
                       onClick={() => setIsOpen(false)}
                     >
                       {item.name}
-                    </Link>
+              </Link>
                   ))}
                 </div>
               )}

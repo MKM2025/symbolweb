@@ -12,9 +12,15 @@ export const metadata: Metadata = {
   title: 'Symbol Technologies - Professional IT Services and Solutions',
   description: 'Symbol Technologies provides enterprise-grade IT solutions including cybersecurity, cloud infrastructure, and managed services.',
   icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon.ico',
-    apple: '/favicon.png',
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-16x16.png', type: 'image/png', sizes: '16x16' },
+      { url: '/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
+      { url: '/favicon-48x48.png', type: 'image/png', sizes: '48x48' }
+    ],
+    apple: [
+      { url: '/favicon-180x180.png', sizes: '180x180' }
+    ]
   },
   manifest: '/manifest.json',
   viewport: {
@@ -31,10 +37,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <head>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/favicon.png" />
-      </head>
       <body className={`${inter.className} antialiased`}>
         <Navbar />
         <Breadcrumb />

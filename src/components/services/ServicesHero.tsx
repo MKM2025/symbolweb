@@ -7,7 +7,7 @@ export default function ServicesHero() {
   return (
     <section className="relative h-[500px] md:h-[600px] flex items-center">
       <Image
-        src="/images/hero/services-hero.jpg"
+        src="/images/hero/hero_desktop.webp"
         alt="IT Services"
         fill
         className="object-cover"

@@ -8,7 +8,7 @@ export default function InsightsHero() {
     <section className="relative h-[500px] md:h-[600px] flex items-center">
       <div className="absolute inset-0">
         <Image
-          src="/images/hero/insights-hero.jpg"
+          src="/images/hero/hero_desktop.webp"
           alt="Technology Insights"
           fill
           className="object-cover"
