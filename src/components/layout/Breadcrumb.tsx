@@ -10,8 +10,8 @@ export default function Breadcrumb() {
   return (
     <nav className="bg-gray-50 border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center space-x-2 py-3 text-sm">
-          <Link href="/" className="text-gray-600 hover:text-blue-600">
+        <div className="flex items-center space-x-2 py-2 sm:py-3 text-xs sm:text-sm overflow-x-auto whitespace-nowrap">
+          <Link href="/" className="text-gray-600 hover:text-blue-600 min-w-[40px]">
             Home
           </Link>
           {paths.map((path, index) => {
@@ -22,12 +22,12 @@ export default function Breadcrumb() {
             ).join(' ');
 
             return (
-              <span key={path} className="flex items-center">
+              <span key={path} className="flex items-center min-w-0">
                 <span className="mx-2 text-gray-400">/</span>
                 {isLast ? (
-                  <span className="text-gray-900">{displayName}</span>
+                  <span className="text-gray-900 truncate">{displayName}</span>
                 ) : (
-                  <Link href={href} className="text-gray-600 hover:text-blue-600">
+                  <Link href={href} className="text-gray-600 hover:text-blue-600 truncate">
                     {displayName}
                   </Link>
                 )}

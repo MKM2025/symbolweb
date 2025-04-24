@@ -17,6 +17,11 @@ export const metadata: Metadata = {
     apple: '/favicon.png',
   },
   manifest: '/manifest.json',
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+  },
 }
 
 export default function RootLayout({
@@ -25,15 +30,15 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <head>
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/favicon.png" />
       </head>
-      <body className={inter.className}>
+      <body className={`${inter.className} antialiased`}>
         <Navbar />
         <Breadcrumb />
-        <main className="pt-4">{children}</main>
+        <main>{children}</main>
         <ScrollArrow />
         <Footer />
       </body>
