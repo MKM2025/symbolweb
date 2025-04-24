@@ -11,7 +11,7 @@ export default function CloudInfrastructurePage() {
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <section className="relative w-full h-[400px] sm:h-[500px] md:h-[600px] bg-gradient-to-r from-blue-600 to-blue-800 -mt-[80px]">
+      <section className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] bg-gradient-to-r from-blue-600 to-blue-800">
         <div className="absolute inset-0">
           <Image
             src="/images/cloud/hero_desktop.jpg"
@@ -21,28 +21,28 @@ export default function CloudInfrastructurePage() {
             className="object-cover"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-black/50"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50"></div>
         </div>
         
         <div className="relative h-full flex flex-col justify-center">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-2xl">
-              <h1 className="text-3xl md:text-5xl font-bold text-white mb-6">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">
                 Cloud Infrastructure
               </h1>
-              <p className="text-lg md:text-xl text-gray-100 mb-8">
+              <p className="text-base sm:text-lg md:text-xl text-gray-100 mb-6 sm:mb-8">
                 Scale your business with modern cloud solutions designed for enterprise performance and reliability.
               </p>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-3 sm:gap-4">
                 <Link
                   href="/contact"
-                  className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+                  className="bg-blue-600 text-white px-6 sm:px-8 py-2 sm:py-3 rounded-lg hover:bg-blue-700 transition-colors text-sm sm:text-base"
                 >
                   Get Started
                 </Link>
                 <Link
                   href="#services"
-                  className="bg-white text-blue-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors"
+                  className="bg-white text-blue-600 px-6 sm:px-8 py-2 sm:py-3 rounded-lg hover:bg-gray-100 transition-colors text-sm sm:text-base"
                 >
                   Our Services
                 </Link>

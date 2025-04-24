@@ -40,7 +40,7 @@ export default function PartnersPage() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="relative w-full h-[400px] md:h-[500px] flex items-center -mt-[80px]">
+      <section className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] flex items-center">
         <div className="absolute inset-0">
           <Image
             src="/images/hero/partners-hero.jpg"
@@ -53,8 +53,8 @@ export default function PartnersPage() {
         </div>
         <div className="relative h-full w-full container mx-auto px-4 flex flex-col justify-center">
           <div className="max-w-2xl">
-            <h1 className="text-3xl md:text-5xl font-bold text-white mb-6">Our Strategic Partners</h1>
-            <p className="text-lg md:text-xl text-gray-100 mb-8">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">Our Strategic Partners</h1>
+            <p className="text-base sm:text-lg md:text-xl text-gray-100 mb-6 sm:mb-8">
               Symbol Technologies collaborates with industry-leading technology providers to deliver comprehensive ICT and cybersecurity solutions across Africa.
             </p>
           </div>

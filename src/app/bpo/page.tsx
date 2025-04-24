@@ -122,7 +122,7 @@ export default function BPOPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[400px] sm:h-[500px] md:h-[600px] bg-gradient-to-r from-blue-600 to-blue-800 -mt-[80px]">
+      <section className="relative h-[300px] sm:h-[400px] md:h-[500px] bg-gradient-to-r from-blue-600 to-blue-800">
         <div className="absolute inset-0">
           <Image
             src="/images/bpo/hero.jpg"
@@ -138,23 +138,23 @@ export default function BPOPage() {
         <div className="relative h-full flex items-center">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
-              <h1 className="text-3xl md:text-5xl font-bold text-white mb-6">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">
                 Business Process Outsourcing
               </h1>
-              <p className="text-lg md:text-xl text-gray-100 mb-8">
+              <p className="text-base sm:text-lg md:text-xl text-gray-100 mb-6 sm:mb-8">
                 Transform your business with our comprehensive tech & IT BPO services. 
                 From development to support, we deliver excellence in every project.
               </p>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-3 sm:gap-4">
                 <Link
                   href="/contact"
-                  className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+                  className="bg-blue-600 text-white px-6 sm:px-8 py-2 sm:py-3 rounded-lg hover:bg-blue-700 transition-colors text-sm sm:text-base"
                 >
                   Get Started
                 </Link>
                 <Link
                   href="#services"
-                  className="bg-white text-blue-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors"
+                  className="bg-white text-blue-600 px-6 sm:px-8 py-2 sm:py-3 rounded-lg hover:bg-gray-100 transition-colors text-sm sm:text-base"
                 >
                   Our Services
                 </Link>
