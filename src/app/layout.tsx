@@ -5,6 +5,7 @@ import ScrollArrow from '@/components/home/ScrollArrow'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import Breadcrumb from '@/components/layout/Breadcrumb'
+import { MenuProvider } from '@/context/MenuContext'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -32,11 +33,13 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.className} antialiased`}>
-        <Navbar />
-        <Breadcrumb />
-        <main>{children}</main>
-        <ScrollArrow />
-        <Footer />
+        <MenuProvider>
+          <Navbar />
+          <Breadcrumb />
+          <main>{children}</main>
+          <ScrollArrow />
+          <Footer />
+        </MenuProvider>
       </body>
     </html>
   )
