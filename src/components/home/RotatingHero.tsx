@@ -4,12 +4,14 @@ import { useState, useEffect, useRef } from 'react';
 import HeroSection from './HeroSection';
 import ServicesHero from '../services/ServicesHero';
 import InsightsHero from '../insights/InsightsHero';
+import { useMenu } from '@/context/MenuContext';
 
 const SLIDE_DURATION = 5000; // 5 seconds
 const TRANSITION_DURATION = 1000; // 1 second for smooth transitions
 const GOLD_GRADIENT = 'bg-gradient-to-r from-[#FFD700] to-[#E6B422]'; // Gold gradient for all progress bars
 
 export default function RotatingHero() {
+  const { isMobileMenuOpen } = useMenu();
   const [currentHero, setCurrentHero] = useState(0);
   const [paused, setPaused] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -119,48 +121,50 @@ export default function RotatingHero() {
       </div>
 
       {/* Progress Bar & Pause/Play Button */}
-      <div className="absolute bottom-0 left-0 right-0 z-50">
-        <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 w-[280px] sm:w-[320px] max-w-[90vw] flex items-center gap-2">
-          <div className="flex-1 flex items-center gap-2">
-            {heroes.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => handleManualChange(index)}
-                className={`relative flex-1 h-1.5 sm:h-2 rounded-full transition-all duration-300 overflow-hidden shadow-lg ${
-                  index === currentHero
-                    ? GOLD_GRADIENT
-                    : 'bg-white/40 hover:bg-white/70'
-                }`}
-                aria-label={`View ${index === 0 ? 'main' : index === 1 ? 'services' : 'insights'} hero`}
-              >
-                {/* Progress animation for current bar */}
-                {index === currentHero && (
-                  <div
-                    className={`absolute left-0 top-0 h-full rounded-full bg-gradient-to-r from-[#FFD700] to-[#E6B422] pointer-events-none`}
-                    style={{ width: `${progress * 100}%`, transition: paused ? 'none' : 'width 0.2s linear' }}
-                  />
-                )}
-              </button>
-            ))}
+      {!isMobileMenuOpen && (
+        <div className="absolute bottom-0 left-0 right-0 z-50">
+          <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 w-[280px] sm:w-[320px] max-w-[90vw] flex items-center gap-2">
+            <div className="flex-1 flex items-center gap-2">
+              {heroes.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => handleManualChange(index)}
+                  className={`relative flex-1 h-1.5 sm:h-2 rounded-full transition-all duration-300 overflow-hidden shadow-lg ${
+                    index === currentHero
+                      ? GOLD_GRADIENT
+                      : 'bg-white/40 hover:bg-white/70'
+                  }`}
+                  aria-label={`View ${index === 0 ? 'main' : index === 1 ? 'services' : 'insights'} hero`}
+                >
+                  {/* Progress animation for current bar */}
+                  {index === currentHero && (
+                    <div
+                      className={`absolute left-0 top-0 h-full rounded-full bg-gradient-to-r from-[#FFD700] to-[#E6B422] pointer-events-none`}
+                      style={{ width: `${progress * 100}%`, transition: paused ? 'none' : 'width 0.2s linear' }}
+                    />
+                  )}
+                </button>
+              ))}
+            </div>
+            <button
+              onClick={() => setPaused((p) => !p)}
+              className="w-6 h-6 sm:w-8 sm:h-8 flex-shrink-0 flex items-center justify-center rounded-full bg-white/80 hover:bg-white text-blue-700 shadow transition-colors"
+              aria-label={paused ? 'Play' : 'Pause'}
+            >
+              {paused ? (
+                <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                  <polygon points="6,4 20,12 6,20" fill="currentColor" />
+                </svg>
+              ) : (
+                <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                  <rect x="6" y="4" width="4" height="16" fill="currentColor" />
+                  <rect x="14" y="4" width="4" height="16" fill="currentColor" />
+                </svg>
+              )}
+            </button>
           </div>
-          <button
-            onClick={() => setPaused((p) => !p)}
-            className="w-6 h-6 sm:w-8 sm:h-8 flex-shrink-0 flex items-center justify-center rounded-full bg-white/80 hover:bg-white text-blue-700 shadow transition-colors"
-            aria-label={paused ? 'Play' : 'Pause'}
-          >
-            {paused ? (
-              <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                <polygon points="6,4 20,12 6,20" fill="currentColor" />
-              </svg>
-            ) : (
-              <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                <rect x="6" y="4" width="4" height="16" fill="currentColor" />
-                <rect x="14" y="4" width="4" height="16" fill="currentColor" />
-              </svg>
-            )}
-          </button>
         </div>
-      </div>
+      )}
     </div>
   );
 } 
