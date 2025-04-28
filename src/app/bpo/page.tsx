@@ -122,7 +122,7 @@ const bpoCategories = [
 
 export default function BPOPage() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen pt-16 sm:pt-20">
       {/* Hero Section */}
       <section className="relative flex items-center justify-center w-full h-[400px] sm:h-[500px] md:h-[600px] overflow-hidden text-white">
         {/* Background image with overlay */}

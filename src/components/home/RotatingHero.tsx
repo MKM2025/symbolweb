@@ -7,9 +7,9 @@ import InsightsHero from '../insights/InsightsHero';
 
 const SLIDE_DURATION = 5000; // 5 seconds
 const PROGRESS_COLORS = [
-  'bg-blue-400', // main
-  'bg-yellow-400', // services
-  'bg-pink-400', // insights
+  'bg-blue-400 hover:bg-blue-500', // main
+  'bg-yellow-400 hover:bg-yellow-500', // services
+  'bg-pink-400 hover:bg-pink-500', // insights
 ];
 
 export default function RotatingHero() {
@@ -80,7 +80,7 @@ export default function RotatingHero() {
 
       {/* Progress Bar & Pause/Play Button */}
       {/* Slide Selectors (now large bars with progress) */}
-      <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-20 w-[280px] sm:w-[320px] max-w-[90vw] flex items-center gap-2">
+      <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-50 w-[280px] sm:w-[320px] max-w-[90vw] flex items-center gap-2 bg-black/20 backdrop-blur-sm rounded-full p-2">
         <div className="flex-1 flex items-center gap-2">
           {heroes.map((_, index) => (
             <button
