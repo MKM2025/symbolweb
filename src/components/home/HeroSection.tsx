@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export default function HeroSection({ fitMode = 'cover' }: { fitMode?: 'cover' | 'contain' }) {
   return (
-    <section className="relative w-full aspect-[16/9] md:aspect-[21/9] min-h-[320px] md:min-h-[500px] max-h-[800px]">
+    <section className="relative w-full h-[500px] md:h-[600px]">
       <div className="absolute inset-0">
         <picture>
           {/* Desktop version */}

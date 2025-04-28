@@ -88,7 +88,7 @@ export default function RotatingHero() {
 
   return (
     <div 
-      className="relative w-full aspect-[16/9] md:aspect-[21/9] min-h-[320px] md:min-h-[500px] max-h-[800px] overflow-hidden"
+      className="relative w-full h-[500px] md:h-[600px] overflow-hidden"
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
