@@ -83,7 +83,7 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 bg-[#0a2a4a] shadow-md z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-24">
+        <div className="flex items-center justify-between h-16 md:h-24">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center justify-center">
             <Link href="/">
@@ -92,7 +92,7 @@ export default function Navbar() {
                 alt="Symbol Logo" 
                 width={180} 
                 height={48}
-                className="brightness-125 contrast-110 saturate-150 drop-shadow-sm"
+                className="brightness-125 contrast-110 saturate-150 drop-shadow-sm w-[140px] md:w-[180px]"
               />
             </Link>
           </div>
@@ -143,7 +143,7 @@ export default function Navbar() {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-100"
+              className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-[#FFD700] hover:bg-[#0a2a4a]/80"
             >
               <svg
                 className="h-6 w-6"
@@ -164,11 +164,11 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden">
+        <div className="md:hidden bg-[#0a2a4a]">
           <div className="px-2 pt-2 pb-3 space-y-1">
             <Link 
               href="/" 
-              className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+              className="block px-3 py-2 text-base font-medium text-white hover:text-[#FFD700] hover:bg-[#0a2a4a]/80"
               onClick={() => setIsOpen(false)}
             >
               Home
@@ -177,7 +177,7 @@ export default function Navbar() {
             <div className="relative">
               <button
                 onClick={() => setShowServices(!showServices)}
-                className="w-full text-left px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 flex items-center justify-between"
+                className="w-full text-left px-3 py-2 text-base font-medium text-white hover:text-[#FFD700] hover:bg-[#0a2a4a]/80 flex items-center justify-between"
               >
                 Services
                 <svg 
@@ -192,14 +192,14 @@ export default function Navbar() {
               {showServices && (
                 <div className="pl-4 space-y-1">
                   {menuItems.services.map((item) => (
-              <Link 
+                    <Link 
                       key={item.name}
                       href={item.href}
-                      className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-gray-50"
+                      className="block px-3 py-2 text-base font-medium text-white/80 hover:text-[#FFD700] hover:bg-[#0a2a4a]/80"
                       onClick={() => setIsOpen(false)}
                     >
                       {item.name}
-              </Link>
+                    </Link>
                   ))}
                 </div>
               )}
@@ -207,7 +207,7 @@ export default function Navbar() {
 
             <Link 
               href="/bpo" 
-              className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+              className="block px-3 py-2 text-base font-medium text-white hover:text-[#FFD700] hover:bg-[#0a2a4a]/80"
               onClick={() => setIsOpen(false)}
             >
               BPO
@@ -215,7 +215,7 @@ export default function Navbar() {
 
             <Link 
               href="/clients" 
-              className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+              className="block px-3 py-2 text-base font-medium text-white hover:text-[#FFD700] hover:bg-[#0a2a4a]/80"
               onClick={() => setIsOpen(false)}
             >
               Our Clients
@@ -223,7 +223,7 @@ export default function Navbar() {
 
             <Link 
               href="/partners" 
-              className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+              className="block px-3 py-2 text-base font-medium text-white hover:text-[#FFD700] hover:bg-[#0a2a4a]/80"
               onClick={() => setIsOpen(false)}
             >
               Partners
@@ -232,7 +232,7 @@ export default function Navbar() {
             <div className="relative">
               <button
                 onClick={() => setShowInsights(!showInsights)}
-                className="w-full text-left px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 flex items-center justify-between"
+                className="w-full text-left px-3 py-2 text-base font-medium text-white hover:text-[#FFD700] hover:bg-[#0a2a4a]/80 flex items-center justify-between"
               >
                 Insights
                 <svg 
@@ -250,11 +250,11 @@ export default function Navbar() {
                     <Link
                       key={item.name}
                       href={item.href}
-                      className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-gray-50"
+                      className="block px-3 py-2 text-base font-medium text-white/80 hover:text-[#FFD700] hover:bg-[#0a2a4a]/80"
                       onClick={() => setIsOpen(false)}
                     >
                       {item.name}
-              </Link>
+                    </Link>
                   ))}
                 </div>
               )}
@@ -262,14 +262,15 @@ export default function Navbar() {
 
             <Link 
               href="/about" 
-              className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+              className="block px-3 py-2 text-base font-medium text-white hover:text-[#FFD700] hover:bg-[#0a2a4a]/80"
               onClick={() => setIsOpen(false)}
             >
               About Us
             </Link>
+
             <Link 
               href="/contact" 
-              className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+              className="block px-3 py-2 text-base font-medium text-white hover:text-[#FFD700] hover:bg-[#0a2a4a]/80"
               onClick={() => setIsOpen(false)}
             >
               Contact
