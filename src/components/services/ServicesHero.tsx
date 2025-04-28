@@ -27,13 +27,13 @@ export default function ServicesHero({ fitMode = 'cover' }: { fitMode?: 'cover' 
           <div className="flex flex-wrap gap-4">
             <Link 
               href="/services/cybersecurity"
-              className="bg-gradient-to-r from-[#BF953F] via-[#FCF6BA] to-[#B38728] text-[#1a1a1a] px-8 py-3 rounded-lg hover:from-[#FCF6BA] hover:via-[#B38728] hover:to-[#BF953F] transition-all duration-300 font-semibold shadow-md"
+              className="bg-gradient-to-r from-[#BF953F] via-[#FCF6BA] to-[#B38728] text-[#1a1a1a] px-6 md:px-8 py-2.5 md:py-3 rounded-lg hover:from-[#FCF6BA] hover:via-[#B38728] hover:to-[#BF953F] transition-all duration-300 font-semibold shadow-md text-sm md:text-base"
             >
               Explore Services
             </Link>
             <Link 
               href="/contact"
-              className="bg-[#4a75a8] text-[#FFD700] px-8 py-3 rounded-lg hover:bg-[#5885bd] transition-colors font-semibold"
+              className="bg-[#4a75a8] text-[#FFD700] px-6 md:px-8 py-2.5 md:py-3 rounded-lg hover:bg-[#5885bd] transition-colors font-semibold shadow-md text-sm md:text-base"
             >
               Contact Us
             </Link>
