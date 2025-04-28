@@ -44,7 +44,7 @@ export default function HeroSection({ fitMode = 'cover' }: { fitMode?: 'cover' |
       </div>
 
       <div className="relative h-full container mx-auto px-4 flex flex-col justify-center">
-        <div className="max-w-2xl pt-8 md:pt-0">
+        <div className="max-w-2xl">
           <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 md:mb-6 drop-shadow-lg">
             Empowering Digital Transformation
           </h1>
