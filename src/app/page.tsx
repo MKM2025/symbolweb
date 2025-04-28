@@ -3,6 +3,19 @@ import Link from 'next/link';
 import RotatingHero from '@/components/home/RotatingHero';
 import TechnologyPartnersSection from '@/components/home/TechnologyPartnersSection';
 
+// Copy bpoCategories from src/app/bpo/page.tsx
+const bpoCategories = [
+  { title: 'Software Development', href: '/bpo/software-development', icon: '💻' },
+  { title: 'Web Services', href: '/bpo/web-services', icon: '🌐' },
+  { title: 'DevOps & Infrastructure', href: '/bpo/devops-infrastructure', icon: '⚙️' },
+  { title: 'Technical Support', href: '/bpo/technical-support', icon: '🛠️' },
+  { title: 'Network & Security', href: '/bpo/network-security', icon: '🔒' },
+  { title: 'AI & Automation', href: '/bpo/ai-automation', icon: '🤖' },
+  { title: 'UI/UX Design', href: '/bpo/ui-ux-design', icon: '🎨' },
+  { title: 'Data Services', href: '/bpo/data-services', icon: '📊' },
+  { title: 'Dedicated Teams', href: '/bpo/dedicated-teams', icon: '👥' },
+];
+
 export default function Home() {
   return (
     <main className="relative">
@@ -10,13 +23,13 @@ export default function Home() {
       <TechnologyPartnersSection />
 
       {/* Intro Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-4 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-8 text-gray-900">
+            <h2 className="text-3xl font-bold mb-2 text-gray-900">
               Leading ICT Solutions Provider in Addis Ababa, Ethiopia
             </h2>
-            <p className="text-lg text-gray-600 leading-relaxed mb-8">
+            <p className="text-lg text-gray-600 leading-relaxed mb-2">
               We combine deep technical expertise, strategic partnerships with global leaders, and an 
               AI-driven approach to deliver secure, scalable, and future-ready systems. From robust 
               cybersecurity defenses and advanced FinTech solutions to cloud transformation and 
@@ -26,10 +39,38 @@ export default function Home() {
         </div>
       </section>
 
+      {/* BPO Section */}
+      <section className="py-6 bg-blue-100">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-2">Business Process Outsourcing (BPO)</h2>
+          <p className="text-lg text-gray-700 mb-4 max-w-2xl mx-auto">
+            Discover our full range of BPO services, from software development and technical support to AI & automation, designed to optimize your business operations.
+          </p>
+          <div className="flex gap-3 overflow-x-auto pb-2 justify-center">
+            {bpoCategories.map((cat) => (
+              <Link
+                key={cat.title}
+                href={cat.href}
+                className="min-w-[120px] bg-white rounded-lg shadow hover:shadow-lg border border-blue-100 hover:bg-blue-600 hover:text-white px-4 py-3 flex flex-col items-center transition-all duration-200 group cursor-pointer"
+              >
+                <span className="text-2xl mb-1 group-hover:text-white transition-colors">{cat.icon}</span>
+                <span className="text-xs font-semibold group-hover:text-white text-center transition-colors">{cat.title}</span>
+              </Link>
+            ))}
+          </div>
+          <Link
+            href="/bpo"
+            className="inline-block mt-4 bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+          >
+            Explore All BPO Services
+          </Link>
+        </div>
+      </section>
+
       {/* Solutions Grid */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-4 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Comprehensive ICT Solutions</h2>
+          <h2 className="text-3xl font-bold text-center mb-4">Comprehensive ICT Solutions</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <Link href="/services/cybersecurity" className="group block bg-white p-8 rounded-xl shadow-sm transition-all duration-200 hover:bg-blue-50 hover:shadow-lg hover:scale-105 focus:outline-none">
               <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-100 transition-colors">
