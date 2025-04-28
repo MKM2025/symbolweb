@@ -3,17 +3,16 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function ServicesHero() {
+export default function ServicesHero({ fitMode = 'cover' }: { fitMode?: 'cover' | 'contain' }) {
   return (
     <section className="relative h-[500px] md:h-[600px] flex items-center">
       <Image
         src="/images/hero/hero_desktop.webp"
         alt="IT Services"
         fill
-        className="object-cover"
+        className={`object-${fitMode}`}
         priority
       />
-      <div className="absolute inset-0 bg-black/50" />
       <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
           <h1 className="text-3xl md:text-5xl font-bold text-white mb-6">

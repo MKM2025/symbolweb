@@ -41,7 +41,7 @@ export default function TechnologyPartnersSection() {
         alt={`${partner.name} logo`}
         width={120}
         height={48}
-        className="object-contain"
+        className="object-contain w-full h-full max-w-full max-h-full"
         onError={() => setError(true)}
       />
     );
@@ -62,7 +62,7 @@ export default function TechnologyPartnersSection() {
               {doubledPartners.map((partner, index) => (
                 <div 
                   key={`partner-${index}`} 
-                  className="inline-flex flex-shrink-0 w-40 h-16 bg-white/90 backdrop-blur-sm items-center justify-center px-4"
+                  className="inline-flex flex-shrink-0 w-40 h-16 bg-white/90 backdrop-blur-sm items-center justify-center px-4 mx-2 overflow-hidden"
                 >
                   <PartnerLogo partner={partner} />
                 </div>
@@ -71,7 +71,7 @@ export default function TechnologyPartnersSection() {
               {partners.slice(0, 3).map((partner, index) => (
                 <div 
                   key={`partner-extra-${index}`} 
-                  className="inline-flex flex-shrink-0 w-40 h-16 bg-white/90 backdrop-blur-sm items-center justify-center px-4"
+                  className="inline-flex flex-shrink-0 w-40 h-16 bg-white/90 backdrop-blur-sm items-center justify-center px-4 mx-2 overflow-hidden"
                 >
                   <PartnerLogo partner={partner} />
                 </div>

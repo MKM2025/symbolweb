@@ -3,29 +3,44 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function HeroSection() {
+export default function HeroSection({ fitMode = 'cover' }: { fitMode?: 'cover' | 'contain' }) {
   return (
-    <section className="relative h-[500px] md:h-[600px]">
+    <section className="relative w-full aspect-[16/9] md:aspect-[21/9] max-h-[800px] min-h-[500px]">
       <div className="absolute inset-0">
         <picture>
+          {/* Desktop version */}
           <source
             media="(min-width: 768px)"
-            srcSet="/images/hero/hero_desktop.webp"
+            srcSet="/images/hero/hero_desktop_5.webp"
+            type="image/webp"
+          />
+          <source
+            media="(min-width: 768px)"
+            srcSet="/images/hero/hero_desktop_5.jpg"
+            type="image/jpeg"
+          />
+          {/* Mobile version */}
+          <source
+            media="(max-width: 767px)"
+            srcSet="/images/hero/new_hero_mobile.webp"
+            type="image/webp"
           />
           <source
             media="(max-width: 767px)"
-            srcSet="/images/hero/hero_mobile.webp"
+            srcSet="/images/hero/new_hero_mobile.jpg"
+            type="image/jpeg"
           />
           <Image
-            src="/images/hero/hero_desktop.jpg"
+            src="/images/hero/hero_desktop_5.webp"
             alt="Hero Background"
             fill
             priority
-            className="object-cover"
+            className={`object-${fitMode} object-[50%_35%]`}
             quality={100}
+            sizes="100vw"
           />
         </picture>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50" />
+        {/* <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50" /> */}
       </div>
 
       <div className="relative h-full container mx-auto px-4 flex flex-col justify-center">

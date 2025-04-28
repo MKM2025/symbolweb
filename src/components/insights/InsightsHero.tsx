@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function InsightsHero() {
+export default function InsightsHero({ fitMode = 'cover' }: { fitMode?: 'cover' | 'contain' }) {
   return (
     <section className="relative h-[500px] md:h-[600px] flex items-center">
       <div className="absolute inset-0">
@@ -11,10 +11,9 @@ export default function InsightsHero() {
           src="/images/hero/hero_desktop.webp"
           alt="Technology Insights"
           fill
-          className="object-cover"
+          className={`object-${fitMode}`}
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50" />
       </div>
       <div className="relative container mx-auto px-4">
         <div className="max-w-2xl">

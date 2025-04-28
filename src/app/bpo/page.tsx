@@ -124,42 +124,52 @@ export default function BPOPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[500px] md:h-[600px]">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/bpo/hero.jpg"
-            alt="BPO Services"
-            fill
-            priority
-            className="object-cover"
-            quality={100}
+      <section className="relative flex items-center justify-center w-full h-[600px] overflow-hidden text-white">
+        {/* Background image with overlay */}
+        <div className="absolute inset-0 -z-10">
+          <img
+            src="/images/bpo/hero_bpo_desktop.webp"
+            alt="BPO Hero Background"
+            className="w-full h-full object-cover"
+            draggable="false"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50" />
+          <div className="absolute inset-0 bg-blue-900/60" />
         </div>
-        
-        <div className="relative h-full container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center">
-          <div className="max-w-2xl">
-            <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 md:mb-6">
-              Business Process Outsourcing
-            </h1>
-            <p className="text-base md:text-lg lg:text-xl text-gray-100 mb-6 md:mb-8">
-              Transform your business with our comprehensive tech & IT BPO services. 
-              From development to support, we deliver excellence in every project.
+        {/* Oval icon arrangement (no lines) */}
+        <div className="relative w-full h-full max-w-6xl mx-auto">
+          {bpoCategories.map((category, i) => {
+            const angle = (i / bpoCategories.length) * 2 * Math.PI;
+            const rx = 0.85; // horizontal radius as a fraction of width
+            const ry = 0.65; // vertical radius as a fraction of height
+            const x = 50 + Math.cos(angle) * 45 * rx;
+            const y = 50 + Math.sin(angle) * 40 * ry;
+            return (
+              <Link
+                key={category.title}
+                href={category.href}
+                className="absolute flex flex-col items-center group hover:text-yellow-400 transition-colors"
+                style={{
+                  left: `${x}%`,
+                  top: `${y}%`,
+                  transform: 'translate(-50%, -50%)',
+                  zIndex: 2
+                }}
+              >
+                <span className="text-3xl md:text-4xl mb-1 group-hover:scale-110 transition-transform bg-white/20 rounded-full p-4 shadow-lg backdrop-blur">
+                  {category.icon}
+                </span>
+                <span className="text-xs md:text-base text-center group-hover:text-yellow-400 transition-colors whitespace-nowrap drop-shadow">
+                  {category.title}
+                </span>
+              </Link>
+            );
+          })}
+          {/* Center text */}
+          <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center z-10 w-[80%] md:w-[60%]">
+            <h1 className="text-xl md:text-3xl font-bold mb-2 drop-shadow-lg text-yellow-300 whitespace-nowrap">Business Process Outsourcing</h1>
+            <p className="text-sm md:text-xl text-blue-100 mb-0 drop-shadow">
+              Providing a range of services to optimize and manage your business processes
             </p>
-            <div className="flex flex-wrap gap-3 md:gap-4">
-              <Link
-                href="/contact"
-                className="bg-blue-600 text-white px-6 md:px-8 py-2 md:py-3 rounded-lg hover:bg-blue-700 transition-colors text-sm md:text-base"
-              >
-                Get Started
-              </Link>
-              <Link
-                href="#services"
-                className="bg-white text-blue-600 px-6 md:px-8 py-2 md:py-3 rounded-lg hover:bg-gray-100 transition-colors text-sm md:text-base"
-              >
-                Our Services
-              </Link>
-            </div>
           </div>
         </div>
       </section>
