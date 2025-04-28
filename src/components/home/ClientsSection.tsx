@@ -13,9 +13,9 @@ export default function ClientsSection() {
   ];
 
   return (
-    <section className="py-16 bg-white overflow-hidden">
+    <section className="py-4 md:py-8 bg-white overflow-hidden">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">Our Clients</h2>
+        <h2 className="text-2xl md:text-3xl font-bold text-center mb-4 md:mb-8">Our Clients</h2>
         
         {/* Scrolling container */}
         <div className="relative">
@@ -53,7 +53,7 @@ export default function ClientsSection() {
           </div>
         </div>
 
-        <div className="text-center mt-12">
+        <div className="text-center mt-4 md:mt-8">
           <Link 
             href="/clients"
             className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium"

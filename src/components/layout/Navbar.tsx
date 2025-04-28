@@ -24,7 +24,7 @@ const DropdownMenu = ({ title, items, isShow, setShow, href }: DropdownMenuProps
     onMouseEnter={() => setShow(true)}
     onMouseLeave={() => setTimeout(() => setShow(false), 100)}
   >
-    <div className="text-gray-700 group-hover:text-blue-600 px-3 py-2 text-sm font-medium inline-flex items-center cursor-pointer">
+    <div className="text-white group-hover:text-[#FFD700] px-3 py-2 text-sm font-medium inline-flex items-center cursor-pointer">
       <Link href={href} className="inline-flex items-center">
         {title}
         <svg 
@@ -40,7 +40,7 @@ const DropdownMenu = ({ title, items, isShow, setShow, href }: DropdownMenuProps
 
     {isShow && (
       <div 
-        className="absolute left-0 mt-0 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5"
+        className="absolute left-0 mt-0 w-56 rounded-md shadow-lg bg-[#0a2a4a] ring-1 ring-black ring-opacity-5"
         onMouseEnter={() => setShow(true)}
         onMouseLeave={() => setShow(false)}
       >
@@ -49,7 +49,7 @@ const DropdownMenu = ({ title, items, isShow, setShow, href }: DropdownMenuProps
             <Link 
               key={item.name}
               href={item.href}
-              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-blue-600"
+              className="block px-4 py-2 text-sm font-medium text-gray-100 hover:text-[#FFE5A0] bg-[#0a2a4a] hover:bg-[#0a2a4a] transition-colors duration-150 hover:drop-shadow-[0_0_3px_rgba(255,229,160,0.3)]"
               role="menuitem"
               onClick={() => setShow(false)}
             >
@@ -81,24 +81,25 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+    <nav className="fixed top-0 left-0 right-0 bg-[#0a2a4a] shadow-md z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-20">
+        <div className="flex items-center justify-between h-24">
           {/* Logo */}
-          <div className="flex-shrink-0 flex items-center">
+          <div className="flex-shrink-0 flex items-center justify-center">
             <Link href="/">
               <Image 
                 src="/images/symbollogo.svg" 
                 alt="Symbol Logo" 
-                width={150} 
-                height={40} 
+                width={180} 
+                height={48}
+                className="brightness-125 contrast-110 saturate-150 drop-shadow-sm"
               />
             </Link>
           </div>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link href="/" className="text-gray-700 hover:text-blue-600">
+            <Link href="/" className="text-white hover:text-[#FFD700]">
               Home
             </Link>
             
@@ -110,15 +111,15 @@ export default function Navbar() {
               href="/services"
             />
 
-            <Link href="/bpo" className="text-gray-700 hover:text-blue-600">
+            <Link href="/bpo" className="text-white hover:text-[#FFD700]">
               BPO
-                </Link>
+            </Link>
 
-            <Link href="/clients" className="text-gray-700 hover:text-blue-600">
+            <Link href="/clients" className="text-white hover:text-[#FFD700]">
               Our Clients
             </Link>
 
-            <Link href="/partners" className="text-gray-700 hover:text-blue-600">
+            <Link href="/partners" className="text-white hover:text-[#FFD700]">
               Partners
             </Link>
 
@@ -130,10 +131,10 @@ export default function Navbar() {
               href="/insights"
             />
 
-            <Link href="/about" className="text-gray-700 hover:text-blue-600">
+            <Link href="/about" className="text-white hover:text-[#FFD700]">
               About Us
             </Link>
-            <Link href="/contact" className="text-gray-700 hover:text-blue-600">
+            <Link href="/contact" className="text-white hover:text-[#FFD700]">
               Contact
             </Link>
           </div>

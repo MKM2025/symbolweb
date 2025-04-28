@@ -6,11 +6,7 @@ import ServicesHero from '../services/ServicesHero';
 import InsightsHero from '../insights/InsightsHero';
 
 const SLIDE_DURATION = 5000; // 5 seconds
-const PROGRESS_COLORS = [
-  'bg-blue-400 hover:bg-blue-500', // main
-  'bg-yellow-400 hover:bg-yellow-500', // services
-  'bg-pink-400 hover:bg-pink-500', // insights
-];
+const GOLD_GRADIENT = 'bg-gradient-to-r from-[#FFD700] to-[#E6B422]'; // Gold gradient for all progress bars
 
 export default function RotatingHero() {
   const [currentHero, setCurrentHero] = useState(0);
@@ -89,7 +85,7 @@ export default function RotatingHero() {
 
   return (
     <div 
-      className="relative w-full aspect-[16/9] md:aspect-[21/9] max-h-[800px] min-h-[500px] overflow-hidden"
+      className="relative w-full aspect-[16/9] md:aspect-[21/9] min-h-[320px] md:min-h-[500px] max-h-[800px] overflow-hidden"
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
@@ -114,7 +110,7 @@ export default function RotatingHero() {
 
       {/* Progress Bar & Pause/Play Button */}
       <div className="absolute bottom-0 left-0 right-0 z-50">
-        <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 w-[280px] sm:w-[320px] max-w-[90vw] flex items-center gap-2 bg-black/20 backdrop-blur-sm rounded-full p-2">
+        <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 w-[280px] sm:w-[320px] max-w-[90vw] flex items-center gap-2">
           <div className="flex-1 flex items-center gap-2">
             {heroes.map((_, index) => (
               <button
@@ -122,7 +118,7 @@ export default function RotatingHero() {
                 onClick={() => handleManualChange(index)}
                 className={`relative flex-1 h-1.5 sm:h-2 rounded-full transition-all duration-300 overflow-hidden shadow-lg ${
                   index === currentHero
-                    ? PROGRESS_COLORS[index]
+                    ? GOLD_GRADIENT
                     : 'bg-white/40 hover:bg-white/70'
                 }`}
                 aria-label={`View ${index === 0 ? 'main' : index === 1 ? 'services' : 'insights'} hero`}
@@ -130,7 +126,7 @@ export default function RotatingHero() {
                 {/* Progress animation for current bar */}
                 {index === currentHero && (
                   <div
-                    className={`absolute left-0 top-0 h-full rounded-full bg-white/70 mix-blend-lighten pointer-events-none`}
+                    className={`absolute left-0 top-0 h-full rounded-full bg-gradient-to-r from-[#FFD700] to-[#E6B422] pointer-events-none`}
                     style={{ width: `${progress * 100}%`, transition: paused ? 'none' : 'width 0.2s linear' }}
                   />
                 )}

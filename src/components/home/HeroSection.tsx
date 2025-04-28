@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export default function HeroSection({ fitMode = 'cover' }: { fitMode?: 'cover' | 'contain' }) {
   return (
-    <section className="relative w-full aspect-[16/9] md:aspect-[21/9] max-h-[800px] min-h-[500px]">
+    <section className="relative w-full aspect-[16/9] md:aspect-[21/9] min-h-[320px] md:min-h-[500px] max-h-[800px]">
       <div className="absolute inset-0">
         <picture>
           {/* Desktop version */}
@@ -54,13 +54,13 @@ export default function HeroSection({ fitMode = 'cover' }: { fitMode?: 'cover' |
           <div className="flex flex-wrap gap-4">
             <Link
               href="/contact"
-              className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+              className="bg-gradient-to-r from-[#BF953F] via-[#FCF6BA] to-[#B38728] text-[#1a1a1a] px-8 py-3 rounded-lg hover:from-[#FCF6BA] hover:via-[#B38728] hover:to-[#BF953F] transition-all duration-300 font-semibold shadow-md"
             >
               Get Started
             </Link>
             <Link
               href="/services"
-              className="bg-white text-blue-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors"
+              className="bg-[#4a75a8] text-[#FFD700] px-8 py-3 rounded-lg hover:bg-[#5885bd] transition-colors font-semibold"
             >
               Our Services
             </Link>

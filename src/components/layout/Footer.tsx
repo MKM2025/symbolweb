@@ -12,7 +12,7 @@ export default function Footer() {
               alt="Symbol Logo" 
               width={160} 
               height={48} 
-              className="mb-4 invert"
+              className="mb-4 brightness-125 contrast-110 saturate-150 drop-shadow-sm"
             />
             <p className="text-gray-400">Professional IT Services and Solutions</p>
           </div>

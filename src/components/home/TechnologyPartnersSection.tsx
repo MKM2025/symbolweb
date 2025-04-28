@@ -51,7 +51,7 @@ export default function TechnologyPartnersSection() {
   const doubledPartners = [...partners, ...partners];
 
   return (
-    <section className="bg-gray-50 overflow-hidden relative w-full">
+    <section className="bg-gray-50 overflow-hidden relative w-full pt-0 md:pt-0 pb-0">
       <div className="w-full">
         <div className="relative">
           <div 

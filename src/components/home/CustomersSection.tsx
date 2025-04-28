@@ -31,9 +31,9 @@ const customers: Customer[] = [
 
 export default function CustomersSection() {
   return (
-    <section className="py-16 bg-white relative overflow-hidden">
+    <section className="py-4 md:py-8 bg-white relative overflow-hidden">
       <div className="container mx-auto px-4">
-        <h2 className="text-2xl font-bold text-center mb-12">Our Customers</h2>
+        <h2 className="text-xl md:text-2xl font-bold text-center mb-4 md:mb-8">Our Customers</h2>
         
         {/* Gradient Overlays */}
         <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />

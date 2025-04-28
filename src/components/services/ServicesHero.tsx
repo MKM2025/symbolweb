@@ -5,16 +5,19 @@ import Link from 'next/link';
 
 export default function ServicesHero({ fitMode = 'cover' }: { fitMode?: 'cover' | 'contain' }) {
   return (
-    <section className="relative h-[500px] md:h-[600px] flex items-center">
-      <Image
-        src="/images/hero/hero_desktop.webp"
-        alt="IT Services"
-        fill
-        className={`object-${fitMode}`}
-        priority
-      />
-      <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl">
+    <section className="relative w-full aspect-[16/9] md:aspect-[21/9] min-h-[320px] md:min-h-[500px] max-h-[800px]">
+      <div className="absolute inset-0">
+        <Image
+          src="/images/hero/hero_desktop.webp"
+          alt="IT Services"
+          fill
+          className={`object-${fitMode} object-[50%_35%]`}
+          priority
+          sizes="100vw"
+        />
+      </div>
+      <div className="relative h-full container mx-auto px-4 flex flex-col justify-center">
+        <div className="max-w-2xl">
           <h1 className="text-3xl md:text-5xl font-bold text-white mb-6">
             Enterprise IT Solutions & Services
           </h1>
@@ -24,13 +27,13 @@ export default function ServicesHero({ fitMode = 'cover' }: { fitMode?: 'cover' 
           <div className="flex flex-wrap gap-4">
             <Link 
               href="/services/cybersecurity"
-              className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+              className="bg-gradient-to-r from-[#BF953F] via-[#FCF6BA] to-[#B38728] text-[#1a1a1a] px-8 py-3 rounded-lg hover:from-[#FCF6BA] hover:via-[#B38728] hover:to-[#BF953F] transition-all duration-300 font-semibold shadow-md"
             >
               Explore Services
             </Link>
             <Link 
               href="/contact"
-              className="bg-white text-blue-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors"
+              className="bg-[#4a75a8] text-[#FFD700] px-8 py-3 rounded-lg hover:bg-[#5885bd] transition-colors font-semibold"
             >
               Contact Us
             </Link>
