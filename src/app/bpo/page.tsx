@@ -124,19 +124,31 @@ export default function BPOPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative flex items-center justify-center w-full h-[600px] overflow-hidden text-white">
+      <section className="relative flex items-center justify-center w-full h-[400px] sm:h-[500px] md:h-[600px] overflow-hidden text-white">
         {/* Background image with overlay */}
         <div className="absolute inset-0 -z-10">
-          <img
-            src="/images/bpo/hero_bpo_desktop.webp"
-            alt="BPO Hero Background"
-            className="w-full h-full object-cover"
-            draggable="false"
-          />
+          <picture>
+            <source
+              media="(min-width: 768px)"
+              srcSet="/images/bpo/hero_bpo_desktop.webp"
+              type="image/webp"
+            />
+            <source
+              media="(max-width: 767px)"
+              srcSet="/images/bpo/hero_bpo_mobile.webp"
+              type="image/webp"
+            />
+            <img
+              src="/images/bpo/hero_bpo_desktop.webp"
+              alt="BPO Hero Background"
+              className="w-full h-full object-cover"
+              draggable="false"
+            />
+          </picture>
           <div className="absolute inset-0 bg-blue-900/60" />
         </div>
         {/* Oval icon arrangement (no lines) */}
-        <div className="relative w-full h-full max-w-6xl mx-auto">
+        <div className="relative w-full h-full max-w-6xl mx-auto hidden md:block">
           {bpoCategories.map((category, i) => {
             const angle = (i / bpoCategories.length) * 2 * Math.PI;
             const rx = 0.85; // horizontal radius as a fraction of width
@@ -164,13 +176,32 @@ export default function BPOPage() {
               </Link>
             );
           })}
-          {/* Center text */}
-          <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center z-10 w-[80%] md:w-[60%]">
-            <h1 className="text-xl md:text-3xl font-bold mb-2 drop-shadow-lg text-yellow-300 whitespace-nowrap">Business Process Outsourcing</h1>
-            <p className="text-sm md:text-xl text-blue-100 mb-0 drop-shadow">
-              Providing a range of services to optimize and manage your business processes
-            </p>
-          </div>
+        </div>
+
+        {/* Mobile icon grid */}
+        <div className="grid grid-cols-3 gap-4 px-4 md:hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-sm">
+          {bpoCategories.slice(0, 6).map((category) => (
+            <Link
+              key={category.title}
+              href={category.href}
+              className="flex flex-col items-center group hover:text-yellow-400 transition-colors"
+            >
+              <span className="text-2xl mb-1 group-hover:scale-110 transition-transform bg-white/20 rounded-full p-2 shadow-lg backdrop-blur">
+                {category.icon}
+              </span>
+              <span className="text-[10px] text-center group-hover:text-yellow-400 transition-colors">
+                {category.title}
+              </span>
+            </Link>
+          ))}
+        </div>
+
+        {/* Center text */}
+        <div className="absolute left-1/2 top-8 md:top-1/2 transform -translate-x-1/2 md:-translate-y-1/2 text-center z-10 w-[90%] sm:w-[80%] md:w-[60%]">
+          <h1 className="text-xl md:text-3xl font-bold mb-2 drop-shadow-lg text-yellow-300">Business Process Outsourcing</h1>
+          <p className="text-sm md:text-xl text-blue-100 mb-0 drop-shadow">
+            Providing a range of services to optimize and manage your business processes
+          </p>
         </div>
       </section>
 
@@ -188,15 +219,15 @@ export default function BPOPage() {
             {bpoCategories.map((category) => (
               <div
                 key={category.title}
-                className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-200 p-6 flex flex-col"
+                className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-200 p-4 sm:p-6 flex flex-col"
               >
-                <div className="text-4xl mb-4">{category.icon}</div>
-                <h3 className="text-xl sm:text-2xl font-bold mb-3">{category.title}</h3>
-                <p className="text-gray-600 text-base sm:text-lg mb-6">{category.description}</p>
+                <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">{category.icon}</div>
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3">{category.title}</h3>
+                <p className="text-sm sm:text-base md:text-lg text-gray-600 mb-4 sm:mb-6">{category.description}</p>
                 <div className="flex-grow">
-                  <ul className="space-y-3 mb-6">
+                  <ul className="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
                     {category.services.map((service, index) => (
-                      <li key={index} className="flex items-start text-base">
+                      <li key={index} className="flex items-start text-sm sm:text-base">
                         <span className="text-blue-600 mr-2 mt-1">•</span>
                         <span className="text-gray-700">{service}</span>
                       </li>
@@ -205,11 +236,11 @@ export default function BPOPage() {
                 </div>
                 <Link
                   href={category.href}
-                  className="inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold group"
+                  className="inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold group text-sm sm:text-base"
                 >
                   Learn More
                   <svg 
-                    className="w-5 h-5 ml-2 transform transition-transform group-hover:translate-x-1" 
+                    className="w-4 h-4 sm:w-5 sm:h-5 ml-2 transform transition-transform group-hover:translate-x-1" 
                     fill="none" 
                     stroke="currentColor" 
                     viewBox="0 0 24 24"
