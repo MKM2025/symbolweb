@@ -22,12 +22,12 @@ export default function HeroSection({ fitMode = 'cover' }: { fitMode?: 'cover' |
           {/* Mobile version */}
           <source
             media="(max-width: 767px)"
-            srcSet="/images/hero/new_hero_mobile.webp"
+            srcSet="/images/hero/hero_mobile_3.webp"
             type="image/webp"
           />
           <source
             media="(max-width: 767px)"
-            srcSet="/images/hero/new_hero_mobile.jpg"
+            srcSet="/images/hero/hero_mobile_3.jpg"
             type="image/jpeg"
           />
           <Image
