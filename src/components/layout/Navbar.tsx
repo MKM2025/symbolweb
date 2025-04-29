@@ -82,18 +82,18 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-[#0a2a4a] shadow-md z-50">
+    <nav className="fixed top-0 left-0 right-0 bg-[#0c2331] z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-[64px] md:h-[96px]">
           {/* Logo */}
-          <div className="flex-shrink-0 flex items-center justify-center">
+          <div className="flex-shrink-0 flex items-start justify-center pt-2 md:pt-4">
             <Link href="/">
               <Image 
                 src="/images/symbollogo.svg" 
                 alt="Symbol Logo" 
-                width={180} 
-                height={48}
-                className="brightness-125 contrast-110 saturate-150 drop-shadow-sm w-[120px] md:w-[180px]"
+                width={240} 
+                height={64}
+                className="brightness-125 contrast-110 saturate-150 drop-shadow-sm w-[200px] md:w-[240px] -mb-4"
               />
             </Link>
           </div>
@@ -167,7 +167,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div 
-        className={`md:hidden bg-[#0a2a4a] transform transition-transform duration-300 ease-in-out ${
+        className={`md:hidden bg-[#0c2331] transform transition-transform duration-300 ease-in-out ${
           isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
         } fixed top-14 left-0 right-0 bottom-0 z-40`}
       >
@@ -196,7 +196,7 @@ export default function Navbar() {
               </svg>
             </button>
             {showServices && (
-              <div className="pl-4 space-y-1 bg-[#0a2a4a]/50">
+              <div className="pl-4 space-y-1 bg-[#0c2331]/50">
                 {menuItems.services.map((item) => (
                   <Link 
                     key={item.name}
@@ -251,7 +251,7 @@ export default function Navbar() {
               </svg>
             </button>
             {showInsights && (
-              <div className="pl-4 space-y-1 bg-[#0a2a4a]/50">
+              <div className="pl-4 space-y-1 bg-[#0c2331]/50">
                 {menuItems.insights.map((item) => (
                   <Link
                     key={item.name}
