@@ -122,8 +122,8 @@ export default function RotatingHero() {
 
       {/* Progress Bar & Pause/Play Button */}
       {!isMobileMenuOpen && (
-        <div className="absolute bottom-0 left-0 right-0 z-50">
-          <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 w-[280px] sm:w-[320px] max-w-[90vw] flex items-center gap-2">
+        <div className="absolute bottom-8 sm:bottom-16 left-[10%] sm:left-[15%] portrait:left-6 z-50 w-[280px] sm:w-[320px]">
+          <div className="flex items-center gap-2">
             <div className="flex-1 flex items-center gap-2">
               {heroes.map((_, index) => (
                 <button

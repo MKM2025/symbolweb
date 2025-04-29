@@ -34,24 +34,24 @@ export default function InsightsHero({ fitMode = 'cover' }: { fitMode?: 'cover' 
           />
         </picture>
       </div>
-      <div className="relative h-full container mx-auto px-4 flex flex-col portrait:pt-24 sm:portrait:pt-32 landscape:justify-center">
-        <div className="max-w-2xl">
-          <h1 className="text-3xl md:text-5xl font-bold text-white mb-6">
+      <div className="relative h-full container mx-auto px-4 flex flex-col justify-center portrait:justify-start portrait:pt-24">
+        <div className="max-w-2xl ml-[10%] sm:ml-[10%] portrait:ml-6">
+          <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-2 sm:mb-4 md:mb-6 drop-shadow-lg">
             Technology Insights & Resources
           </h1>
-          <p className="text-lg md:text-xl text-gray-100 mb-8">
+          <p className="text-base sm:text-lg md:text-xl text-gray-100 mb-4 sm:mb-6 md:mb-8 drop-shadow-md">
             Stay ahead with our latest technology insights, industry trends, and expert perspectives.
           </p>
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-col portrait:gap-3 flex-wrap landscape:flex-row landscape:gap-4">
             <Link 
               href="/insights/blogs"
-              className="bg-gradient-to-r from-[#BF953F] via-[#FCF6BA] to-[#B38728] text-[#1a1a1a] px-6 md:px-8 py-2.5 md:py-3 rounded-lg hover:from-[#FCF6BA] hover:via-[#B38728] hover:to-[#BF953F] transition-all duration-300 font-semibold shadow-md text-sm md:text-base"
+              className="w-40 bg-gradient-to-r from-[#BF953F] via-[#FCF6BA] to-[#B38728] text-[#1a1a1a] px-4 py-2 rounded-lg hover:from-[#FCF6BA] hover:via-[#B38728] hover:to-[#BF953F] transition-all duration-300 font-semibold shadow-md text-sm text-center"
             >
-              Read Latest Insights
+              Latest Insights
             </Link>
             <Link 
               href="/insights/case-studies"
-              className="bg-[#4a75a8] text-[#FFD700] px-6 md:px-8 py-2.5 md:py-3 rounded-lg hover:bg-[#5885bd] transition-colors font-semibold shadow-md text-sm md:text-base"
+              className="w-40 bg-[#4a75a8] text-[#FFD700] px-4 py-2 rounded-lg hover:bg-[#5885bd] transition-colors font-semibold shadow-md text-sm text-center"
             >
               View Case Studies
             </Link>
