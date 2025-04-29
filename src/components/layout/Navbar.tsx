@@ -83,17 +83,17 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 bg-[#0c2331] z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-[64px] md:h-[96px]">
+      <div className="max-w-7xl mx-auto px-0">
+        <div className="flex items-center justify-between h-[56px] sm:h-[64px] md:h-[96px]">
           {/* Logo */}
-          <div className="flex-shrink-0 flex items-start justify-center pt-2 md:pt-4">
+          <div className="flex-shrink-0 flex items-start justify-start pt-1 sm:pt-2 md:pt-4 -ml-4">
             <Link href="/">
               <Image 
                 src="/images/symbollogo.svg" 
                 alt="Symbol Logo" 
-                width={240} 
-                height={64}
-                className="brightness-125 contrast-110 saturate-150 drop-shadow-sm w-[200px] md:w-[240px] -mb-4"
+                width={160} 
+                height={48}
+                className="brightness-125 contrast-110 saturate-150 drop-shadow-sm w-[120px] sm:w-[160px] md:w-[220px] -mb-2 sm:-mb-4"
               />
             </Link>
           </div>
