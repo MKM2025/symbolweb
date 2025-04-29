@@ -54,7 +54,7 @@ export default function HeroSection({ fitMode = 'cover' }: { fitMode?: 'cover' |
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-transparent" />
       </div>
 
-      <div className="relative h-full container mx-auto px-4 flex flex-col justify-center">
+      <div className="relative h-full container mx-auto px-4 flex flex-col portrait:pt-24 sm:portrait:pt-32 landscape:justify-center">
         <div className="max-w-2xl">
           <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-2 sm:mb-4 md:mb-6 drop-shadow-lg">
             Empowering Digital Transformation
