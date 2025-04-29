@@ -5,50 +5,50 @@ import Link from 'next/link';
 
 export default function HeroSection({ fitMode = 'cover' }: { fitMode?: 'cover' | 'contain' }) {
   return (
-    <section className="relative w-full min-h-[400px] aspect-[3/4] sm:aspect-[3/2] md:aspect-[32/15] max-h-screen md:max-h-[900px]">
+    <section className="relative w-full min-h-[400px] aspect-[3/4] sm:aspect-[3/2] md:aspect-[32/15] max-h-screen md:max-h-[900px] landscape:aspect-[32/15] landscape:min-h-[300px] -mt-[1px]">
       <div className="absolute inset-0">
         <picture>
           {/* Mobile Portrait */}
           <source
             media="(max-width: 640px) and (orientation: portrait)"
-            srcSet="/images/hero/hero_mobile_3.webp"
+            srcSet="/images/hero/hero_bpo_mobile.webp"
             type="image/webp"
           />
           <source
             media="(max-width: 640px) and (orientation: portrait)"
-            srcSet="/images/hero/hero_mobile_3.jpg"
+            srcSet="/images/hero/hero_bpo_mobile.jpg"
             type="image/jpeg"
           />
           {/* Mobile Landscape */}
           <source
-            media="(max-width: 768px) and (orientation: landscape)"
-            srcSet="/images/hero/hero_desktop_5.webp"
+            media="(max-width: 1024px) and (orientation: landscape)"
+            srcSet="/images/hero/hero_bpo_desktop.webp"
             type="image/webp"
           />
           <source
-            media="(max-width: 768px) and (orientation: landscape)"
-            srcSet="/images/hero/hero_desktop_5.jpg"
+            media="(max-width: 1024px) and (orientation: landscape)"
+            srcSet="/images/hero/hero_bpo_desktop.jpg"
             type="image/jpeg"
           />
-          {/* Tablet and up */}
+          {/* Desktop */}
           <source
-            media="(min-width: 769px)"
-            srcSet="/images/hero/hero_desktop_5.webp"
+            media="(min-width: 1025px)"
+            srcSet="/images/hero/hero_bpo_desktop.webp"
             type="image/webp"
           />
           <source
-            media="(min-width: 769px)"
-            srcSet="/images/hero/hero_desktop_5.jpg"
+            media="(min-width: 1025px)"
+            srcSet="/images/hero/hero_bpo_desktop.jpg"
             type="image/jpeg"
           />
           <Image
-            src="/images/hero/hero_desktop_5.webp"
+            src="/images/hero/hero_bpo_desktop.jpg"
             alt="Hero Background"
             fill
             priority
-            className={`object-${fitMode} object-center ${fitMode === 'cover' ? 'object-top sm:object-center' : ''}`}
+            className={`object-${fitMode} object-center landscape:object-top`}
             quality={100}
-            sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, 100vw"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 100vw"
           />
         </picture>
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-transparent" />

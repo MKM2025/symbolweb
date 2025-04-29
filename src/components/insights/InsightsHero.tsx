@@ -7,14 +7,32 @@ export default function InsightsHero({ fitMode = 'cover' }: { fitMode?: 'cover' 
   return (
     <section className="relative w-full h-[500px] md:h-[600px]">
       <div className="absolute inset-0">
-        <Image
-          src="/images/hero/hero_desktop.webp"
-          alt="Technology Insights"
-          fill
-          className={`object-${fitMode} object-[50%_35%]`}
-          priority
-          sizes="100vw"
-        />
+        <picture>
+          {/* Mobile Portrait */}
+          <source
+            media="(max-width: 640px) and (orientation: portrait)"
+            srcSet="/images/hero/hero_bpo_mobile.webp"
+            type="image/webp"
+          />
+          <source
+            media="(max-width: 640px) and (orientation: portrait)"
+            srcSet="/images/hero/hero_bpo_mobile.jpg"
+            type="image/jpeg"
+          />
+          {/* Desktop and Landscape */}
+          <source
+            srcSet="/images/hero/hero_bpo_desktop.webp"
+            type="image/webp"
+          />
+          <Image
+            src="/images/hero/hero_bpo_desktop.jpg"
+            alt="Technology Insights"
+            fill
+            className={`object-${fitMode} object-[50%_35%]`}
+            priority
+            sizes="100vw"
+          />
+        </picture>
       </div>
       <div className="relative h-full container mx-auto px-4 flex flex-col justify-center">
         <div className="max-w-2xl">
