@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export default function HeroSection({ fitMode = 'cover' }: { fitMode?: 'cover' | 'contain' }) {
   return (
-    <section className="relative w-full min-h-[400px] aspect-[4/3] sm:aspect-[3/2] md:aspect-[32/15] max-h-screen md:max-h-[900px]">
+    <section className="relative w-full min-h-[400px] aspect-[3/4] sm:aspect-[3/2] md:aspect-[32/15] max-h-screen md:max-h-[900px]">
       <div className="absolute inset-0">
         <picture>
           {/* Mobile Portrait */}
@@ -46,7 +46,7 @@ export default function HeroSection({ fitMode = 'cover' }: { fitMode?: 'cover' |
             alt="Hero Background"
             fill
             priority
-            className={`object-${fitMode} object-center`}
+            className={`object-${fitMode} object-center ${fitMode === 'cover' ? 'object-top sm:object-center' : ''}`}
             quality={100}
             sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, 100vw"
           />

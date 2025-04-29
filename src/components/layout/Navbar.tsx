@@ -170,9 +170,9 @@ export default function Navbar() {
       <div 
         className={`md:hidden bg-[#0c2331] transform transition-transform duration-300 ease-in-out ${
           isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
-        } fixed top-14 left-0 right-0 bottom-0 z-40`}
+        } fixed top-14 left-0 right-0 bottom-0 z-40 min-h-screen`}
       >
-        <div className="px-4 pt-2 pb-3 space-y-1 h-full overflow-y-auto">
+        <div className="px-4 pt-2 pb-3 space-y-1 h-full overflow-y-auto bg-[#0c2331]">
           <Link 
             href="/" 
             className="block px-3 py-2 text-base font-medium text-white hover:text-[#FFD700]"
