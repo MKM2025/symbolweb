@@ -25,11 +25,11 @@ const DropdownMenu = ({ title, items, isShow, setShow, href }: DropdownMenuProps
     onMouseEnter={() => setShow(true)}
     onMouseLeave={() => setTimeout(() => setShow(false), 100)}
   >
-    <div className="text-white group-hover:text-[#FFD700] px-3 py-2 text-sm font-medium inline-flex items-center cursor-pointer">
+    <div className="text-white group-hover:text-[#FFD700] px-2 lg:px-3 py-2 text-sm lg:text-base font-medium inline-flex items-center cursor-pointer">
       <Link href={href} className="inline-flex items-center">
         {title}
         <svg 
-          className="ml-1 w-4 h-4 transition-transform duration-200 group-hover:rotate-180" 
+          className="ml-1 w-3 h-3 lg:w-4 lg:h-4 transition-transform duration-200 group-hover:rotate-180" 
           fill="none" 
           stroke="currentColor" 
           viewBox="0 0 24 24"
@@ -41,7 +41,7 @@ const DropdownMenu = ({ title, items, isShow, setShow, href }: DropdownMenuProps
 
     {isShow && (
       <div 
-        className="absolute left-0 mt-0 w-56 rounded-md shadow-lg bg-[#0a2a4a] ring-1 ring-black ring-opacity-5"
+        className="absolute left-0 mt-0 w-48 lg:w-56 rounded-md shadow-lg bg-[#00101d] ring-1 ring-black ring-opacity-5"
         onMouseEnter={() => setShow(true)}
         onMouseLeave={() => setShow(false)}
       >
@@ -50,7 +50,7 @@ const DropdownMenu = ({ title, items, isShow, setShow, href }: DropdownMenuProps
             <Link 
               key={item.name}
               href={item.href}
-              className="block px-4 py-2 text-sm font-medium text-gray-100 hover:text-[#FFE5A0] bg-[#0a2a4a] hover:bg-[#0a2a4a] transition-colors duration-150 hover:drop-shadow-[0_0_3px_rgba(255,229,160,0.3)]"
+              className="block px-4 py-2 text-sm lg:text-base font-medium text-gray-100 hover:text-[#FFE5A0] bg-[#00101d] hover:bg-[#00101d] transition-colors duration-150 hover:drop-shadow-[0_0_3px_rgba(255,229,160,0.3)]"
               role="menuitem"
               onClick={() => setShow(false)}
             >
@@ -82,7 +82,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-[#0c2331] z-50">
+    <nav className="fixed top-0 left-0 right-0 bg-[#00101d] z-50">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-[56px] sm:h-[64px] md:h-[96px]">
           {/* Logo */}
@@ -100,8 +100,8 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
-            <Link href="/" className="text-white hover:text-[#FFD700]">
+          <div className="hidden md:flex items-center space-x-4 lg:space-x-8">
+            <Link href="/" className="text-white hover:text-[#FFD700] text-sm lg:text-base">
               Home
             </Link>
             
@@ -113,15 +113,15 @@ export default function Navbar() {
               href="/services"
             />
 
-            <Link href="/bpo" className="text-white hover:text-[#FFD700]">
+            <Link href="/bpo" className="text-white hover:text-[#FFD700] text-sm lg:text-base">
               BPO
             </Link>
 
-            <Link href="/clients" className="text-white hover:text-[#FFD700]">
+            <Link href="/clients" className="text-white hover:text-[#FFD700] text-sm lg:text-base">
               Our Clients
             </Link>
 
-            <Link href="/partners" className="text-white hover:text-[#FFD700]">
+            <Link href="/partners" className="text-white hover:text-[#FFD700] text-sm lg:text-base">
               Partners
             </Link>
 
@@ -133,10 +133,10 @@ export default function Navbar() {
               href="/insights"
             />
 
-            <Link href="/about" className="text-white hover:text-[#FFD700]">
+            <Link href="/about" className="text-white hover:text-[#FFD700] text-sm lg:text-base">
               About Us
             </Link>
-            <Link href="/contact" className="text-white hover:text-[#FFD700]">
+            <Link href="/contact" className="text-white hover:text-[#FFD700] text-sm lg:text-base">
               Contact
             </Link>
           </div>
@@ -168,11 +168,11 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div 
-        className={`md:hidden bg-[#0c2331] transform transition-transform duration-300 ease-in-out ${
+        className={`md:hidden bg-[#00101d] transform transition-transform duration-300 ease-in-out ${
           isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
         } fixed top-14 left-0 right-0 bottom-0 z-40 min-h-screen`}
       >
-        <div className="px-4 pt-2 pb-3 space-y-1 h-full overflow-y-auto bg-[#0c2331]">
+        <div className="px-4 pt-2 pb-3 space-y-1 h-full overflow-y-auto bg-[#00101d]">
           <Link 
             href="/" 
             className="block px-3 py-2 text-base font-medium text-white hover:text-[#FFD700]"
@@ -197,7 +197,7 @@ export default function Navbar() {
               </svg>
             </button>
             {showServices && (
-              <div className="pl-4 space-y-1 bg-[#0c2331]">
+              <div className="pl-4 space-y-1 bg-[#00101d]">
                 {menuItems.services.map((item) => (
                   <Link 
                     key={item.name}
@@ -252,7 +252,7 @@ export default function Navbar() {
               </svg>
             </button>
             {showInsights && (
-              <div className="pl-4 space-y-1 bg-[#0c2331]">
+              <div className="pl-4 space-y-1 bg-[#00101d]">
                 {menuItems.insights.map((item) => (
                   <Link
                     key={item.name}
