@@ -51,10 +51,9 @@ export default function HeroSection({ fitMode = 'cover' }: { fitMode?: 'cover' |
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 100vw"
           />
         </picture>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-transparent" />
       </div>
 
-      <div className="relative h-full container mx-auto px-4 flex flex-col justify-center portrait:justify-start portrait:pt-24">
+      <div className="relative h-full container mx-auto px-4 flex flex-col justify-center portrait:justify-start portrait:pt-16">
         <div className="max-w-2xl ml-[10%] sm:ml-[10%] portrait:ml-6">
           <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-2 sm:mb-4 md:mb-6 drop-shadow-lg">
             Empowering Digital Transformation
