@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export default function InsightsHero({ fitMode = 'cover' }: { fitMode?: 'cover' | 'contain' }) {
   return (
-    <section className="relative w-full h-[500px] md:h-[600px]">
+    <section className="relative w-full min-h-[400px] aspect-[3/4] sm:aspect-[3/2] md:aspect-[32/15] max-h-screen md:max-h-[900px] landscape:aspect-[32/15] landscape:min-h-[300px] -mt-[1px]">
       <div className="absolute inset-0">
         <picture>
           {/* Mobile Portrait */}
