@@ -51,18 +51,18 @@ export default function TechnologyPartnersSection() {
   const doubledPartners = [...partners, ...partners];
 
   return (
-    <section className="bg-gray-50 overflow-hidden relative w-full pt-0 md:pt-0 pb-0">
+    <section className="bg-gray-50 overflow-hidden relative w-full pt-0 md:pt-0 pb-0 -mt-8 sm:-mt-12 z-10">
       <div className="w-full">
         <div className="relative">
           <div 
             ref={scrollContainerRef}
-            className="flex whitespace-nowrap py-4 overflow-x-hidden"
+            className="flex whitespace-nowrap py-3 overflow-x-hidden"
           >
-            <div className="flex animate-scroll">
+            <div className="flex animate-scroll -ml-8 sm:-ml-12">
               {doubledPartners.map((partner, index) => (
                 <div 
                   key={`partner-${index}`} 
-                  className="inline-flex flex-shrink-0 w-40 h-16 bg-white/90 backdrop-blur-sm items-center justify-center px-4 mx-2 overflow-hidden"
+                  className="inline-flex flex-shrink-0 w-48 h-14 bg-white/90 backdrop-blur-sm items-center justify-center px-4 mx-2 overflow-hidden shadow-sm"
                 >
                   <PartnerLogo partner={partner} />
                 </div>
@@ -71,7 +71,7 @@ export default function TechnologyPartnersSection() {
               {partners.slice(0, 3).map((partner, index) => (
                 <div 
                   key={`partner-extra-${index}`} 
-                  className="inline-flex flex-shrink-0 w-40 h-16 bg-white/90 backdrop-blur-sm items-center justify-center px-4 mx-2 overflow-hidden"
+                  className="inline-flex flex-shrink-0 w-48 h-14 bg-white/90 backdrop-blur-sm items-center justify-center px-4 mx-2 overflow-hidden shadow-sm"
                 >
                   <PartnerLogo partner={partner} />
                 </div>
