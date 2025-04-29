@@ -34,7 +34,7 @@ export default function ServicesHero({ fitMode = 'cover' }: { fitMode?: 'cover' 
           />
         </picture>
       </div>
-      <div className="relative h-full container mx-auto px-4 flex flex-col justify-center">
+      <div className="relative h-full container mx-auto px-4 flex flex-col portrait:pt-24 sm:portrait:pt-32 landscape:justify-center">
         <div className="max-w-2xl">
           <h1 className="text-3xl md:text-5xl font-bold text-white mb-6">
             Enterprise IT Solutions & Services
