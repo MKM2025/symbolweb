@@ -11,25 +11,60 @@ export default function CybersecurityPage() {
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <section className="relative h-[500px] md:h-[600px]">
+      <section className="relative w-full min-h-[400px] aspect-[3/4] sm:aspect-[3/2] md:aspect-[32/15] max-h-screen md:max-h-[900px] landscape:aspect-[32/15] landscape:min-h-[300px] -mt-[1px] mb-0">
         <div className="absolute inset-0">
-          <Image
-            src="/images/cybersecurity/hero_desktop.jpg"
-            alt="Cybersecurity"
-            fill
-            priority
-            className="object-cover"
-            quality={100}
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50" />
+          <picture>
+            {/* Mobile Portrait */}
+            <source
+              media="(max-width: 640px) and (orientation: portrait)"
+              srcSet="/images/hero/hero_cyber_desktop.webp"
+              type="image/webp"
+            />
+            <source
+              media="(max-width: 640px) and (orientation: portrait)"
+              srcSet="/images/hero/hero_cyber_desktop.jpg"
+              type="image/jpeg"
+            />
+            {/* Mobile Landscape */}
+            <source
+              media="(max-width: 1024px) and (orientation: landscape)"
+              srcSet="/images/hero/hero_cyber_desktop.webp"
+              type="image/webp"
+            />
+            <source
+              media="(max-width: 1024px) and (orientation: landscape)"
+              srcSet="/images/hero/hero_cyber_desktop.jpg"
+              type="image/jpeg"
+            />
+            {/* Desktop */}
+            <source
+              media="(min-width: 1025px)"
+              srcSet="/images/hero/hero_cyber_desktop.webp"
+              type="image/webp"
+            />
+            <source
+              media="(min-width: 1025px)"
+              srcSet="/images/hero/hero_cyber_desktop.jpg"
+              type="image/jpeg"
+            />
+            <Image
+              src="/images/hero/hero_cyber_desktop.jpg"
+              alt="Cybersecurity Solutions"
+              fill
+              priority
+              className="object-cover object-center landscape:object-top"
+              quality={100}
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 100vw"
+            />
+          </picture>
         </div>
         
         <div className="relative h-full container mx-auto px-4 flex flex-col justify-center">
           <div className="max-w-2xl">
-            <h1 className="text-3xl md:text-5xl font-bold text-white mb-6">
+            <h1 className="text-3xl md:text-5xl font-bold text-white mb-6 drop-shadow-lg">
               Cybersecurity Solutions
             </h1>
-            <p className="text-lg md:text-xl text-gray-100 mb-8">
+            <p className="text-lg md:text-xl text-white mb-8 drop-shadow-md">
               Comprehensive security solutions to protect your business from evolving digital threats.
             </p>
             <div className="flex flex-wrap gap-4">

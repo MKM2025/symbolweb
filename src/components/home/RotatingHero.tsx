@@ -5,6 +5,7 @@ import HeroSection from './HeroSection';
 import ServicesHero from '../services/ServicesHero';
 import InsightsHero from '../insights/InsightsHero';
 import { useMenu } from '@/context/MenuContext';
+import { motion } from 'framer-motion';
 
 const SLIDE_DURATION = 5000; // 5 seconds
 const TRANSITION_DURATION = 1000; // 1 second for smooth transitions
@@ -98,22 +99,9 @@ export default function RotatingHero() {
         {heroes.map((Hero, index) => (
           <div
             key={Hero.key}
-            className={`absolute inset-0 w-full h-full transition-all duration-${TRANSITION_DURATION} ease-[cubic-bezier(0.4,0,0.2,1)] transform ${
-              index === currentHero 
-                ? 'opacity-100 z-10 translate-x-0 scale-100' 
-                : index < currentHero
-                  ? 'opacity-0 z-0 -translate-x-full scale-95'
-                  : 'opacity-0 z-0 translate-x-full scale-95'
+            className={`absolute inset-0 w-full h-full ${
+              index === currentHero ? 'opacity-100' : 'opacity-0'
             }`}
-            style={{
-              transition: `all ${TRANSITION_DURATION}ms cubic-bezier(0.4,0,0.2,1)`,
-              transform: index === currentHero 
-                ? 'translateX(0) scale(1)' 
-                : index < currentHero
-                  ? 'translateX(-100%) scale(0.95)'
-                  : 'translateX(100%) scale(0.95)',
-              opacity: index === currentHero ? 1 : 0,
-            }}
           >
             <Hero.component fitMode="cover" />
           </div>
