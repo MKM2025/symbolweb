@@ -9,7 +9,10 @@ import { motion } from 'framer-motion';
 
 const SLIDE_DURATION = 5000; // 5 seconds
 const TRANSITION_DURATION = 1000; // 1 second for smooth transitions
-const GOLD_GRADIENT = 'bg-gradient-to-r from-[#FFD700] to-[#E6B422]'; // Gold gradient for all progress bars
+const GOLD_GRADIENT = 'bg-gradient-to-r from-[#FFD700] via-[#FCF6BA] to-[#FFD700]'; // Brighter metallic gold gradient for all progress bars
+const DEEP_BLUE_GRADIENT = 'bg-[#0a2a4a]'; // Deep dark blue for insights hero
+const LIGHT_BLUE_GRADIENT = 'bg-[#4a90e2]'; // Light blue for first two bars
+const INACTIVE_BAR = 'bg-[#E0F7FF]'; // Much brighter light blue for inactive bars
 
 export default function RotatingHero() {
   const { isMobileMenuOpen } = useMenu();
@@ -120,14 +123,14 @@ export default function RotatingHero() {
                   className={`relative flex-1 h-1.5 sm:h-2 rounded-full transition-all duration-300 overflow-hidden shadow-lg ${
                     index === currentHero
                       ? GOLD_GRADIENT
-                      : 'bg-white/40 hover:bg-white/70'
+                      : INACTIVE_BAR
                   }`}
                   aria-label={`View ${index === 0 ? 'main' : index === 1 ? 'services' : 'insights'} hero`}
                 >
                   {/* Progress animation for current bar */}
                   {index === currentHero && (
                     <div
-                      className={`absolute left-0 top-0 h-full rounded-full bg-gradient-to-r from-[#FFD700] to-[#E6B422] pointer-events-none`}
+                      className={`absolute left-0 top-0 h-full rounded-full ${GOLD_GRADIENT} pointer-events-none`}
                       style={{ width: `${progress * 100}%`, transition: paused ? 'none' : 'width 0.2s linear' }}
                     />
                   )}

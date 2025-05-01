@@ -1,0 +1,47 @@
+import { defineDocumentType, makeSource } from 'contentlayer/source-files';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypeSlug from 'rehype-slug';
+
+export const Blog = defineDocumentType(() => ({
+  name: 'Blog',
+  filePathPattern: `blog/*.mdx`,
+  contentType: 'mdx',
+  fields: {
+    title: { type: 'string', required: true },
+    date: { type: 'date', required: true },
+    summary: { type: 'string', required: false },
+    tags: { type: 'list', of: { type: 'string' } },
+    author: { type: 'string', required: true },
+    image: { type: 'string', required: false },
+  },
+  computedFields: {
+    url: {
+      type: 'string',
+      resolve: (doc) => `/blog/${doc._raw.flattenedPath}`,
+    },
+    readingTime: {
+      type: 'json',
+      resolve: (doc) => {
+        const content = doc.body.raw;
+        const wordsPerMinute = 200;
+        const words = content.split(/\s+/).length;
+        const minutes = Math.ceil(words / wordsPerMinute);
+        return {
+          text: `${minutes} min read`,
+          minutes: minutes,
+          time: minutes * 60 * 1000,
+          words: words,
+        };
+      },
+    },
+  },
+}));
+
+export default makeSource({
+  contentDirPath: 'content',
+  documentTypes: [Blog],
+  mdx: {
+    rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
+  },
+  disableImportAliasWarning: true,
+}); 
