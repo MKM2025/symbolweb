@@ -60,13 +60,13 @@ export default function HeroSection({ fitMode = 'cover' }: HeroSectionProps) {
 
       <NetworkAnimation />
 
-      <div className="relative h-full container mx-auto px-4 flex flex-col justify-center portrait:justify-start portrait:pt-16">
-        <div className="max-w-2xl ml-0 pl-4 sm:pl-8 portrait:ml-6 portrait:mt-0 landscape:mt-8 md:mt-[-150px]">
-          <h1 className="text-2xl sm:text-3xl md:text-5xl landscape:!text-[min(4vw,2.5rem)] font-bold text-white mb-2 sm:mb-4 md:mb-6 landscape:mb-3 drop-shadow-lg landscape:leading-tight max-w-lg">
+      <div className="relative h-full container mx-auto px-4 flex flex-col justify-center portrait:justify-start portrait:pt-16 landscape:items-start">
+        <div className="max-w-2xl ml-0 pl-4 sm:pl-8 portrait:ml-6 portrait:mt-0 landscape:mt-8 md:mt-[-150px] portrait:items-start portrait:text-left portrait:pr-8">
+          <h1 className="text-2xl sm:text-4xl md:text-6xl landscape:!text-[min(4.5vw,3rem)] font-bold text-white mb-2 sm:mb-4 md:mb-6 landscape:mb-3 drop-shadow-lg landscape:leading-tight max-w-lg landscape:text-left">
             BPO Across the Globe
           </h1>
-          <p className="text-base sm:text-lg md:text-xl landscape:!text-[min(2vw,1rem)] text-white mb-4 sm:mb-6 md:mb-8 landscape:mb-4 drop-shadow-md landscape:max-w-[90%] max-w-xl">
-            Empowering businesses worldwide with scalable, efficient, and cost-effective BPO solutions. From customer support to back-office operations, we provide 24/7 services that drive growth and innovation.
+          <p className="text-base sm:text-lg md:text-xl landscape:!text-[min(2.2vw,1.2rem)] text-white mb-4 sm:mb-6 md:mb-8 landscape:mb-4 drop-shadow-md landscape:max-w-[90%] max-w-xl landscape:text-left">
+            Empowering businesses with scalable, efficient BPO solutions. We provide 24/7 services that drive growth and innovation.
           </p>
           <div className="flex flex-col portrait:gap-3 flex-wrap landscape:flex-row landscape:gap-4">
             <Link
