@@ -7,22 +7,12 @@ export interface Blog {
     contentType: string;
     flattenedPath: string;
   };
-  type: 'Blog';
+  type: string;
   title: string;
   date: string;
-  tags?: string[];
-  summary?: string;
-  author: string;
-  image?: string;
-  url: string;
-  readingTime: {
-    text: string;
-    minutes: number;
-    time: number;
-    words: number;
-  };
+  slug: string;
+  readingTime: string;
   body: {
-    raw: string;
     code: string;
   };
 } 

@@ -1,7 +1,7 @@
 import { allBlogs } from 'contentlayer/generated';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
-import { MDXContent } from 'next-contentlayer/hooks';
+import { useMDXComponent } from 'next-contentlayer/hooks';
 import { Blog } from '@/types/blog';
 
 interface BlogPostProps {
@@ -11,45 +11,23 @@ interface BlogPostProps {
 }
 
 export default function BlogPost({ params }: BlogPostProps) {
-  const blog = allBlogs.find((blog: Blog) => blog.url === params.slug);
+  const post = allBlogs.find((post) => post.slug === params.slug);
 
-  if (!blog) {
+  if (!post) {
     notFound();
   }
 
+  const MDXContent = useMDXComponent(post.body.code);
+
   return (
-    <article className="container mx-auto px-4 py-12">
-      <div className="max-w-3xl mx-auto">
-        <div className="relative h-[400px] mb-8">
-          <Image
-            src={blog.image}
-            alt={blog.title}
-            fill
-            className="object-cover rounded-lg"
-          />
-        </div>
-        <h1 className="text-4xl font-bold mb-4">{blog.title}</h1>
-        <div className="flex items-center gap-4 mb-8 text-gray-600">
-          <span>{blog.author}</span>
-          <span>•</span>
-          <span>{new Date(blog.date).toLocaleDateString()}</span>
-          <span>•</span>
-          <span>{blog.readingTime.text}</span>
-        </div>
-        <div className="flex gap-2 mb-8">
-          {blog.tags.map((tag: string) => (
-            <span
-              key={tag}
-              className="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-sm"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-        <div className="prose prose-lg max-w-none">
-          <MDXContent code={blog.body.code} />
-        </div>
+    <article className="prose prose-lg mx-auto px-4 py-8">
+      <h1>{post.title}</h1>
+      <div className="flex items-center gap-4 text-sm text-gray-500">
+        <time dateTime={post.date}>{post.date}</time>
+        <span>•</span>
+        <span>{post.readingTime} min read</span>
       </div>
+      <MDXContent />
     </article>
   );
 } 
