@@ -11,7 +11,7 @@ interface BlogPostProps {
 }
 
 export default function BlogPost({ params }: BlogPostProps) {
-  const post = allBlogs.find((post) => post.slug === params.slug);
+  const post = allBlogs.find((post) => post.url === params.slug);
 
   if (!post) {
     notFound();
@@ -25,7 +25,7 @@ export default function BlogPost({ params }: BlogPostProps) {
       <div className="flex items-center gap-4 text-sm text-gray-500">
         <time dateTime={post.date}>{post.date}</time>
         <span>•</span>
-        <span>{post.readingTime} min read</span>
+        <span>{post.readingTime.text}</span>
       </div>
       <MDXContent />
     </article>

@@ -42,10 +42,14 @@ var contentlayer_config_default = makeSource({
   mdx: {
     rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings]
   },
-  disableImportAliasWarning: true
+  disableImportAliasWarning: true,
+  onSuccess: async () => {
+    console.log("Contentlayer build completed successfully");
+    return Promise.resolve();
+  }
 });
 export {
   Blog,
   contentlayer_config_default as default
 };
-//# sourceMappingURL=compiled-contentlayer-config-6D4QUQ4Q.mjs.map
+//# sourceMappingURL=compiled-contentlayer-config-SF3TTESU.mjs.map

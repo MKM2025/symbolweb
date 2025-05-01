@@ -1,12 +1,17 @@
-import { allBlogs } from '.contentlayer/generated';
+import { allBlogs } from 'contentlayer/generated';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Blog } from '@/types/blog';
 
 export default function InsightsBlogsPage() {
+  console.log('Blogs:', allBlogs.map(blog => ({
+    title: blog.title,
+    image: blog.image,
+    url: blog.url
+  })));
+
   return (
     <div className="container mx-auto px-4 py-12">
-      <h1 className="text-4xl font-bold mb-8">Technology Insights & Resources</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {allBlogs.map((blog: Blog) => (
           <Link
@@ -21,6 +26,7 @@ export default function InsightsBlogsPage() {
                   alt={blog.title}
                   fill
                   className="object-cover"
+                  priority
                 />
               )}
             </div>

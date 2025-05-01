@@ -44,4 +44,8 @@ export default makeSource({
     rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
   },
   disableImportAliasWarning: true,
+  onSuccess: async () => {
+    console.log('Contentlayer build completed successfully');
+    return Promise.resolve();
+  },
 }); 

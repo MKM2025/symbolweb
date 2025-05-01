@@ -71,7 +71,7 @@ export default function HeroSection({ fitMode = 'cover' }: HeroSectionProps) {
           <div className="flex flex-col portrait:gap-3 flex-wrap landscape:flex-row landscape:gap-4">
             <Link
               href="/bpo"
-              className="w-48 landscape:w-auto landscape:px-6 landscape:!text-[min(1.8vw,0.875rem)] bg-gradient-to-r from-[#BF953F] via-[#FCF6BA] to-[#B38728] text-[#1a1a1a] px-4 py-2 rounded-lg hover:from-[#FCF6BA] hover:via-[#B38728] hover:to-[#BF953F] transition-all duration-300 font-semibold shadow-md text-sm text-center"
+              className="w-48 landscape:w-auto landscape:px-6 landscape:!text-[min(1.8vw,0.875rem)] bg-gradient-to-r from-[#E6B94F] via-[#FFF9D4] to-[#DBA23A] text-[#1a1a1a] px-4 py-2 rounded-lg hover:from-[#FFF9D4] hover:via-[#DBA23A] hover:to-[#E6B94F] transition-all duration-300 font-semibold shadow-md text-sm text-center"
             >
               Our BPO Services
             </Link>

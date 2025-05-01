@@ -1,5 +1,3 @@
-import InsightsHero from '@/components/insights/InsightsHero';
-
 export default function InsightsBlogsLayout({
   children,
 }: {
@@ -7,7 +5,6 @@ export default function InsightsBlogsLayout({
 }) {
   return (
     <main>
-      <InsightsHero />
       {children}
     </main>
   );

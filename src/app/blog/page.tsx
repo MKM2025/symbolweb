@@ -14,17 +14,20 @@ export default function BlogPage() {
             href={`/blog/${blog.url}`}
             className="group block bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
           >
-            <div className="relative h-48">
-              <Image
-                src={blog.image}
-                alt={blog.title}
-                fill
-                className="object-cover"
-              />
-            </div>
+            {blog.image && (
+              <div className="relative h-48">
+                <Image
+                  src={blog.image}
+                  alt={blog.title}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+              </div>
+            )}
             <div className="p-6">
               <div className="flex items-center gap-2 mb-2">
-                {blog.tags.map((tag: string) => (
+                {blog.tags && blog.tags.map((tag: string) => (
                   <span
                     key={tag}
                     className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded"
@@ -36,7 +39,7 @@ export default function BlogPage() {
               <h2 className="text-xl font-semibold mb-2 group-hover:text-blue-600 transition-colors">
                 {blog.title}
               </h2>
-              <p className="text-gray-600 mb-4">{blog.summary}</p>
+              {blog.summary && <p className="text-gray-600 mb-4">{blog.summary}</p>}
               <div className="flex items-center justify-between text-sm text-gray-500">
                 <span>{blog.author}</span>
                 <span>{blog.readingTime.text}</span>

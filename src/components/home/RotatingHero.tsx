@@ -9,7 +9,7 @@ import { motion } from 'framer-motion';
 
 const SLIDE_DURATION = 5000; // 5 seconds
 const TRANSITION_DURATION = 1000; // 1 second for smooth transitions
-const GOLD_GRADIENT = 'bg-gradient-to-r from-[#FFD700] via-[#FCF6BA] to-[#FFD700]'; // Brighter metallic gold gradient for all progress bars
+const GOLD_GRADIENT = 'bg-gradient-to-r from-[#BF953F] via-[#FCF6BA] to-[#B38728]'; // Original metallic gold gradient for progress bars
 const DEEP_BLUE_GRADIENT = 'bg-[#0a2a4a]'; // Deep dark blue for insights hero
 const LIGHT_BLUE_GRADIENT = 'bg-[#4a90e2]'; // Light blue for first two bars
 const INACTIVE_BAR = 'bg-[#E0F7FF]'; // Much brighter light blue for inactive bars
