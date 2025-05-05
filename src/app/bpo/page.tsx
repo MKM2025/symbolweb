@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 const bpoCategories = [
   {
@@ -120,88 +121,74 @@ const bpoCategories = [
   }
 ];
 
+function useIsLandscape() {
+  const [isLandscape, setIsLandscape] = useState(false);
+  useEffect(() => {
+    function check() {
+      setIsLandscape(window.matchMedia('(orientation: landscape) and (max-width: 1024px)').matches);
+    }
+    check();
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
+  return isLandscape;
+}
+
 export default function BPOPage() {
+  const isLandscape = useIsLandscape();
   return (
-    <div className="min-h-screen pt-16 sm:pt-20">
+    <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative flex items-center justify-center w-full h-[400px] sm:h-[500px] md:h-[600px] overflow-hidden text-white">
-        {/* Background image with overlay */}
-        <div className="absolute inset-0 -z-10">
+      <section className="relative h-[900px] md:h-[900px] w-full">
+        {/* Desktop/Landscape Image */}
+        <div className="absolute inset-0 hidden md:block">
+          <Image
+            src="/images/bpo/hero_bpo_desktop.webp"
+            alt="BPO Services Hero"
+            fill
+            priority
+            className="object-cover"
+            sizes="100vw"
+          />
+        </div>
+        
+        {/* Mobile Portrait Image */}
+        <div className="absolute inset-0 block md:hidden">
           <picture>
-            <source
-              media="(min-width: 768px)"
-              srcSet="/images/bpo/hero_bpo_desktop.webp"
-              type="image/webp"
-            />
-            <source
-              media="(max-width: 767px)"
-              srcSet="/images/bpo/hero_bpo_mobile.webp"
-              type="image/webp"
-            />
+            <source srcSet="/images/bpo/hero_bpo_mobile.webp" type="image/webp" />
             <img
-              src="/images/bpo/hero_bpo_desktop.webp"
-              alt="BPO Hero Background"
-              className="w-full h-full object-cover"
-              draggable="false"
+              src="/images/bpo/hero_bpo_mobile.jpg"
+              alt="BPO Services Hero"
+              className="object-cover w-full h-full"
+              style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+              loading="eager"
+              draggable={false}
             />
           </picture>
-          <div className="absolute inset-0 bg-blue-900/60" />
-        </div>
-        {/* Oval icon arrangement (no lines) */}
-        <div className="relative w-full h-full max-w-6xl mx-auto hidden md:block">
-          {bpoCategories.map((category, i) => {
-            const angle = (i / bpoCategories.length) * 2 * Math.PI;
-            const rx = 0.85; // horizontal radius as a fraction of width
-            const ry = 0.65; // vertical radius as a fraction of height
-            const x = 50 + Math.cos(angle) * 45 * rx;
-            const y = 50 + Math.sin(angle) * 40 * ry;
-            return (
-              <Link
-                key={category.title}
-                href={category.href}
-                className="absolute flex flex-col items-center group hover:text-yellow-400 transition-colors"
-                style={{
-                  left: `${x}%`,
-                  top: `${y}%`,
-                  transform: 'translate(-50%, -50%)',
-                  zIndex: 2
-                }}
-              >
-                <span className="text-3xl md:text-4xl mb-1 group-hover:scale-110 transition-transform bg-white/20 rounded-full p-4 shadow-lg backdrop-blur">
-                  {category.icon}
-                </span>
-                <span className="text-xs md:text-base text-center group-hover:text-yellow-400 transition-colors whitespace-nowrap drop-shadow">
-                  {category.title}
-                </span>
-              </Link>
-            );
-          })}
         </div>
 
-        {/* Mobile icon grid */}
-        <div className="grid grid-cols-3 gap-4 px-4 md:hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-sm">
-          {bpoCategories.slice(0, 6).map((category) => (
-            <Link
-              key={category.title}
-              href={category.href}
-              className="flex flex-col items-center group hover:text-yellow-400 transition-colors"
+        {/* Hero Content */}
+        <div className="absolute inset-0 bg-black/40 flex items-start justify-center md:justify-start pt-28 md:pt-0">
+          <div
+            className={
+              "container mx-auto px-4 text-white md:max-w-2xl md:ml-16 md:mt-40 bpo-hero-landscape-mt" +
+              (isLandscape ? "" : " text-center md:text-left")
+            }
+            style={isLandscape ? { marginTop: '0.5rem' } : undefined}
+          >
+            <h1
+              className="text-3xl md:text-6xl font-bold mb-4 md:mb-6 bpo-hero-landscape-h1"
+              style={isLandscape ? { fontSize: '1.1rem', lineHeight: '1.15', maxWidth: '70vw', textAlign: 'left', marginLeft: 0 } : undefined}
             >
-              <span className="text-2xl mb-1 group-hover:scale-110 transition-transform bg-white/20 rounded-full p-2 shadow-lg backdrop-blur">
-                {category.icon}
-              </span>
-              <span className="text-[10px] text-center group-hover:text-yellow-400 transition-colors">
-                {category.title}
-              </span>
-            </Link>
-          ))}
-        </div>
-
-        {/* Center text */}
-        <div className="absolute left-1/2 top-8 md:top-1/2 transform -translate-x-1/2 md:-translate-y-1/2 text-center z-10 w-[90%] sm:w-[80%] md:w-[60%]">
-          <h1 className="text-xl md:text-3xl font-bold mb-2 drop-shadow-lg text-yellow-300">Business Process Outsourcing</h1>
-          <p className="text-sm md:text-xl text-blue-100 mb-0 drop-shadow">
-            Providing a range of services to optimize and manage your business processes
-          </p>
+              Empowering Global Businesses with Next-Gen ICT & BPO Solutions
+            </h1>
+            <p
+              className="text-base md:text-xl max-w-3xl mx-auto md:mx-0 bpo-hero-landscape-p"
+              style={isLandscape ? { fontSize: '0.8rem', lineHeight: '1.25', maxWidth: '70vw', textAlign: 'left', marginLeft: 0 } : undefined}
+            >
+              Streamline operations, enhance customer experience, and scale effortlessly with our cutting-edge IT support, automation, and back-office outsourcing services.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -269,6 +256,6 @@ export default function BPOPage() {
           </Link>
         </div>
       </section>
-    </div>
+    </main>
   );
 } 

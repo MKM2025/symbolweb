@@ -79,3 +79,29 @@ body {
 .group:hover .group-hover\:block {
   display: block;
 }
+
+@media (orientation: landscape) and (max-width: 1024px) {
+  .bpo-hero-landscape-h1,
+  .bpo-hero-landscape-h1.text-3xl,
+  .bpo-hero-landscape-h1.md\:text-6xl {
+    font-size: 1.1rem !important;
+    line-height: 1.15 !important;
+    margin-bottom: 0.5rem !important;
+    text-align: left !important;
+    max-width: 70vw !important;
+  }
+  .bpo-hero-landscape-p,
+  .bpo-hero-landscape-p.text-base,
+  .bpo-hero-landscape-p.md\:text-xl {
+    font-size: 0.8rem !important;
+    line-height: 1.25 !important;
+    margin-bottom: 1rem !important;
+    text-align: left !important;
+    max-width: 70vw !important;
+  }
+  .bpo-hero-landscape-mt {
+    margin-top: 1.2rem !important;
+    margin-left: 2vw !important;
+    align-items: flex-start !important;
+  }
+}
