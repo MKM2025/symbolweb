@@ -1,126 +1,87 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 
-interface Node {
-  x: number;
-  y: number;
-  connections: number[];
+interface SolutionsHeroProps {
+  fitMode?: 'cover' | 'contain';
 }
 
-export default function SolutionsHero({ fitMode = 'cover' }: { fitMode?: 'cover' | 'contain' }) {
-  const [nodes, setNodes] = useState<Node[]>([]);
-  
-  useEffect(() => {
-    // Create initial nodes
-    const initialNodes: Node[] = Array.from({ length: 12 }, (_, i) => ({
-      x: Math.random() * 100,
-      y: Math.random() * 100,
-      connections: []
-    }));
-
-    // Create connections between nodes
-    initialNodes.forEach((node, idx) => {
-      const numConnections = Math.floor(Math.random() * 3) + 1;
-      for (let i = 0; i < numConnections; i++) {
-        let targetIdx;
-        do {
-          targetIdx = Math.floor(Math.random() * initialNodes.length);
-        } while (targetIdx === idx || node.connections.includes(targetIdx));
-        node.connections.push(targetIdx);
-      }
-    });
-
-    setNodes(initialNodes);
-  }, []);
-
+export default function SolutionsHero({ fitMode = 'cover' }: SolutionsHeroProps) {
   return (
-    <section className="relative w-full min-h-[400px] aspect-[3/4] sm:aspect-[3/2] md:aspect-[32/15] max-h-screen md:max-h-[900px] landscape:aspect-[32/15] landscape:min-h-[300px] -mt-[1px] bg-gradient-to-r from-blue-900 to-blue-700 overflow-hidden">
-      {/* Network Visualization */}
+    <section className="relative h-[500px] md:h-[600px] w-full max-w-[1920px] mx-auto overflow-hidden">
+      {/* Background Image with responsive handling */}
       <div className="absolute inset-0">
-        {nodes.map((node, idx) => (
-          <div key={idx}>
-            {/* Draw connections */}
-            {node.connections.map((targetIdx, connIdx) => {
-              const target = nodes[targetIdx];
-              return (
-                <motion.div
-                  key={`${idx}-${connIdx}`}
-                  className="absolute h-px bg-blue-400/30"
-                  style={{
-                    left: `${node.x}%`,
-                    top: `${node.y}%`,
-                    width: `${Math.sqrt(
-                      Math.pow(target.x - node.x, 2) + Math.pow(target.y - node.y, 2)
-                    )}%`,
-                    transform: `rotate(${Math.atan2(target.y - node.y, target.x - node.x)}rad)`,
-                    transformOrigin: 'left center'
-                  }}
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 1, delay: idx * 0.1 }}
-                />
-              );
-            })}
-            {/* Draw node */}
-            <motion.div
-              className="absolute w-4 h-4 bg-blue-400 rounded-full shadow-lg shadow-blue-400/50"
-              style={{
-                left: `${node.x}%`,
-                top: `${node.y}%`,
-                transform: 'translate(-50%, -50%)'
-              }}
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ 
-                opacity: 1, 
-                scale: [1, 1.2, 1],
-                y: [0, -10, 0]
-              }}
-              transition={{
-                duration: 2,
-                delay: idx * 0.1,
-                repeat: Infinity,
-                repeatDelay: Math.random() * 2
-              }}
-            />
-          </div>
-        ))}
+        <picture>
+          {/* Mobile Portrait */}
+          <source
+            media="(max-width: 640px) and (orientation: portrait)"
+            srcSet="/images/solutions/hero_solutions_mobile.webp"
+            type="image/webp"
+          />
+          <source
+            media="(max-width: 640px) and (orientation: portrait)"
+            srcSet="/images/solutions/hero_solutions_mobile.jpg"
+            type="image/jpeg"
+          />
+          {/* Tablet and Desktop */}
+          <source
+            media="(min-width: 641px)"
+            srcSet="/images/solutions/hero_solutions_desktop.webp"
+            type="image/webp"
+          />
+          <source
+            media="(min-width: 641px)"
+            srcSet="/images/solutions/hero_solutions_desktop.jpg"
+            type="image/jpeg"
+          />
+          <Image
+            src="/images/solutions/hero_solutions_desktop.webp"
+            alt="BPO Solutions Hero"
+            fill
+            priority
+            className="object-cover object-center"
+            quality={100}
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1920px"
+          />
+        </picture>
+        {/* Lighter overlay gradient for better image visibility */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0a192f]/40 via-[#1a365d]/30 to-[#2d3748]/40" />
       </div>
 
-      {/* Content */}
-      <div className="relative h-full container mx-auto px-4 flex flex-col justify-center portrait:justify-start portrait:pt-16">
-        <div className="max-w-2xl ml-[2%] sm:ml-[2%] portrait:ml-6">
+      {/* Content Container with responsive padding */}
+      <div className="relative h-full container mx-auto px-4 flex flex-col justify-center portrait:justify-start portrait:pt-16 landscape:items-start">
+        <div className="max-w-2xl ml-0 pl-4 sm:pl-8 portrait:ml-6 portrait:mt-0 landscape:mt-8 md:mt-[-150px] portrait:items-start portrait:text-left portrait:pr-8">
           <motion.h1
-            initial={{ y: 100, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-            className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-2 sm:mb-4 md:mb-6 drop-shadow-lg"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+            className="text-2xl sm:text-4xl md:text-6xl landscape:!text-[min(4.5vw,3rem)] font-bold text-white mb-2 sm:mb-4 md:mb-6 landscape:mb-3 drop-shadow-lg landscape:leading-tight max-w-lg landscape:text-left"
           >
-            Digital Network
+            Comprehensive ICT Solutions & Turnkey Integration
           </motion.h1>
-
-          <motion.div
-            initial={{ x: -100, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ delay: 1, duration: 0.8 }}
-            className="flex flex-col portrait:gap-3 flex-wrap landscape:flex-row landscape:gap-4"
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
+            className="text-base sm:text-lg md:text-xl landscape:!text-[min(2.2vw,1.2rem)] text-white mb-4 sm:mb-6 md:mb-8 landscape:mb-4 drop-shadow-md landscape:max-w-[90%] max-w-xl landscape:text-left"
           >
-            <motion.button
-              whileHover={{ scale: 1.2 }}
-              whileTap={{ scale: 0.9 }}
-              className="w-48 bg-gradient-to-r from-[#BF953F] via-[#FCF6BA] to-[#B38728] text-[#1a1a1a] px-4 py-2 rounded-lg hover:from-[#FCF6BA] hover:via-[#B38728] hover:to-[#BF953F] transition-all duration-300 font-semibold shadow-md text-sm text-center"
+            Empowering businesses with end-to-end technology, infrastructure, and automation — from design to deployment.
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Link
+              href="/contact"
+              className="w-48 landscape:w-auto landscape:px-6 landscape:!text-[min(1.8vw,0.875rem)] bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-2 rounded-lg font-semibold shadow-md text-sm text-center cursor-pointer transition-all duration-300 hover:from-blue-400 hover:to-indigo-500 hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-400 active:scale-95 z-10"
             >
-              Explore Network
-            </motion.button>
-            
-            <motion.button
-              whileHover={{ scale: 1.2 }}
-              whileTap={{ scale: 0.9 }}
-              className="w-48 bg-gradient-to-r from-[#BF953F] via-[#FCF6BA] to-[#B38728] text-[#1a1a1a] px-4 py-2 rounded-lg hover:from-[#FCF6BA] hover:via-[#B38728] hover:to-[#BF953F] transition-all duration-300 font-semibold shadow-md text-sm text-center"
-            >
-              Learn More
-            </motion.button>
+              Explore Our Solutions
+            </Link>
           </motion.div>
         </div>
       </div>

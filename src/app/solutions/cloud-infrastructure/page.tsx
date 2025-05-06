@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export const metadata = {
   title: 'Cloud Infrastructure Solutions | Symbol Technologies',
-  description: 'Enterprise cloud infrastructure solutions including cloud migration, optimization, and managed cloud services.',
+  description: 'Enterprise cloud infrastructure solutions including cloud migration, optimization, and managed cloud solutions.',
 };
 
 export default function CloudInfrastructurePage() {

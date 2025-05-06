@@ -90,6 +90,8 @@ export default function RotatingHero() {
     setProgress(0);
   };
 
+  const CurrentHero = heroes[currentHero].component;
+
   return (
     <div 
       className="relative w-full min-h-[400px] aspect-[3/4] sm:aspect-[3/2] md:aspect-[32/15] max-h-screen md:max-h-[900px] landscape:aspect-[32/15] landscape:min-h-[300px] overflow-hidden"
@@ -99,16 +101,7 @@ export default function RotatingHero() {
     >
       {/* Hero Components */}
       <div className="relative w-full h-full">
-        {heroes.map((Hero, index) => (
-          <div
-            key={Hero.key}
-            className={`absolute inset-0 w-full h-full ${
-              index === currentHero ? 'opacity-100' : 'opacity-0'
-            }`}
-          >
-            <Hero.component fitMode="cover" />
-          </div>
-        ))}
+        <CurrentHero fitMode="cover" />
       </div>
 
       {/* Progress Bar & Pause/Play Button */}

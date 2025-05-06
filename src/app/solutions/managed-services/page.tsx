@@ -3,11 +3,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export const metadata = {
-  title: 'Managed IT Services | Symbol Technologies',
-  description: 'Comprehensive managed IT services including infrastructure management, help desk support, and IT consulting.',
+  title: 'Managed IT Solutions | Symbol Technologies',
+  description: 'Comprehensive managed IT solutions including infrastructure management, help desk support, and IT consulting.',
 };
 
-export default function ManagedServicesPage() {
+export default function ManagedSolutionsPage() {
   return (
     <div className="w-full">
       {/* Hero Section */}
@@ -15,7 +15,7 @@ export default function ManagedServicesPage() {
         <div className="absolute inset-0">
           <Image
             src="/images/managed/hero_desktop.jpg"
-            alt="Managed Services"
+            alt="Managed Solutions"
             fill
             priority
             className="object-cover"
@@ -27,7 +27,7 @@ export default function ManagedServicesPage() {
         <div className="relative h-full container mx-auto px-4 flex flex-col justify-center">
           <div className="max-w-2xl">
             <h1 className="text-3xl md:text-5xl font-bold text-white mb-6">
-              Managed IT Services
+              Managed IT Solutions
             </h1>
             <p className="text-lg md:text-xl text-gray-100 mb-8">
               Comprehensive IT management and support to keep your business running smoothly and efficiently.
@@ -40,20 +40,20 @@ export default function ManagedServicesPage() {
                 Get Started
               </Link>
               <Link
-                href="#services"
+                href="#solutions"
                 className="bg-white text-blue-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors"
               >
-                Our Services
+                Our Solutions
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Services Content */}
+      {/* Solutions Content */}
       <section id="scroll-target" className="w-full py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-6">Our Managed Services</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-6">Our Managed Solutions</h2>
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
               <h3 className="text-xl font-bold mb-2">IT Infrastructure Management</h3>
@@ -77,10 +77,10 @@ export default function ManagedServicesPage() {
         </div>
       </section>
 
-      {/* Related Services */}
+      {/* Related Solutions */}
       <section className="w-full bg-gray-50 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-6">Related Services</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-6">Related Solutions</h2>
           <div className="grid sm:grid-cols-2 gap-6">
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
               <h3 className="text-xl font-bold mb-2">Cybersecurity</h3>
@@ -88,7 +88,7 @@ export default function ManagedServicesPage() {
                 Comprehensive security solutions to protect your business.
               </p>
               <Link 
-                href="/services/cybersecurity"
+                href="/solutions/cybersecurity"
                 className="text-blue-600 hover:text-blue-800 font-semibold inline-flex items-center"
               >
                 Learn More 
@@ -103,7 +103,7 @@ export default function ManagedServicesPage() {
                 Scalable cloud solutions for your business needs.
               </p>
               <Link 
-                href="/services/cloud-infrastructure"
+                href="/solutions/cloud-infrastructure"
                 className="text-blue-600 hover:text-blue-800 font-semibold inline-flex items-center"
               >
                 Learn More 
@@ -115,13 +115,13 @@ export default function ManagedServicesPage() {
           </div>
           <div className="text-center mt-6">
             <Link 
-              href="/services"
+              href="/solutions"
               className="inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold"
             >
               <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
-              Back to All Services
+              Back to All Solutions
             </Link>
           </div>
         </div>

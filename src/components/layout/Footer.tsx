@@ -14,14 +14,14 @@ export default function Footer() {
               height={48} 
               className="mb-4 brightness-125 contrast-110 saturate-150 drop-shadow-sm"
             />
-            <p className="text-gray-400">Professional IT Services and Solutions</p>
+            <p className="text-gray-400">Professional IT Solutions and Services</p>
           </div>
           <div>
-            <h4 className="text-lg font-bold mb-4">Services</h4>
+            <h4 className="text-lg font-bold mb-4">Solutions</h4>
             <ul className="space-y-2">
-              <li><Link href="/services/cybersecurity" className="text-gray-400 hover:text-white">Cybersecurity</Link></li>
-              <li><Link href="/services/cloud-infrastructure" className="text-gray-400 hover:text-white">Cloud Infrastructure</Link></li>
-              <li><Link href="/services/managed-services" className="text-gray-400 hover:text-white">Managed Services</Link></li>
+              <li><Link href="/solutions/cybersecurity" className="text-gray-400 hover:text-white">Cybersecurity</Link></li>
+              <li><Link href="/solutions/cloud-infrastructure" className="text-gray-400 hover:text-white">Cloud Infrastructure</Link></li>
+              <li><Link href="/solutions/managed-services" className="text-gray-400 hover:text-white">Managed Services</Link></li>
             </ul>
           </div>
           <div>

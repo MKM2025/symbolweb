@@ -65,14 +65,14 @@ const DropdownMenu = ({ title, items, isShow, setShow, href }: DropdownMenuProps
 
 export default function Navbar() {
   const { isMobileMenuOpen, setIsMobileMenuOpen } = useMenu();
-  const [showServices, setShowServices] = useState(false);
+  const [showSolutions, setShowSolutions] = useState(false);
   const [showInsights, setShowInsights] = useState(false);
 
   const menuItems = {
-    services: [
-      { name: 'Cybersecurity', href: '/services/cybersecurity' },
-      { name: 'Cloud Infrastructure', href: '/services/cloud-infrastructure' },
-      { name: 'Managed Services', href: '/services/managed-services' }
+    solutions: [
+      { name: 'Cybersecurity', href: '/solutions/cybersecurity' },
+      { name: 'Cloud Infrastructure', href: '/solutions/cloud-infrastructure' },
+      { name: 'Managed Services', href: '/solutions/managed-services' }
     ],
     insights: [
       { name: 'Blogs', href: '/insights/blogs' },
@@ -106,11 +106,11 @@ export default function Navbar() {
             </Link>
             
             <DropdownMenu 
-              title="Services"
-              items={menuItems.services}
-              isShow={showServices}
-              setShow={setShowServices}
-              href="/services"
+              title="Solutions"
+              items={menuItems.solutions}
+              isShow={showSolutions}
+              setShow={setShowSolutions}
+              href="/solutions"
             />
 
             <Link href="/bpo" className="text-white hover:text-[#FFD700] text-sm lg:text-base">
@@ -183,12 +183,12 @@ export default function Navbar() {
           
           <div className="relative">
             <button
-              onClick={() => setShowServices(!showServices)}
+              onClick={() => setShowSolutions(!showSolutions)}
               className="w-full text-left px-3 py-2 text-base font-medium text-white hover:text-[#FFD700] flex items-center justify-between"
             >
-              Services
+              Solutions
               <svg 
-                className={`ml-1 w-4 h-4 transition-transform duration-200 ${showServices ? 'rotate-180' : ''}`}
+                className={`ml-1 w-4 h-4 transition-transform duration-200 ${showSolutions ? 'rotate-180' : ''}`}
                 fill="none" 
                 stroke="currentColor" 
                 viewBox="0 0 24 24"
@@ -196,9 +196,9 @@ export default function Navbar() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
-            {showServices && (
+            {showSolutions && (
               <div className="pl-4 space-y-1 bg-[#00101d]">
-                {menuItems.services.map((item) => (
+                {menuItems.solutions.map((item) => (
                   <Link 
                     key={item.name}
                     href={item.href}

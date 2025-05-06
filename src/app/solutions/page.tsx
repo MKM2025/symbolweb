@@ -1,17 +1,14 @@
 import Link from 'next/link';
 import PageWrapper from '@/components/layout/PageWrapper';
-import ServicesHero from '@/components/services/ServicesHero';
+import SolutionsHero from '@/components/solutions/SolutionsHero';
 
-export default function ServicesPage() {
+export default function SolutionsPage() {
   return (
     <main>
-      <section>
-        <ServicesHero />
-      </section>
-      
-      <PageWrapper>
-        <section className="max-w-7xl mx-auto">
-          <h1 className="text-3xl sm:text-4xl font-bold mb-6 sm:mb-8">Our Services</h1>
+      <SolutionsHero />
+      <div className="container mx-auto px-4 py-12">
+        <h1 className="text-3xl sm:text-4xl font-bold mb-6 sm:mb-8">Our Solutions</h1>
+        <section id="scroll-target" className="max-w-7xl mx-auto scroll-mt-24">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             <div className="bg-white p-4 sm:p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
               <h2 className="text-xl sm:text-2xl font-semibold mb-2 sm:mb-3">Cybersecurity</h2>
@@ -19,7 +16,7 @@ export default function ServicesPage() {
                 Comprehensive security solutions to protect your business from evolving cyber threats.
               </p>
               <Link 
-                href="/services/cybersecurity"
+                href="/solutions/cybersecurity"
                 className="text-blue-600 hover:text-blue-800 font-semibold inline-flex items-center text-sm sm:text-base"
               >
                 Learn More 
@@ -35,7 +32,7 @@ export default function ServicesPage() {
                 Scalable cloud solutions to drive innovation and business growth.
               </p>
               <Link 
-                href="/services/cloud-infrastructure"
+                href="/solutions/cloud-infrastructure"
                 className="text-blue-600 hover:text-blue-800 font-semibold inline-flex items-center text-sm sm:text-base"
               >
                 Learn More 
@@ -51,7 +48,7 @@ export default function ServicesPage() {
                 End-to-end IT management and support for your business operations.
               </p>
               <Link 
-                href="/services/managed-services"
+                href="/solutions/managed-services"
                 className="text-blue-600 hover:text-blue-800 font-semibold inline-flex items-center text-sm sm:text-base"
               >
                 Learn More 
@@ -62,7 +59,7 @@ export default function ServicesPage() {
             </div>
           </div>
         </section>
-      </PageWrapper>
+      </div>
     </main>
   );
 } 

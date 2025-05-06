@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 
 const bpoCategories = [
   {
@@ -147,9 +148,11 @@ export default function BPOPage() {
             alt="BPO Services Hero"
             fill
             priority
-            className="object-cover"
+            className="object-cover object-center"
             sizes="100vw"
           />
+          {/* Lighter overlay gradient for better image visibility */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#0a192f]/40 via-[#1a365d]/30 to-[#2d3748]/40" />
         </div>
         
         {/* Mobile Portrait Image */}
@@ -165,10 +168,12 @@ export default function BPOPage() {
               draggable={false}
             />
           </picture>
+          {/* Lighter overlay gradient for better image visibility */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#0a192f]/40 via-[#1a365d]/30 to-[#2d3748]/40" />
         </div>
 
         {/* Hero Content */}
-        <div className="absolute inset-0 bg-black/40 flex items-start justify-start pt-2 md:justify-start md:pt-0">
+        <div className="absolute inset-0 flex items-start justify-start pt-2 md:justify-start md:pt-0">
           <div
             className={
               "container mx-auto px-4 text-white pt-16 md:pt-0 md:max-w-2xl md:ml-16 md:mt-40 bpo-hero-landscape-mt" +
@@ -176,24 +181,45 @@ export default function BPOPage() {
             }
             style={isLandscape ? { marginTop: '0.5rem' } : undefined}
           >
-            <h1
-              className="text-3xl md:text-6xl font-bold mb-4 md:mb-6 bpo-hero-landscape-h1"
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
+              className="text-2xl sm:text-4xl md:text-6xl landscape:!text-[min(4.5vw,3rem)] font-bold text-white mb-2 sm:mb-4 md:mb-6 landscape:mb-3 drop-shadow-lg landscape:leading-tight max-w-lg landscape:text-left"
               style={isLandscape ? { fontSize: '1.1rem', lineHeight: '1.15', maxWidth: '70vw', textAlign: 'left', marginLeft: 0 } : undefined}
             >
               Empowering Global Businesses with Next-Gen ICT & BPO Solutions
-            </h1>
-            <p
-              className="text-base md:text-xl max-w-3xl mx-auto md:mx-0 bpo-hero-landscape-p"
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
+              className="text-base sm:text-lg md:text-xl landscape:!text-[min(2.2vw,1.2rem)] text-white mb-4 sm:mb-6 md:mb-8 landscape:mb-4 drop-shadow-md landscape:max-w-[90%] max-w-xl landscape:text-left"
               style={isLandscape ? { fontSize: '0.8rem', lineHeight: '1.25', maxWidth: '70vw', textAlign: 'left', marginLeft: 0 } : undefined}
             >
               Streamline operations, enhance customer experience, and scale effortlessly with our cutting-edge IT support, automation, and back-office outsourcing services.
-            </p>
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="mt-6"
+            >
+              <Link
+                href="/contact"
+                className="inline-block bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-8 py-4 rounded-lg text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                Get a Quote
+              </Link>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* Services Grid */}
-      <section id="scroll-target" className="bg-gray-50">
+      <section id="scroll-target" className="bg-gray-50 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="text-center mb-8 sm:mb-12">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Our BPO Services</h2>
