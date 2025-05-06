@@ -84,24 +84,42 @@ body {
   .bpo-hero-landscape-h1,
   .bpo-hero-landscape-h1.text-3xl,
   .bpo-hero-landscape-h1.md\:text-6xl {
-    font-size: 1.1rem !important;
-    line-height: 1.15 !important;
-    margin-bottom: 0.5rem !important;
+    font-size: 2.5rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 1.5rem !important;
     text-align: left !important;
-    max-width: 70vw !important;
+    max-width: 80vw !important;
+    padding-bottom: 2rem !important;
   }
   .bpo-hero-landscape-p,
   .bpo-hero-landscape-p.text-base,
   .bpo-hero-landscape-p.md\:text-xl {
-    font-size: 0.8rem !important;
-    line-height: 1.25 !important;
-    margin-bottom: 1rem !important;
+    font-size: 1.1rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 2rem !important;
     text-align: left !important;
-    max-width: 70vw !important;
+    max-width: 80vw !important;
   }
   .bpo-hero-landscape-mt {
-    margin-top: 1.2rem !important;
+    margin-top: 2rem !important;
+    margin-bottom: 3rem !important;
     margin-left: 2vw !important;
     align-items: flex-start !important;
+  }
+  .bpo-hero-image {
+    object-fit: cover !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-height: none !important;
+  }
+}
+
+@layer utilities {
+  .animate-bounce {
+    animation: bounce 1.2s infinite;
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(12px); }
   }
 }

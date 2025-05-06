@@ -51,7 +51,7 @@ export default function ManagedServicesPage() {
       </section>
 
       {/* Services Content */}
-      <section id="services" className="w-full py-12">
+      <section id="scroll-target" className="w-full py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl sm:text-3xl font-bold mb-6">Our Managed Services</h2>
           <div className="grid md:grid-cols-3 gap-6">

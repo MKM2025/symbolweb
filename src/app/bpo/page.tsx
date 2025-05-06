@@ -139,7 +139,7 @@ export default function BPOPage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[900px] md:h-[900px] w-full">
+      <section className="relative h-[500px] md:h-[600px] w-full">
         {/* Desktop/Landscape Image */}
         <div className="absolute inset-0 hidden md:block">
           <Image
@@ -168,10 +168,10 @@ export default function BPOPage() {
         </div>
 
         {/* Hero Content */}
-        <div className="absolute inset-0 bg-black/40 flex items-start justify-center md:justify-start pt-28 md:pt-0">
+        <div className="absolute inset-0 bg-black/40 flex items-start justify-start pt-2 md:justify-start md:pt-0">
           <div
             className={
-              "container mx-auto px-4 text-white md:max-w-2xl md:ml-16 md:mt-40 bpo-hero-landscape-mt" +
+              "container mx-auto px-4 text-white pt-16 md:pt-0 md:max-w-2xl md:ml-16 md:mt-40 bpo-hero-landscape-mt" +
               (isLandscape ? "" : " text-center md:text-left")
             }
             style={isLandscape ? { marginTop: '0.5rem' } : undefined}
@@ -193,7 +193,7 @@ export default function BPOPage() {
       </section>
 
       {/* Services Grid */}
-      <section id="services" className="bg-gray-50">
+      <section id="scroll-target" className="bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="text-center mb-8 sm:mb-12">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Our BPO Services</h2>

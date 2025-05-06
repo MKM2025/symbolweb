@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import ScrollArrow from '@/components/home/ScrollArrow'
+import ScrollDownButton from '@/components/common/ScrollDownButton'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import Breadcrumb from '@/components/layout/Breadcrumb'
@@ -37,7 +37,7 @@ export default function RootLayout({
           <Navbar />
           <Breadcrumb />
           <main>{children}</main>
-          <ScrollArrow />
+          <ScrollDownButton />
           <Footer />
         </MenuProvider>
       </body>
