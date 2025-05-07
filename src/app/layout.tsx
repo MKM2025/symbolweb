@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import ScrollDownButton from '@/components/common/ScrollDownButton'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import Breadcrumb from '@/components/layout/Breadcrumb'
@@ -32,12 +31,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        {/* Preload hero images for instant swap */}
+        <link rel="preload" as="image" href="/images/hero/hero_bpo_desktop.webp" />
+        <link rel="preload" as="image" href="/images/solutions/hero_solutions_desktop.webp" />
+        <link rel="preload" as="image" href="/images/insights/hero_insights_desktop.webp" />
+      </head>
       <body className={`${inter.className} antialiased`}>
         <MenuProvider>
           <Navbar />
           <Breadcrumb />
           <main>{children}</main>
-          <ScrollDownButton />
           <Footer />
         </MenuProvider>
       </body>

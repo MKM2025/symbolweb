@@ -30,6 +30,12 @@ const customers: Customer[] = [
 ];
 
 export default function CustomersSection() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const handleScrollLeft = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: -400, behavior: 'smooth' });
+    }
+  };
   return (
     <section className="py-4 md:py-8 bg-white relative overflow-hidden">
       <div className="container mx-auto px-4">
@@ -41,7 +47,18 @@ export default function CustomersSection() {
 
         {/* Auto-scrolling Container */}
         <div className="relative">
-          <div className="flex animate-scroll">
+          {/* Left Arrow Button */}
+          <button
+            onClick={handleScrollLeft}
+            className="absolute left-2 top-1/2 -translate-y-1/2 z-50 bg-gradient-to-br from-yellow-400 to-yellow-600 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg ring-2 ring-white hover:scale-110 transition-transform"
+            aria-label="Scroll left fast"
+            style={{ left: '0.5rem' }}
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <div ref={scrollRef} className="flex animate-scroll scrollbar-hide">
             {/* First set of customers */}
             <div className="flex space-x-8 min-w-max">
               {customers.map((customer, index) => (
@@ -94,10 +111,17 @@ export default function CustomersSection() {
           }
         }
         .animate-scroll {
-          animation: scroll 30s linear infinite;
+          animation: scroll 50s linear infinite;
         }
         .animate-scroll:hover {
           animation-play-state: paused;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
         }
       `}</style>
     </section>

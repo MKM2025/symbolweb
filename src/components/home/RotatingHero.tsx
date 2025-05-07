@@ -5,14 +5,10 @@ import HeroSection from './HeroSection';
 import ServicesHero from '../services/ServicesHero';
 import InsightsHero from '../insights/InsightsHero';
 import { useMenu } from '@/context/MenuContext';
-import { motion } from 'framer-motion';
 
 const SLIDE_DURATION = 5000; // 5 seconds
-const TRANSITION_DURATION = 1000; // 1 second for smooth transitions
-const GOLD_GRADIENT = 'bg-gradient-to-r from-[#BF953F] via-[#FCF6BA] to-[#B38728]'; // Original metallic gold gradient for progress bars
-const DEEP_BLUE_GRADIENT = 'bg-[#0a2a4a]'; // Deep dark blue for insights hero
-const LIGHT_BLUE_GRADIENT = 'bg-[#4a90e2]'; // Light blue for first two bars
-const INACTIVE_BAR = 'bg-[#E0F7FF]'; // Much brighter light blue for inactive bars
+const GOLD_GRADIENT = 'bg-gradient-to-r from-[#BF953F] via-[#FCF6BA] to-[#B38728]';
+const INACTIVE_BAR = 'bg-[#E0F7FF]';
 
 export default function RotatingHero() {
   const { isMobileMenuOpen } = useMenu();
@@ -61,14 +57,16 @@ export default function RotatingHero() {
       if (intervalRef.current) clearInterval(intervalRef.current);
       return;
     }
-    setProgress(0);
+
     intervalRef.current = setInterval(() => {
       setCurrentHero((prev) => (prev + 1) % heroes.length);
       setProgress(0);
     }, SLIDE_DURATION);
+
     // Progress animation
     let start = Date.now();
     let frame: number;
+    
     function animate() {
       if (paused) return;
       const elapsed = Date.now() - start;
@@ -77,20 +75,20 @@ export default function RotatingHero() {
         frame = requestAnimationFrame(animate);
       }
     }
+    
     animate();
+    
     return () => {
       if (intervalRef.current) clearInterval(intervalRef.current);
       cancelAnimationFrame(frame);
     };
   }, [currentHero, paused]);
 
-  // Manual slide change resets progress
+  // Manual slide change
   const handleManualChange = (idx: number) => {
     setCurrentHero(idx);
     setProgress(0);
   };
-
-  const CurrentHero = heroes[currentHero].component;
 
   return (
     <div 
@@ -99,11 +97,18 @@ export default function RotatingHero() {
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
-      {/* Hero Components */}
+      {/* Render all hero components, only show the active one */}
       <div className="relative w-full h-full">
-        <CurrentHero fitMode="cover" />
+        <div className={currentHero === 0 ? 'block' : 'hidden'}>
+          <HeroSection fitMode="cover" isActive={currentHero === 0} />
+        </div>
+        <div className={currentHero === 1 ? 'block' : 'hidden'}>
+          <ServicesHero fitMode="cover" isActive={currentHero === 1} />
+        </div>
+        <div className={currentHero === 2 ? 'block' : 'hidden'}>
+          <InsightsHero fitMode="cover" isActive={currentHero === 2} />
+        </div>
       </div>
-
       {/* Progress Bar & Pause/Play Button */}
       {!isMobileMenuOpen && (
         <div className="absolute bottom-8 sm:bottom-16 left-[10%] sm:left-[15%] portrait:left-6 z-50 w-[280px] sm:w-[320px]">
@@ -113,7 +118,7 @@ export default function RotatingHero() {
                 <button
                   key={index}
                   onClick={() => handleManualChange(index)}
-                  className={`relative flex-1 h-1.5 sm:h-2 rounded-full transition-all duration-300 overflow-hidden shadow-lg ${
+                  className={`relative flex-1 h-1.5 sm:h-2 rounded-full overflow-hidden shadow-lg ${
                     index === currentHero
                       ? GOLD_GRADIENT
                       : INACTIVE_BAR
@@ -124,7 +129,7 @@ export default function RotatingHero() {
                   {index === currentHero && (
                     <div
                       className={`absolute left-0 top-0 h-full rounded-full ${GOLD_GRADIENT} pointer-events-none`}
-                      style={{ width: `${progress * 100}%`, transition: paused ? 'none' : 'width 0.2s linear' }}
+                      style={{ width: `${progress * 100}%` }}
                     />
                   )}
                 </button>

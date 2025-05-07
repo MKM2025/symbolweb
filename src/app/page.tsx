@@ -24,7 +24,7 @@ export default function Home() {
       <TechnologyPartnersSection />
 
       {/* Intro Section */}
-      <section className="py-6 md:py-12 bg-gradient-to-l from-white to-[#cce1ff] dark:from-white dark:to-[#a3c5ff]">
+      <section className="py-6 md:py-12 bg-[#f1f5fb]">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-2xl md:text-4xl font-bold mb-3 md:mb-4 text-[#0a2a4a]">
@@ -55,7 +55,7 @@ export default function Home() {
 
             <Link 
               href="/about"
-              className="inline-block w-full sm:w-auto bg-[#4a75a8] text-[#FFD700] px-6 md:px-8 py-3 rounded-lg hover:bg-[#5885bd] transition-all duration-300 font-semibold shadow-md text-sm md:text-base"
+              className="inline-block bg-gradient-to-r from-[#BF953F] via-[#FCF6BA] to-[#B38728] text-[#1a1a1a] px-6 py-3 rounded-lg text-base font-semibold shadow-lg hover:from-[#FFF9D4] hover:via-[#DBA23A] hover:to-[#E6B94F] hover:scale-105 hover:shadow-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#E6B94F] active:scale-95"
             >
               Learn More About Us
             </Link>
@@ -75,16 +75,16 @@ export default function Home() {
               <Link
                 key={cat.title}
                 href={cat.href}
-                className="bg-white rounded-lg shadow hover:shadow-lg border border-blue-100 hover:bg-[#0a2a51] p-3 md:p-4 flex flex-col items-center transition-all duration-200 group cursor-pointer"
+                className="bg-[#0a2a51] text-[#FFE5A0] rounded-lg shadow hover:shadow-lg border border-blue-100 hover:bg-gradient-to-r hover:from-[#BF953F] hover:via-[#FCF6BA] hover:to-[#B38728] hover:text-[#0a2a51] p-3 md:p-4 flex flex-col items-center transition-all duration-200 group cursor-pointer"
               >
                 <span className="text-xl md:text-2xl mb-2 group-hover:text-[#FFE5A0] transition-colors">{cat.icon}</span>
-                <span className="text-xs md:text-sm font-semibold group-hover:text-[#FFE5A0] text-center transition-colors">{cat.title}</span>
+                <span className="text-xs md:text-sm font-semibold text-center transition-colors">{cat.title}</span>
               </Link>
             ))}
           </div>
           <Link
             href="/bpo"
-            className="inline-block w-full sm:w-auto bg-[#4a75a8] text-[#FFD700] px-6 md:px-8 py-3 rounded-lg text-sm md:text-base font-semibold hover:bg-[#5885bd] transition-colors"
+            className="inline-block bg-gradient-to-r from-[#BF953F] via-[#FCF6BA] to-[#B38728] text-[#1a1a1a] px-6 py-3 rounded-lg text-base font-semibold shadow-lg hover:from-[#FFF9D4] hover:via-[#DBA23A] hover:to-[#E6B94F] hover:scale-105 hover:shadow-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#E6B94F] active:scale-95"
           >
             Explore All BPO Services
           </Link>
@@ -92,7 +92,7 @@ export default function Home() {
       </section>
 
       {/* Solutions Grid */}
-      <section id="scroll-target" className="py-6 md:py-12 bg-gradient-to-l from-white to-[#cce1ff] dark:from-white dark:to-[#a3c5ff]">
+      <section id="scroll-target" className="py-6 md:py-12 bg-[#f1f5fb]">
         <div className="container mx-auto px-4 md:px-6">
           <h2 className="text-2xl md:text-4xl font-bold text-center mb-6 md:mb-8 text-[#0a2a4a]">Comprehensive ICT Solutions</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
@@ -153,7 +153,7 @@ export default function Home() {
           </p>
           <Link 
             href="/contact-us"
-            className="inline-block w-full sm:w-auto bg-[#4a75a8] text-[#FFD700] px-6 md:px-8 py-3 rounded-lg text-sm md:text-base font-semibold hover:bg-[#5885bd] transition-colors"
+            className="inline-block bg-gradient-to-r from-[#BF953F] via-[#FCF6BA] to-[#B38728] text-[#1a1a1a] px-6 py-3 rounded-lg text-base font-semibold shadow-lg hover:from-[#FFF9D4] hover:via-[#DBA23A] hover:to-[#E6B94F] hover:scale-105 hover:shadow-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#E6B94F] active:scale-95"
           >
             Schedule a Consultation
           </Link>
