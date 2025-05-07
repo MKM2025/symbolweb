@@ -152,7 +152,7 @@ export default function Home() {
             Let's discuss how our AI-driven solutions can help your organization stay ahead in the digital age.
           </p>
           <Link 
-            href="/contact-us"
+            href="/contact"
             className="inline-block bg-gradient-to-r from-[#BF953F] via-[#FCF6BA] to-[#B38728] text-[#1a1a1a] px-6 py-3 rounded-lg text-base font-semibold shadow-lg hover:from-[#FFF9D4] hover:via-[#DBA23A] hover:to-[#E6B94F] hover:scale-105 hover:shadow-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#E6B94F] active:scale-95"
           >
             Schedule a Consultation

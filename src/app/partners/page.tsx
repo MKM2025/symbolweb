@@ -105,7 +105,7 @@ export default function PartnersPage() {
             We're always looking to expand our network of technology partners. If you're interested in partnering with Symbol Technologies, we'd love to hear from you.
           </p>
           <Link 
-            href="/contact-us"
+            href="/contact"
             className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors inline-block"
           >
             Contact Us

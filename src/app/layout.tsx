@@ -6,7 +6,11 @@ import Footer from '@/components/layout/Footer'
 import Breadcrumb from '@/components/layout/Breadcrumb'
 import { MenuProvider } from '@/context/MenuContext'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  adjustFontFallback: true,
+})
 
 export const metadata: Metadata = {
   title: 'Symbol Technologies - Professional IT Services and Solutions',
