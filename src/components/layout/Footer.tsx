@@ -1,9 +1,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { Linkedin, Facebook, Twitter } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#00101d] text-white py-12">
+    <footer className="bg-[#00101d] text-white pt-12 pb-0">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
           <div>
@@ -44,8 +45,21 @@ export default function Footer() {
             <p className="text-gray-400">Phone: +1 (555) 123-4567</p>
           </div>
         </div>
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Symbol Technologies. All rights reserved.</p>
+      </div>
+      <div className="border-t border-gray-800 mt-8 pt-6 pb-6 px-4 bg-[#00101d]">
+        <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-gray-400">
+          <div className="text-sm">&copy; {new Date().getFullYear()} Symbol Technologies. All rights reserved.</div>
+          <div className="flex gap-4 mt-2 md:mt-0">
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-blue-400 transition-colors">
+              <Linkedin size={22} />
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-blue-400 transition-colors">
+              <Facebook size={22} />
+            </a>
+            <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" className="hover:text-blue-400 transition-colors">
+              <Twitter size={22} />
+            </a>
+          </div>
         </div>
       </div>
     </footer>

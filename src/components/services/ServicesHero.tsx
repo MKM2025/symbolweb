@@ -38,15 +38,15 @@ export default function ServicesHero({ fitMode = 'cover', isActive }: ServicesHe
       </div>
 
       {/* Content Container */}
-      <div className="relative h-full container mx-auto px-4 flex flex-col justify-center portrait:justify-start portrait:pt-16 landscape:items-start">
-        <div className="max-w-xl ml-0 pl-4 sm:pl-8 portrait:ml-6 portrait:mt-0 landscape:mt-8 md:mt-[-150px] landscape:max-w-[45%] landscape:ml-4 portrait:items-start portrait:text-left portrait:pr-8">
+      <div className="relative h-full container mx-auto px-4 flex flex-col justify-center portrait:justify-start portrait:pt-16 landscape:items-start md:absolute md:top-[25%] md:px-4 md:justify-start md:pt-0">
+        <div className="max-w-2xl ml-0 md:ml-12 pl-4 sm:pl-8 portrait:ml-6 portrait:mt-0 landscape:mt-8 lg:mt-[-180px] portrait:items-start portrait:text-left portrait:pr-8">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={isActive ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
             className="text-2xl sm:text-3xl md:text-6xl landscape:!text-[min(4.5vw,3rem)] font-bold text-white mb-2 sm:mb-4 md:mb-6 landscape:mb-3 drop-shadow-lg landscape:leading-tight landscape:text-left"
           >
-            Comprehensive Solutions
+            Comprehensive ICT Solutions
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}

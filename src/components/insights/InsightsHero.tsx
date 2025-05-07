@@ -34,12 +34,12 @@ export default function InsightsHero({ fitMode = 'cover', isActive }: InsightsHe
           sizes="100vw"
         />
         {/* Optimized gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0a192f]/60 via-[#1a365d]/40 to-[#2d3748]/30" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#3b5998]/20 via-[#5a8dee]/10 to-[#a7c7ff]/10" />
       </div>
 
       {/* Content Container */}
-      <div className="relative h-full container mx-auto px-4 flex flex-col justify-center portrait:justify-start portrait:pt-16 landscape:items-start">
-        <div className="max-w-2xl ml-0 pl-4 sm:pl-8 portrait:ml-6 portrait:mt-0 landscape:mt-8 lg:mt-[-180px] portrait:items-start portrait:text-left portrait:pr-8">
+      <div className="relative h-full container mx-auto px-4 flex flex-col justify-center portrait:justify-start portrait:pt-16 landscape:items-start md:absolute md:top-[25%] md:px-4 md:justify-start md:pt-0">
+        <div className="max-w-2xl ml-0 md:ml-12 pl-4 sm:pl-8 portrait:ml-6 portrait:mt-0 landscape:mt-8 lg:mt-[-180px] portrait:items-start portrait:text-left portrait:pr-8">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={isActive ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
