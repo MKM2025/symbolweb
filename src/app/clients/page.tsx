@@ -3,6 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 const clientCategories = {
   Financial: [
@@ -32,42 +33,44 @@ export default function ClientsPage() {
   return (
     <main className="w-full">
       {/* Hero Section */}
-      <section className="relative h-[500px] md:h-[600px]">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/hero/clients-hero.jpg"
-            alt="Our Clients"
-            fill
-            priority
-            className="object-cover"
-            quality={100}
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50" />
-        </div>
-        
-        <div className="relative h-full container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center">
-          <div className="max-w-2xl">
-            <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 md:mb-6">
-              Our Clients
-            </h1>
-            <p className="text-base md:text-lg lg:text-xl text-gray-100 mb-6 md:mb-8">
-              Trusted by leading organizations across Ethiopia, delivering innovative solutions that drive success.
-            </p>
-            <div className="flex flex-wrap gap-3 md:gap-4">
-              <Link
-                href="/contact"
-                className="bg-blue-600 text-white px-6 md:px-8 py-2 md:py-3 rounded-lg hover:bg-blue-700 transition-colors text-sm md:text-base"
-              >
-                Get Started
-              </Link>
-              <Link
-                href="#clients"
-                className="bg-white text-blue-600 px-6 md:px-8 py-2 md:py-3 rounded-lg hover:bg-gray-100 transition-colors text-sm md:text-base"
-              >
-                View Clients
-              </Link>
-            </div>
-          </div>
+      <section className="relative w-screen h-[300px] flex items-center justify-start mb-8">
+        <Image
+          src="/images/clients/hero_clients_desktop.webp"
+          alt="Our Clients"
+          fill
+          priority
+          className="object-cover object-center z-0 hidden md:block"
+          quality={100}
+          sizes="100vw"
+          unoptimized
+        />
+        <Image
+          src="/images/clients/hero_clients_mobile.webp"
+          alt="Our Clients"
+          fill
+          priority
+          className="object-cover object-center z-0 md:hidden"
+          quality={100}
+          sizes="100vw"
+          unoptimized
+        />
+        <div className="relative z-20 flex flex-col items-start justify-center w-full h-full text-left px-4 max-w-2xl mx-auto md:ml-48">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+            className="text-3xl sm:text-4xl md:text-4xl font-bold text-[#FFF9C4] mb-4"
+          >
+            Our Valued Clients
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
+            className="text-base sm:text-lg md:text-lg text-[#FFF9C4] max-w-2xl"
+          >
+            Empowering businesses across industries with innovative technology and trusted solutions.
+          </motion.p>
         </div>
       </section>
 
