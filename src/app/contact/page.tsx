@@ -14,7 +14,17 @@ export default function ContactPage() {
           alt="Contact Hero"
           fill
           priority
-          className="object-cover object-center z-0"
+          className="object-cover object-center z-0 hidden md:block"
+          quality={100}
+          sizes="100vw"
+          unoptimized
+        />
+        <Image
+          src="/images/contact/hero_contact_mobile.webp"
+          alt="Contact Hero"
+          fill
+          priority
+          className="object-cover object-center z-0 md:hidden"
           quality={100}
           sizes="100vw"
           unoptimized
@@ -40,7 +50,7 @@ export default function ContactPage() {
       </section>
       <main className="min-h-screen bg-white flex flex-col items-center justify-start py-0 sm:px-8">
         {/* Contact Form Section */}
-        <section className="w-full max-w-2xl bg-white rounded-xl shadow-lg pt-2 pb-6 px-4 sm:pt-4 sm:pb-10 sm:px-8 mb-16">
+        <section className="w-full max-w-2xl bg-[#e9eef6] rounded-xl shadow-lg pt-2 pb-6 px-4 sm:pt-4 sm:pb-10 sm:px-8 mb-16">
           <h2 className="text-3xl font-bold text-[#0a192f] mb-8 text-center">Contact Us</h2>
           <form className="flex flex-col gap-6 bg-gray-50 p-6 rounded-lg shadow-[inset_0_2px_4px_rgba(0,0,0,0.1)]" action="mailto:info@symboltech.net" method="POST" encType="text/plain">
             <div className="flex flex-col gap-4 sm:flex-row sm:gap-6">

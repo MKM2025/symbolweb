@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 export default function PartnersPage() {
   const partners = [
@@ -37,63 +38,77 @@ export default function PartnersPage() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="relative h-[500px] md:h-[600px]">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/hero/partners-hero.jpg"
-            alt="Our Partners"
-            fill
-            priority
-            className="object-cover"
-            quality={100}
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50" />
-        </div>
-        
-        <div className="relative h-full container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center">
-          <div className="max-w-2xl">
-            <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 md:mb-6">
-              Our Strategic Partners
-            </h1>
-            <p className="text-base md:text-lg lg:text-xl text-gray-100 mb-6 md:mb-8">
-              Symbol Technologies collaborates with industry-leading technology providers to deliver comprehensive ICT and cybersecurity solutions across Africa.
-            </p>
-            <div className="flex flex-wrap gap-3 md:gap-4">
-              <Link
-                href="/contact"
-                className="bg-blue-600 text-white px-6 md:px-8 py-2 md:py-3 rounded-lg hover:bg-blue-700 transition-colors text-sm md:text-base"
-              >
-                Get Started
-              </Link>
-              <Link
-                href="#partners"
-                className="bg-white text-blue-600 px-6 md:px-8 py-2 md:py-3 rounded-lg hover:bg-gray-100 transition-colors text-sm md:text-base"
-              >
-                View Partners
-              </Link>
-            </div>
-          </div>
+      <section className="relative w-screen h-[300px] flex items-center justify-start mb-8">
+        <Image
+          src="/images/partners/hero_partners_desktop.webp"
+          alt="Partners Hero"
+          fill
+          priority
+          className="object-cover object-center z-0 hidden md:block"
+          quality={100}
+          sizes="100vw"
+          unoptimized
+        />
+        <Image
+          src="/images/partners/hero_partners_mobile.webp"
+          alt="Partners Hero"
+          fill
+          priority
+          className="object-cover object-center z-0 md:hidden"
+          quality={100}
+          sizes="100vw"
+          unoptimized
+        />
+        <div className="relative z-20 flex flex-col items-start justify-center w-full h-full text-left px-4 max-w-2xl mx-auto md:ml-48">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+            className="text-3xl sm:text-4xl md:text-4xl font-bold text-[#FFF9C4] mb-4"
+          >
+            Our Technology Partners
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
+            className="text-base sm:text-lg md:text-lg text-[#FFF9C4] max-w-2xl"
+          >
+            Collaborating with Industry Leaders and Top Tech Innovators to deliver Cutting-Edge Solutions.
+          </motion.p>
         </div>
       </section>
 
       {/* Partners Grid */}
-      <section className="bg-gray-50">
-        <div className="container mx-auto px-4 py-12">
-          {Object.entries(partnersByCategory).map(([category, categoryPartners]) => (
-            <div key={category} className="mb-16">
-              <h2 className="text-2xl font-bold mb-8 text-gray-900">{category}</h2>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                {categoryPartners.map((partner) => (
-                  <div 
-                    key={partner.name}
-                    className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow flex items-center justify-center"
-                  >
-                    <span className="text-gray-700 font-semibold text-center">{partner.name}</span>
-                  </div>
-                ))}
+      <section className="bg-gray-50 py-8">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:max-w-7xl lg:mx-auto">
+            {Object.entries(partnersByCategory).map(([category, categoryPartners]) => (
+              <div key={category} className="mb-8 bg-white rounded-2xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.16)] transition-all duration-300">
+                <h2 className="text-2xl font-bold mb-6 text-gray-900 text-center lg:text-left border-b border-gray-100 pb-4">{category}</h2>
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                  {categoryPartners.map((partner) => (
+                    <div 
+                      key={partner.name}
+                      className="bg-gray-50 p-2 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105 flex items-center justify-center aspect-[2/1] lg:aspect-[3/2]"
+                    >
+                      <div className="relative w-full h-full flex items-center justify-center">
+                        <Image
+                          src={`/images/partners/${partner.name.toLowerCase()}.png`}
+                          alt={`${partner.name} logo`}
+                          fill
+                          className="object-contain p-1 lg:p-0"
+                          sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 20vw"
+                          style={{ objectFit: 'contain' }}
+                          priority
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
