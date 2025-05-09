@@ -13,51 +13,25 @@ interface HeroSectionProps {
 export default function HeroSection({ fitMode = 'cover', isActive }: HeroSectionProps) {
   return (
     <section className="relative w-full min-h-[400px] aspect-[3/4] sm:aspect-[3/2] md:aspect-[32/15] max-h-screen md:max-h-[900px] landscape:aspect-[32/15] landscape:min-h-[300px] -mt-[1px] mb-0">
-      <div className="absolute inset-0">
-        <picture>
-          {/* Mobile Portrait */}
-          <source
-            media="(max-width: 640px) and (orientation: portrait)"
-            srcSet="/images/hero/hero_bpo_mobile.webp"
-            type="image/webp"
-          />
-          <source
-            media="(max-width: 640px) and (orientation: portrait)"
-            srcSet="/images/hero/hero_bpo_mobile.jpg"
-            type="image/jpeg"
-          />
-          {/* Mobile Landscape */}
-          <source
-            media="(max-width: 1024px) and (orientation: landscape)"
-            srcSet="/images/hero/hero_bpo_desktop.webp"
-            type="image/webp"
-          />
-          <source
-            media="(max-width: 1024px) and (orientation: landscape)"
-            srcSet="/images/hero/hero_bpo_desktop.jpg"
-            type="image/jpeg"
-          />
-          {/* Desktop */}
-          <source
-            media="(min-width: 1025px)"
-            srcSet="/images/hero/hero_bpo_desktop.webp"
-            type="image/webp"
-          />
-          <source
-            media="(min-width: 1025px)"
-            srcSet="/images/hero/hero_bpo_desktop.jpg"
-            type="image/jpeg"
-          />
-          <Image
-            src="/images/hero/hero_bpo_desktop.jpg"
-            alt="Hero Background"
-            fill
-            priority
-            className={`object-${fitMode} object-center`}
-            quality={100}
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 100vw"
-          />
-        </picture>
+      <div className="absolute inset-0 bg-[#0a192f]">
+        <Image
+          src="/images/hero/hero_bpo_desktop.webp"
+          alt="Hero Background"
+          fill
+          priority
+          className="object-cover object-center hidden md:block"
+          quality={90}
+          sizes="(max-width: 768px) 100vw, 100vw"
+        />
+        <Image
+          src="/images/hero/hero_bpo_mobile.webp"
+          alt="Hero Background Mobile"
+          fill
+          priority
+          className="object-cover object-center md:hidden"
+          quality={90}
+          sizes="(max-width: 768px) 100vw, 100vw"
+        />
       </div>
 
       <NetworkAnimation />

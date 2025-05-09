@@ -12,16 +12,16 @@ export default function CloudInfrastructurePage() {
     <div className="w-full">
       {/* Hero Section */}
       <section className="relative h-[500px] md:h-[600px]">
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-[#0a192f]">
           <Image
-            src="/images/cloud/hero_desktop.jpg"
+            src="/images/cloud/hero_desktop.webp"
             alt="Cloud Infrastructure"
             fill
             priority
             className="object-cover"
-            quality={100}
+            quality={90}
+            sizes="(max-width: 768px) 100vw, 100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50" />
         </div>
         
         <div className="relative h-full container mx-auto px-4 flex flex-col justify-center">

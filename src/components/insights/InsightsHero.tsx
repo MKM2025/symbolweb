@@ -21,7 +21,7 @@ export default function InsightsHero({ fitMode = 'cover', isActive }: InsightsHe
           priority
           className="object-cover object-center"
           quality={90}
-          sizes="100vw"
+          sizes="(max-width: 768px) 100vw, 100vw"
         />
         {/* Mobile Image - Only loads on small screens */}
         <Image
@@ -31,10 +31,8 @@ export default function InsightsHero({ fitMode = 'cover', isActive }: InsightsHe
           priority
           className="object-cover object-center sm:hidden"
           quality={90}
-          sizes="100vw"
+          sizes="(max-width: 768px) 100vw, 100vw"
         />
-        {/* Optimized gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#3b5998]/20 via-[#5a8dee]/10 to-[#a7c7ff]/10" />
       </div>
 
       {/* Content Container */}

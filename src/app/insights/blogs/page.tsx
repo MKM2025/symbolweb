@@ -14,44 +14,17 @@ export default function InsightsBlogsPage() {
     <>
       {/* Blog Hero Section */}
       <section className="relative w-full h-[180px] md:h-[300px] flex items-center justify-center mb-8">
-        <picture>
-          {/* Mobile Portrait */}
-          <source
-            media="(max-width: 639px) and (orientation: portrait)"
-            srcSet="/images/blog/hero_blog_mobile.jpg"
-          />
-          <source
-            media="(max-width: 639px) and (orientation: portrait)"
-            srcSet="/images/blog/hero_blog_mobile.webp"
-            type="image/webp"
-          />
-          {/* Mobile Landscape */}
-          <source
-            media="(max-width: 1023px) and (orientation: landscape)"
-            srcSet="/images/blog/hero_blog_landscape.jpg"
-          />
-          <source
-            media="(max-width: 1023px) and (orientation: landscape)"
-            srcSet="/images/blog/hero_blog_landscape.webp"
-            type="image/webp"
-          />
-          {/* Desktop */}
-          <source
-            media="(min-width: 1024px)"
-            srcSet="/images/blog/hero_blog_desktop.jpg"
-          />
-          <source
-            media="(min-width: 1024px)"
-            srcSet="/images/blog/hero_blog_desktop.webp"
-            type="image/webp"
-          />
-          <img
-            src="/images/blog/hero_blog_desktop.jpg"
+        <div className="absolute inset-0 bg-[#0a192f]">
+          <Image
+            src="/images/blog/hero_blog_desktop.webp"
             alt="Symboltech Blog Hero"
-            className="w-full h-full object-cover absolute inset-0 z-0"
-            style={{ position: 'absolute', inset: 0, zIndex: 0 }}
+            fill
+            priority
+            className="object-cover"
+            quality={90}
+            sizes="(max-width: 768px) 100vw, 100vw"
           />
-        </picture>
+        </div>
         <h1 className="relative z-10 text-white text-3xl md:text-5xl font-extrabold text-center w-full drop-shadow-lg">
           Symboltech&apos;s Blog
         </h1>

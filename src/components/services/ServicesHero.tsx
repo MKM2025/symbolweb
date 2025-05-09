@@ -21,7 +21,7 @@ export default function ServicesHero({ fitMode = 'cover', isActive }: ServicesHe
           priority
           className="object-cover object-center"
           quality={90}
-          sizes="100vw"
+          sizes="(max-width: 768px) 100vw, 100vw"
         />
         {/* Mobile Image - Only loads on small screens */}
         <Image
@@ -31,10 +31,8 @@ export default function ServicesHero({ fitMode = 'cover', isActive }: ServicesHe
           priority
           className="object-cover object-center sm:hidden"
           quality={90}
-          sizes="100vw"
+          sizes="(max-width: 768px) 100vw, 100vw"
         />
-        {/* Optimized gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0a192f]/60 via-[#1a365d]/40 to-[#2d3748]/30" />
       </div>
 
       {/* Content Container */}

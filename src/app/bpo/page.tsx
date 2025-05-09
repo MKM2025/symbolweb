@@ -141,35 +141,27 @@ export default function BPOPage() {
     <main className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-[500px] md:h-[600px] w-full">
-        {/* Desktop/Landscape Image */}
-        <div className="absolute inset-0 hidden md:block">
+        <div className="absolute inset-0 bg-[#0a192f]">
+          {/* Desktop/Landscape Image */}
           <Image
             src="/images/bpo/hero_bpo_desktop.webp"
             alt="BPO Services Hero"
             fill
             priority
-            className="object-cover object-center"
-            sizes="100vw"
+            className="object-cover object-center hidden md:block"
+            quality={90}
+            sizes="(max-width: 768px) 100vw, 100vw"
           />
-          {/* Lighter overlay gradient for better image visibility */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[#0a192f]/40 via-[#1a365d]/30 to-[#2d3748]/40" />
-        </div>
-        
-        {/* Mobile Portrait Image */}
-        <div className="absolute inset-0 block md:hidden">
-          <picture>
-            <source srcSet="/images/bpo/hero_bpo_mobile.webp" type="image/webp" />
-            <img
-              src="/images/bpo/hero_bpo_mobile.jpg"
-              alt="BPO Services Hero"
-              className="object-cover w-full h-full"
-              style={{ objectFit: 'cover', width: '100%', height: '100%' }}
-              loading="eager"
-              draggable={false}
-            />
-          </picture>
-          {/* Lighter overlay gradient for better image visibility */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[#0a192f]/40 via-[#1a365d]/30 to-[#2d3748]/40" />
+          {/* Mobile Portrait Image */}
+          <Image
+            src="/images/bpo/hero_bpo_mobile.webp"
+            alt="BPO Services Hero"
+            fill
+            priority
+            className="object-cover object-center md:hidden"
+            quality={90}
+            sizes="(max-width: 768px) 100vw, 100vw"
+          />
         </div>
 
         {/* Hero Content */}

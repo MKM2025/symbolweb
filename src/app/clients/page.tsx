@@ -34,26 +34,26 @@ export default function ClientsPage() {
     <main className="w-full">
       {/* Hero Section */}
       <section className="relative w-screen h-[300px] flex items-center justify-start mb-8">
-        <Image
-          src="/images/clients/hero_clients_desktop.webp"
-          alt="Our Clients"
-          fill
-          priority
-          className="object-cover object-center z-0 hidden md:block"
-          quality={100}
-          sizes="100vw"
-          unoptimized
-        />
-        <Image
-          src="/images/clients/hero_clients_mobile.webp"
-          alt="Our Clients"
-          fill
-          priority
-          className="object-cover object-center z-0 md:hidden"
-          quality={100}
-          sizes="100vw"
-          unoptimized
-        />
+        <div className="absolute inset-0 bg-[#0a192f]">
+          <Image
+            src="/images/clients/hero_clients_desktop.webp"
+            alt="Our Clients"
+            fill
+            priority
+            className="object-cover object-center z-0 hidden md:block"
+            quality={90}
+            sizes="(max-width: 768px) 100vw, 100vw"
+          />
+          <Image
+            src="/images/clients/hero_clients_mobile.webp"
+            alt="Our Clients"
+            fill
+            priority
+            className="object-cover object-center z-0 md:hidden"
+            quality={90}
+            sizes="(max-width: 768px) 100vw, 100vw"
+          />
+        </div>
         <div className="relative z-20 flex flex-col items-start justify-center w-full h-full text-left px-4 max-w-2xl mx-auto md:ml-48">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
