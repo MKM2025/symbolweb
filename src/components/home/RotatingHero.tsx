@@ -130,7 +130,7 @@ export default function RotatingHero() {
         </div>
       </div>
       {/* Progress Bar & Pause/Play Button */}
-      {!isMobileMenuOpen && (
+      {!isMobileMenuOpen && showArrow && (
         <div className="absolute bottom-8 sm:bottom-16 left-[2%] sm:left-[5%] portrait:left-6 z-50 w-[400px] sm:w-[500px]">
           <div className="flex items-center gap-2">
             <div className="flex-1 flex items-center gap-2">
