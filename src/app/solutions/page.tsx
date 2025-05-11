@@ -196,7 +196,7 @@ export default function ServicesPage() {
         {showArrows && (
           <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-50">
             <motion.a
-              href="#next-section"
+              href="#security-solutions"
               className="cursor-pointer group block"
               initial={{ y: 0 }}
               animate={{ y: [0, 8, 0] }}
