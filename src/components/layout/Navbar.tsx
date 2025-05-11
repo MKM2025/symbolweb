@@ -41,11 +41,11 @@ const DropdownMenu = ({ title, items, isShow, setShow, href }: DropdownMenuProps
 
     {isShow && (
       <div 
-        className="absolute left-0 mt-0 w-48 lg:w-56 rounded-md shadow-lg bg-[#00101d] ring-1 ring-black ring-opacity-5"
+        className="absolute left-0 mt-0 w-64 rounded-md shadow-lg bg-[#00101d] ring-1 ring-black ring-opacity-5 z-50"
         onMouseEnter={() => setShow(true)}
         onMouseLeave={() => setShow(false)}
       >
-        <div className="py-1" role="menu" aria-orientation="vertical">
+        <div className="py-2 flex flex-col gap-y-0.5" role="menu" aria-orientation="vertical">
           {items.map((item) => (
             <Link 
               key={item.name}
@@ -70,9 +70,11 @@ export default function Navbar() {
 
   const menuItems = {
     solutions: [
-      { name: 'Cybersecurity', href: '/solutions/cybersecurity' },
-      { name: 'Cloud Infrastructure', href: '/solutions/cloud-infrastructure' },
-      { name: 'Managed Services', href: '/solutions/managed-services' }
+      { name: 'Security Solutions', href: '/solutions#security-solutions' },
+      { name: 'Financial Technology Solutions', href: '/solutions#financial-technology' },
+      { name: 'Cloud & Infrastructure', href: '/solutions#cloud-infrastructure' },
+      { name: 'Data, AI & Intelligence', href: '/solutions#data-ai' },
+      { name: 'Managed IT Services', href: '/solutions#managed-it' }
     ],
     insights: [
       { name: 'Blogs', href: '/insights/blogs' },

@@ -11,7 +11,7 @@ interface ServicesHeroProps {
 
 export default function ServicesHero({ fitMode = 'cover', isActive }: ServicesHeroProps) {
   return (
-    <section className="relative w-full min-h-[400px] aspect-[3/4] sm:aspect-[3/2] md:aspect-[32/15] max-h-screen md:max-h-[900px] landscape:aspect-[32/15] landscape:min-h-[300px] -mt-[1px] mb-0">
+    <section className="relative w-full h-screen min-h-screen max-h-screen overflow-hidden -mt-[1px] mb-0">
       {/* Background Image Container */}
       <div className="absolute inset-0 bg-[#0a192f]">
         <Image
@@ -40,7 +40,8 @@ export default function ServicesHero({ fitMode = 'cover', isActive }: ServicesHe
         <div className="max-w-2xl ml-0 md:ml-12 pl-4 sm:pl-8 portrait:ml-6 portrait:mt-0 landscape:mt-8 lg:mt-[-180px] portrait:items-start portrait:text-left portrait:pr-8">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
-            animate={isActive ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.6 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
             className="text-2xl sm:text-3xl md:text-6xl landscape:!text-[min(4.5vw,3rem)] font-bold text-white mb-2 sm:mb-4 md:mb-6 landscape:mb-3 drop-shadow-lg landscape:leading-tight landscape:text-left"
           >
@@ -48,7 +49,8 @@ export default function ServicesHero({ fitMode = 'cover', isActive }: ServicesHe
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
-            animate={isActive ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.6 }}
             transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
             className="text-base sm:text-lg md:text-xl landscape:!text-[min(2.2vw,1.2rem)] text-white mb-4 sm:mb-6 md:mb-8 landscape:mb-4 drop-shadow-md landscape:max-w-[90%] landscape:text-left"
           >

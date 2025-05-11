@@ -17,7 +17,8 @@ export default function AnimatedCounter({ end, duration = 2000, suffix = '' }: A
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsInView(true);
+          setIsInView(false);
+          setTimeout(() => setIsInView(true), 10);
         }
       },
       { threshold: 0.1 }
@@ -36,21 +37,18 @@ export default function AnimatedCounter({ end, duration = 2000, suffix = '' }: A
 
   useEffect(() => {
     if (!isInView) return;
-
     let startTimestamp: number | null = null;
+    setCount(0);
     const step = (timestamp: number) => {
       if (!startTimestamp) startTimestamp = timestamp;
       const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-      
       setCount(Math.floor(progress * end));
-      
       if (progress < 1) {
         window.requestAnimationFrame(step);
       }
     };
-
     window.requestAnimationFrame(step);
-  }, [end, duration, isInView]);
+  }, [isInView, end, duration]);
 
   return (
     <div ref={countRef} className="text-4xl font-bold text-[#0a2a4a] mb-2">

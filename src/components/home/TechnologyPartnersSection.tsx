@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useRef } from 'react';
+import { motion } from 'framer-motion';
 
 export default function TechnologyPartnersSection() {
   const scrollBarRef = useRef<HTMLDivElement>(null);
@@ -62,17 +63,23 @@ export default function TechnologyPartnersSection() {
   };
 
   return (
-    <section className="bg-gray-50 overflow-hidden relative w-full pt-0 md:pt-0 pb-0 -mt-8 sm:-mt-12 z-10">
-      <div className="w-full">
-        <div className="relative">
-          <Link href="/partners" className="block">
-            <div
-              className="flex whitespace-nowrap py-3 overflow-x-hidden cursor-pointer"
-              style={{ position: 'relative' }}
-            >
-              <div
-                className="flex animate-scroll-partners scrollbar-hide"
-              >
+    <section id="next-section" className="bg-white overflow-hidden relative w-full py-10 md:py-14 z-10">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="text-center mb-6 md:mb-8">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.6 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+            className="text-2xl md:text-4xl font-bold mb-3 md:mb-4 text-[#0a2a4a]"
+          >
+            Our Technology Partners
+          </motion.h2>
+        </div>
+        <div className="w-full">
+          <div className="relative">
+            <div className="flex whitespace-nowrap py-3 overflow-x-hidden cursor-pointer" style={{ position: 'relative' }}>
+              <div className="flex animate-scroll-partners scrollbar-hide">
                 <div className="flex animate-scroll-partners -ml-8 sm:-ml-12">
                   {doubledPartners.map((partner, index) => (
                     <div
@@ -85,6 +92,11 @@ export default function TechnologyPartnersSection() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+        <div className="text-center mt-6 md:mt-8">
+          <Link href="/partners" className="inline-block bg-gradient-to-r from-[#BF953F] via-[#FCF6BA] to-[#B38728] text-[#1a1a1a] px-6 py-3 rounded-lg text-base font-semibold shadow-lg hover:from-[#FFF9D4] hover:via-[#DBA23A] hover:to-[#E6B94F] hover:scale-105 hover:shadow-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#E6B94F] active:scale-95">
+            Explore all Our Partners
           </Link>
         </div>
       </div>

@@ -5,6 +5,7 @@ import HeroSection from './HeroSection';
 import ServicesHero from '../services/ServicesHero';
 import InsightsHero from '../insights/InsightsHero';
 import { useMenu } from '@/context/MenuContext';
+import { motion } from 'framer-motion';
 
 const SLIDE_DURATION = 5000; // 5 seconds
 const GOLD_GRADIENT = 'bg-gradient-to-r from-[#BF953F] via-[#FCF6BA] to-[#B38728]';
@@ -17,6 +18,8 @@ export default function RotatingHero() {
   const [progress, setProgress] = useState(0);
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
+  const [showArrow, setShowArrow] = useState(true);
+  const heroRef = useRef<HTMLDivElement>(null);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const heroes = [
     { component: HeroSection, key: 'main' },
@@ -90,9 +93,26 @@ export default function RotatingHero() {
     setProgress(0);
   };
 
+  // Intersection observer to hide arrow when hero is not in view
+  useEffect(() => {
+    const observer = new window.IntersectionObserver(
+      ([entry]) => {
+        setShowArrow(entry.isIntersecting && entry.intersectionRatio > 0.7);
+      },
+      { threshold: [0.7] }
+    );
+    if (heroRef.current) {
+      observer.observe(heroRef.current);
+    }
+    return () => {
+      if (heroRef.current) observer.unobserve(heroRef.current);
+    };
+  }, []);
+
   return (
     <div 
-      className="relative w-full min-h-[400px] aspect-[3/4] sm:aspect-[3/2] md:aspect-[32/15] max-h-screen md:max-h-[900px] landscape:aspect-[32/15] landscape:min-h-[300px] overflow-hidden"
+      ref={heroRef}
+      className="relative w-full h-screen overflow-hidden"
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
@@ -152,6 +172,45 @@ export default function RotatingHero() {
               )}
             </button>
           </div>
+        </div>
+      )}
+      {/* Tech-style Scroll Arrow */}
+      {showArrow && (
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-50">
+          <motion.a
+            href="#intro-section"
+            className="cursor-pointer group block"
+            initial={{ y: 0 }}
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+            style={{ WebkitTapHighlightColor: 'transparent' }}
+          >
+            <span className="block">
+              <svg
+                width="64" height="72" viewBox="0 0 64 72" fill="none"
+                className="drop-shadow-lg animate-pulse"
+                style={{ filter: 'drop-shadow(0 0 8px #FFD70088)' }}
+              >
+                <defs>
+                  <linearGradient id="hex-gold" x1="0" y1="0" x2="64" y2="72" gradientUnits="userSpaceOnUse">
+                    <stop stopColor="#fde68a" />
+                    <stop offset="1" stopColor="#f59e42" />
+                  </linearGradient>
+                </defs>
+                <polygon
+                  points="32,4 60,20 60,52 32,68 4,52 4,20"
+                  stroke="url(#hex-gold)"
+                  strokeWidth="3"
+                  fill="rgba(255, 215, 0, 0.08)"
+                  className="transition-all duration-300"
+                />
+                <g>
+                  <polyline points="22,32 32,44 42,32" fill="none" stroke="#FFD700" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                  <polyline points="22,42 32,54 42,42" fill="none" stroke="#FFD700" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                </g>
+              </svg>
+            </span>
+          </motion.a>
         </div>
       )}
     </div>
