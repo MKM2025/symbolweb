@@ -59,10 +59,10 @@ export default function ServicesHero({ fitMode = 'cover' }: ServicesHeroProps) {
 
       <div className="relative h-full container mx-auto px-4 flex flex-col justify-center portrait:justify-start portrait:pt-16 landscape:items-start">
         <div className="max-w-xl ml-0 pl-4 sm:pl-8 portrait:ml-6 portrait:mt-0 landscape:mt-8 md:mt-[-150px] landscape:max-w-[45%] landscape:ml-4 portrait:items-start portrait:text-left portrait:pr-8">
-          <h1 className="text-2xl sm:text-3xl md:text-6xl landscape:!text-[min(4.5vw,3rem)] font-bold text-white mb-2 sm:mb-4 md:mb-6 landscape:mb-3 drop-shadow-lg landscape:leading-tight landscape:text-left">
+          <h1 className="text-2xl sm:text-3xl md:text-6xl landscape:!text-[min(4.5vw,3rem)] font-bold text-[#FFF9C4] mb-2 sm:mb-4 md:mb-6 landscape:mb-3 drop-shadow-lg landscape:leading-tight landscape:text-left">
             Comprehensive Solutions
           </h1>
-          <p className="text-base sm:text-lg md:text-xl landscape:!text-[min(2.2vw,1.2rem)] text-white mb-4 sm:mb-6 md:mb-8 landscape:mb-4 drop-shadow-md landscape:max-w-[90%] landscape:text-left">
+          <p className="text-base sm:text-lg md:text-xl landscape:!text-[min(2.2vw,1.2rem)] text-[#FFF9C4] mb-4 sm:mb-6 md:mb-8 landscape:mb-4 drop-shadow-md landscape:max-w-[90%] landscape:text-left">
             Discover our range of innovative solutions designed to transform your business operations and drive growth.
           </p>
           <div className="flex flex-col portrait:gap-3 flex-wrap landscape:flex-row landscape:gap-4">

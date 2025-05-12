@@ -175,18 +175,20 @@ export default function BPOPage() {
           >
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.6 }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
-              className="text-2xl sm:text-4xl md:text-6xl landscape:!text-[min(4.5vw,3rem)] font-bold text-white mb-2 sm:mb-4 md:mb-6 landscape:mb-3 drop-shadow-lg landscape:leading-tight max-w-lg landscape:text-left"
+              className="text-2xl sm:text-4xl md:text-6xl landscape:!text-[min(4.5vw,3rem)] font-bold text-[#FFF9C4] mb-2 sm:mb-4 md:mb-6 landscape:mb-3 drop-shadow-lg landscape:leading-tight max-w-lg landscape:text-left"
               style={isLandscape ? { fontSize: '1.1rem', lineHeight: '1.15', maxWidth: '70vw', textAlign: 'left', marginLeft: 0 } : undefined}
             >
               Empowering Global Businesses with Next-Gen ICT & BPO Solutions
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.6 }}
               transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
-              className="text-base sm:text-lg md:text-xl landscape:!text-[min(2.2vw,1.2rem)] text-white mb-4 sm:mb-6 md:mb-8 landscape:mb-4 drop-shadow-md landscape:max-w-[90%] max-w-xl landscape:text-left"
+              className="text-base sm:text-lg md:text-xl landscape:!text-[min(2.2vw,1.2rem)] text-[#FFF9C4] mb-4 sm:mb-6 md:mb-8 landscape:mb-4 drop-shadow-md landscape:max-w-[90%] max-w-xl landscape:text-left"
               style={isLandscape ? { fontSize: '0.8rem', lineHeight: '1.25', maxWidth: '70vw', textAlign: 'left', marginLeft: 0 } : undefined}
             >
               Streamline operations, enhance customer experience, and scale effortlessly with our cutting-edge IT support, automation, and back-office outsourcing services.
@@ -199,7 +201,15 @@ export default function BPOPage() {
       <section id="scroll-target" className="bg-gray-50 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Our BPO Services</h2>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.6 }}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4"
+            >
+              Our BPO Services
+            </motion.h2>
             <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
               Comprehensive business solutions tailored to meet your specific needs and drive your success
             </p>
@@ -212,7 +222,15 @@ export default function BPOPage() {
                 className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-200 p-4 sm:p-6 flex flex-col"
               >
                 <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">{category.icon}</div>
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3">{category.title}</h3>
+                <motion.h3
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false, amount: 0.6 }}
+                  transition={{ duration: 0.7, ease: 'easeOut' }}
+                  className="text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3"
+                >
+                  {category.title}
+                </motion.h3>
                 <p className="text-sm sm:text-base md:text-lg text-gray-600 mb-4 sm:mb-6">{category.description}</p>
                 <div className="flex-grow">
                   <ul className="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
@@ -224,20 +242,6 @@ export default function BPOPage() {
                     ))}
                   </ul>
                 </div>
-                <Link
-                  href={category.href}
-                  className="inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold group text-sm sm:text-base"
-                >
-                  Learn More
-                  <svg 
-                    className="w-4 h-4 sm:w-5 sm:h-5 ml-2 transform transition-transform group-hover:translate-x-1" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </Link>
               </div>
             ))}
           </div>
@@ -245,20 +249,27 @@ export default function BPOPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-12 sm:py-16 md:py-20 bg-blue-900 text-white">
+      <motion.section
+        className="py-12 sm:py-16 md:py-20" style={{ backgroundColor: '#f3f6fb' }}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, amount: 0.3 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+      >
         <div className="container mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">Ready to Transform Your Business?</h2>
-          <p className="text-lg sm:text-xl text-gray-300 mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
-            Partner with us for innovative solutions that drive growth and efficiency
+          <p className="text-lg sm:text-xl text-[#0a2a4a] mb-6 sm:mb-8 max-w-2xl mx-auto px-4 text-center">
+            Outsource with confidence — partner with us to unlock smart, scalable BPO and ICT solutions that accelerate growth, boost efficiency, and free your team to focus on what matters most.
           </p>
           <Link
             href="/contact"
-            className="inline-block w-full sm:w-auto bg-white text-blue-900 px-6 sm:px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors text-center"
+            className="inline-block w-full sm:w-auto bg-[#0a2a4a] px-6 sm:px-8 py-3 rounded-lg font-semibold hover:bg-blue-950 transition-colors text-center"
+            style={{ color: '#FFD700' }}
           >
-            Contact Us Today
+            Contact Sales
           </Link>
         </div>
-      </section>
+      </motion.section>
     </main>
   );
 } 

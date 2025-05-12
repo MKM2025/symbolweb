@@ -135,7 +135,7 @@ export default function Navbar() {
               href="/insights"
             />
 
-            <Link href="/about" className="text-white hover:text-[#FFD700] text-sm lg:text-base">
+            <Link href="/aboutus" className="text-white hover:text-[#FFD700] text-sm lg:text-base">
               About Us
             </Link>
             <Link href="/contact" className="text-white hover:text-[#FFD700] text-sm lg:text-base">
@@ -270,7 +270,7 @@ export default function Navbar() {
           </div>
 
           <Link 
-            href="/about" 
+            href="/aboutus" 
             className="block px-3 py-2 text-base font-medium text-white hover:text-[#FFD700]"
             onClick={() => setIsMobileMenuOpen(false)}
           >

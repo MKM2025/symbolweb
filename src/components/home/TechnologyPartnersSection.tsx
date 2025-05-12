@@ -82,12 +82,13 @@ export default function TechnologyPartnersSection() {
               <div className="flex animate-scroll-partners scrollbar-hide">
                 <div className="flex animate-scroll-partners -ml-8 sm:-ml-12">
                   {doubledPartners.map((partner, index) => (
-                    <div
+                    <Link
                       key={`partner-${index}`}
-                      className="inline-flex flex-shrink-0 w-48 h-14 bg-white/90 backdrop-blur-sm items-center justify-center px-4 mx-2 overflow-hidden shadow-sm"
+                      href="/partners"
+                      className="inline-flex flex-shrink-0 w-48 h-14 bg-white/90 backdrop-blur-sm items-center justify-center px-4 mx-2 overflow-hidden shadow-sm hover:shadow-md transition-shadow"
                     >
                       <PartnerLogo partner={partner} />
-                    </div>
+                    </Link>
                   ))}
                 </div>
               </div>

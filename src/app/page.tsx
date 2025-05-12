@@ -27,7 +27,7 @@ export default function Home() {
       {/* Intro Section */}
       <section id="intro-section" className="py-6 md:py-12 bg-[#f1f5fb] scroll-mt-[96px]">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-7xl mx-auto w-full text-center">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -43,40 +43,70 @@ export default function Home() {
               cybersecurity defenses and advanced FinTech solutions to cloud transformation and 
               resilient infrastructure, we provide the end-to-end capabilities you need to thrive.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 mb-8">
+            <div className="grid grid-cols-2 xs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6 mb-8 w-full max-w-none justify-center items-center place-items-center">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false, amount: 0.6 }}
                 transition={{ duration: 0.8, ease: 'easeOut' }}
-                className="text-center p-4 bg-white/50 rounded-lg"
+                className="text-center p-3 md:p-4 bg-white/50 rounded-lg"
               >
-                <AnimatedCounter end={150} suffix="+" />
-                <div className="text-gray-600 text-sm md:text-base">Projects Completed</div>
+                <div className="text-[#FFD700]">
+                  <AnimatedCounter end={40} suffix="+" />
+                </div>
+                <div className="text-[#0a2a4a] text-sm md:text-base">Clients Served</div>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false, amount: 0.6 }}
                 transition={{ duration: 0.8, ease: 'easeOut' }}
-                className="text-center p-4 bg-white/50 rounded-lg"
+                className="text-center p-3 md:p-4 bg-white/50 rounded-lg"
               >
-                <AnimatedCounter end={46} />
-                <div className="text-gray-600 text-sm md:text-base">Satisfied Clients</div>
+                <div className="text-[#FFD700]">
+                  <AnimatedCounter end={15} suffix="+" />
+                </div>
+                <div className="text-[#0a2a4a] text-sm md:text-base">Years in Tech</div>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false, amount: 0.6 }}
                 transition={{ duration: 0.8, ease: 'easeOut' }}
-                className="text-center p-4 bg-white/50 rounded-lg"
+                className="text-center p-3 md:p-4 bg-white/50 rounded-lg"
               >
-                <AnimatedCounter end={34560} suffix="+" />
-                <div className="text-gray-600 text-sm md:text-base">End Users Empowered</div>
+                <div className="text-[#FFD700]">
+                  <AnimatedCounter end={100000} suffix="+" />
+                </div>
+                <div className="text-[#0a2a4a] text-sm md:text-base">End Users Empowered</div>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.6 }}
+                transition={{ duration: 0.8, ease: 'easeOut' }}
+                className="text-center p-3 md:p-4 bg-white/50 rounded-lg"
+              >
+                <div className="text-[#FFD700]">
+                  <AnimatedCounter end={50} suffix="+" />
+                </div>
+                <div className="text-[#0a2a4a] text-sm md:text-base">Employees</div>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.6 }}
+                transition={{ duration: 0.8, ease: 'easeOut' }}
+                className="text-center p-3 md:p-4 bg-white/50 rounded-lg"
+              >
+                <div className="text-[#FFD700]">
+                  <AnimatedCounter end={100} suffix="+" />
+                </div>
+                <div className="text-[#0a2a4a] text-sm md:text-base">Projects Completed</div>
               </motion.div>
             </div>
             <Link 
-              href="/about"
+              href="/aboutus"
               className="inline-block bg-gradient-to-r from-[#BF953F] via-[#FCF6BA] to-[#B38728] text-[#1a1a1a] px-6 py-3 rounded-lg text-base font-semibold shadow-lg hover:from-[#FFF9D4] hover:via-[#DBA23A] hover:to-[#E6B94F] hover:scale-105 hover:shadow-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#E6B94F] active:scale-95"
             >
               Learn More About Us

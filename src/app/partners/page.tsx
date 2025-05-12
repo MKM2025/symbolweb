@@ -62,17 +62,19 @@ export default function PartnersPage() {
         <div className="relative z-20 flex flex-col items-start justify-center w-full h-full text-left px-4 max-w-2xl mx-auto md:ml-48">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.6 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
-            className="text-3xl sm:text-4xl md:text-4xl font-bold text-[#FFF9C4] mb-4"
+            className="text-3xl sm:text-4xl md:text-4xl font-bold text-[#FFF9C4] mb-4 mt-[1em] text-center md:text-left w-full max-w-full"
           >
             Our Technology Partners
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.6 }}
             transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
-            className="text-base sm:text-lg md:text-lg text-[#FFF9C4] max-w-2xl"
+            className="text-base sm:text-lg md:text-lg text-[#FFF9C4] w-full max-w-full text-center md:text-left"
           >
             Collaborating with Industry Leaders and Top Tech Innovators to deliver Cutting-Edge Solutions.
           </motion.p>
@@ -85,7 +87,15 @@ export default function PartnersPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:max-w-7xl lg:mx-auto">
             {Object.entries(partnersByCategory).map(([category, categoryPartners]) => (
               <div key={category} className="mb-8 bg-white rounded-2xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.16)] transition-all duration-300">
-                <h2 className="text-2xl font-bold mb-6 text-gray-900 text-center lg:text-left border-b border-gray-100 pb-4">{category}</h2>
+                <motion.h2
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false, amount: 0.6 }}
+                  transition={{ duration: 0.7, ease: 'easeOut' }}
+                  className="text-2xl font-bold mb-6 text-gray-900 text-center lg:text-left border-b border-gray-100 pb-4"
+                >
+                  {category}
+                </motion.h2>
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
                   {categoryPartners.map((partner) => (
                     <div 
@@ -113,20 +123,28 @@ export default function PartnersPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-6">Become a Partner</h2>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            We're always looking to expand our network of technology partners. If you're interested in partnering with Symbol Technologies, we'd love to hear from you.
-          </p>
-          <Link 
-            href="/contact"
-            className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors inline-block"
-          >
-            Contact Us
-          </Link>
+      <motion.section
+        className="py-16 bg-gray-50"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, amount: 0.3 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">Become a Partner</h2>
+            <p className="mt-4 text-lg text-gray-600">
+              Whether you're a technology vendor or a joint contractor, we're always open to meaningful collaboration. If you're interested in working with Symbol Technologies to deliver impactful solutions, we'd be glad to connect with you.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-block mt-6 bg-[#0a2a4a] text-[#FFD700] px-6 py-3 rounded-lg font-semibold hover:bg-blue-950 transition-colors"
+            >
+              Become a Partner
+            </Link>
+          </div>
         </div>
-      </section>
+      </motion.section>
     </main>
   );
 } 

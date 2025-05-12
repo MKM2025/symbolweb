@@ -162,7 +162,7 @@ export default function ServicesPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.6 }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
-              className="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-2 sm:mb-4 md:mb-6 drop-shadow-lg max-w-lg text-left"
+              className="text-3xl sm:text-4xl md:text-6xl font-bold text-[#FFF9C4] mb-2 sm:mb-4 md:mb-6 drop-shadow-lg max-w-full text-center md:text-left w-full"
             >
               Comprehensive IT Solutions for a Smarter Future
             </motion.h1>
@@ -171,7 +171,7 @@ export default function ServicesPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.6 }}
               transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
-              className="text-lg sm:text-lg md:text-xl text-gray-100 mb-4 sm:mb-6 md:mb-8 drop-shadow-md max-w-xl text-left"
+              className="text-lg sm:text-lg md:text-xl text-[#FFF9C4] mb-4 sm:mb-6 md:mb-8 drop-shadow-md max-w-full text-center md:text-left w-full"
             >
               Symbol Technologies delivers AI-driven, end-to-end digital solutions—from cybersecurity and cloud infrastructure to automation—empowering modern enterprises with agility, resilience, and innovation.
             </motion.p>
@@ -180,7 +180,7 @@ export default function ServicesPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.6 }}
               transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
-              className="mt-6"
+              className="mt-6 flex justify-center md:justify-start w-full"
             >
               <a
                 href="#security-solutions"

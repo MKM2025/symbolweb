@@ -34,7 +34,7 @@ export default function ContactPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
-            className="text-3xl sm:text-4xl md:text-4xl font-bold text-[#FFF9C4] mb-4"
+            className="text-3xl sm:text-4xl md:text-4xl font-bold text-[#FFF9C4] mb-4 mt-[1em] text-center md:text-left w-full max-w-full"
           >
             Tell us about your issue
           </motion.h1>
@@ -42,7 +42,7 @@ export default function ContactPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
-            className="text-base sm:text-lg md:text-lg text-[#FFF9C4] max-w-2xl"
+            className="text-base sm:text-lg md:text-lg text-[#FFF9C4] w-full max-w-full text-center md:text-left"
           >
             Whether it is AI & Automation, Cloud, Cybersecurity, BPO, System Integration, and IT Consulting. Whether you have a project in mind or just need advice, our experts are ready to assist.
           </motion.p>
