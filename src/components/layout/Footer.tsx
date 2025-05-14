@@ -19,31 +19,49 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-bold mb-4">Solutions</h4>
             <ul className="space-y-2">
-              <li><Link href="/solutions/cybersecurity" className="text-gray-400 hover:text-[#FFD700]">Cybersecurity</Link></li>
-              <li><Link href="/solutions/cloud-infrastructure" className="text-gray-400 hover:text-[#FFD700]">Cloud Infrastructure</Link></li>
-              <li><Link href="/solutions/managed-services" className="text-gray-400 hover:text-[#FFD700]">Managed Services</Link></li>
+              <li><Link href="/solutions#security-solutions" className="text-gray-400 hover:text-[#FFD700]">Security Solutions</Link></li>
+              <li><Link href="/solutions#financial-technology" className="text-gray-400 hover:text-[#FFD700]">Financial Technology Solutions</Link></li>
+              <li><Link href="/solutions#cloud-infrastructure" className="text-gray-400 hover:text-[#FFD700]">Cloud & Infrastructure</Link></li>
+              <li><Link href="/solutions#data-ai" className="text-gray-400 hover:text-[#FFD700]">Data, AI & Intelligence</Link></li>
+              <li><Link href="/solutions#managed-it" className="text-gray-400 hover:text-[#FFD700]">Managed IT Services</Link></li>
             </ul>
           </div>
           <div>
             <h4 className="text-lg font-bold mb-4">BPO</h4>
             <ul className="space-y-2">
-              <li><Link href="/bpo" className="text-gray-400 hover:text-[#FFD700]">Our BPO Services</Link></li>
+              <li><Link href="/bpo/software-development" className="text-gray-400 hover:text-[#FFD700]">Software Development</Link></li>
+              <li><Link href="/bpo/web-services" className="text-gray-400 hover:text-[#FFD700]">Web Services</Link></li>
+              <li><Link href="/bpo/devops-infrastructure" className="text-gray-400 hover:text-[#FFD700]">DevOps & Infrastructure</Link></li>
+              <li><Link href="/bpo/technical-support" className="text-gray-400 hover:text-[#FFD700]">Technical Support</Link></li>
+              <li><Link href="/bpo/network-security" className="text-gray-400 hover:text-[#FFD700]">Network & Security</Link></li>
+              <li><Link href="/bpo/ai-automation" className="text-gray-400 hover:text-[#FFD700]">AI & Automation</Link></li>
+              <li><Link href="/bpo/ui-ux-design" className="text-gray-400 hover:text-[#FFD700]">UI/UX Design</Link></li>
+              <li><Link href="/bpo/data-services" className="text-gray-400 hover:text-[#FFD700]">Data Services</Link></li>
+              <li><Link href="/bpo/dedicated-teams" className="text-gray-400 hover:text-[#FFD700]">Dedicated Teams</Link></li>
             </ul>
           </div>
           <div>
             <h4 className="text-lg font-bold mb-4">Company</h4>
-            <ul className="space-y-2">
+            <ul className="space-y-2 mb-4">
               <li><Link href="/about-us" className="text-gray-400 hover:text-[#FFD700]">About Us</Link></li>
-              <li><Link href="/contact" className="text-gray-400 hover:text-[#FFD700]">Contact</Link></li>
-              <li><Link href="/insights" className="text-gray-400 hover:text-[#FFD700]">Insights</Link></li>
+              <li><Link href="/partners" className="text-gray-400 hover:text-[#FFD700]">Partners</Link></li>
+              <li><Link href="/clients" className="text-gray-400 hover:text-[#FFD700]">Our Clients</Link></li>
+            </ul>
+            <h4 className="text-lg font-bold mb-2 mt-6">Contact</h4>
+            <ul className="space-y-1">
+              <li className="text-gray-400">Email: info@symboltech.net</li>
+              <li className="text-gray-400">Sales: +251-910-822-333</li>
+              <li className="text-gray-400">CEO: +251-911-523-249</li>
+              <li className="text-gray-400">Support: +251-116-630-664</li>
             </ul>
           </div>
           <div>
-            <h4 className="text-lg font-bold mb-4">Contact</h4>
-            <p className="text-gray-400">Email: info@symboltech.net</p>
-            <p className="text-gray-400">Sales: +251-910-822-333</p>
-            <p className="text-gray-400">CEO: +251-911-523-249</p>
-            <p className="text-gray-400">Support: +251-116-630-664</p>
+            <h4 className="text-lg font-bold mb-4">Insights</h4>
+            <ul className="space-y-2">
+              <li><Link href="/insights#blogs" className="text-gray-400 hover:text-[#FFD700]">Blogs</Link></li>
+              <li><Link href="/insights#case-studies" className="text-gray-400 hover:text-[#FFD700]">Case Studies</Link></li>
+              <li><Link href="/insights#white-papers" className="text-gray-400 hover:text-[#FFD700]">White Papers</Link></li>
+            </ul>
           </div>
         </div>
       </div>

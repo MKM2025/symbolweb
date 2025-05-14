@@ -86,30 +86,33 @@ export default function PartnersPage() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:max-w-7xl lg:mx-auto">
             {Object.entries(partnersByCategory).map(([category, categoryPartners]) => (
-              <div key={category} className="mb-8 bg-white rounded-2xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.16)] transition-all duration-300">
+              <div
+                key={category}
+                className="mb-8 rounded-2xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.16)] transition-all duration-300 flex flex-col items-center"
+                style={{ background: 'linear-gradient(120deg, rgba(255,245,200,0.13) 0%, rgba(255,230,140,0.08) 100%)' }}
+              >
                 <motion.h2
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: false, amount: 0.6 }}
                   transition={{ duration: 0.7, ease: 'easeOut' }}
-                  className="text-2xl font-bold mb-6 text-gray-900 text-center lg:text-left border-b border-gray-100 pb-4"
+                  className="text-2xl font-bold mb-6 text-gray-900 text-center border-b border-gray-100 pb-4 w-full"
                 >
                   {category}
                 </motion.h2>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                <div className="flex flex-wrap justify-center gap-x-6 gap-y-4">
                   {categoryPartners.map((partner) => (
-                    <div 
+                    <div
                       key={partner.name}
-                      className="bg-gray-50 p-2 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105 flex items-center justify-center aspect-[2/1] lg:aspect-[3/2]"
+                      className="bg-gray-50 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105 flex items-center justify-center w-40 h-24 p-2 md:p-4"
                     >
                       <div className="relative w-full h-full flex items-center justify-center">
                         <Image
                           src={`/images/partners/${partner.name.toLowerCase()}.png`}
                           alt={`${partner.name} logo`}
                           fill
-                          className="object-contain p-1 lg:p-0"
+                          className="object-contain w-full h-full"
                           sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 20vw"
-                          style={{ objectFit: 'contain' }}
                           priority
                         />
                       </div>

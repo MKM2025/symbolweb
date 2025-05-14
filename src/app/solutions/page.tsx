@@ -14,19 +14,19 @@ const solutions = [
       {
         title: "Comprehensive Cybersecurity for a Resilient Digital Future",
         description: "The threat landscape is constantly evolving, demanding a proactive, intelligent, and integrated approach to security. Symbol Technologies provides end-to-end cybersecurity solutions and services designed to protect your critical assets, detect threats early, respond decisively, and ensure compliance.",
-        image: "https://via.placeholder.com/500x300/0A0F2C/D4AF37?text=Cybersecurity",
+        image: "/images/solutions/cybersecurity.webp",
         link: "/solutions/cybersecurity"
       },
       {
         title: "Intelligent Security Operations & 24/7 Managed Detection and Response",
         description: "Gain continuous visibility and expert oversight of your security posture with our comprehensive Security Operations and Managed Security Services, delivered through ST-CyberSOC Team.",
-        image: "https://via.placeholder.com/500x300/1A237E/FFD700?text=SecOps+%26+MSSP",
+        image: "/images/solutions/cybersoc.webp",
         link: "/solutions/secops"
       },
       {
         title: "Proactively Reduce Your Attack Surface",
         description: "Understand and minimize your cyber risk by continuously identifying, prioritizing, and remediating vulnerabilities across your entire digital footprint. Our services leverage leading platforms like Tenable and Rapid7.",
-        image: "https://via.placeholder.com/500x300/263238/FFD700?text=Vulnerability",
+        image: "/images/solutions/proactive.webp",
         link: "/solutions/vulnerability"
       }
     ]
@@ -39,7 +39,7 @@ const solutions = [
       {
         title: "Secure and Compliant Solutions for the Modern Financial Services Industry",
         description: "The financial sector faces unique challenges. Symbol Technologies provides specialized FinTech solutions and advisory services to help institutions manage risk, ensure compliance, and prevent financial crime.",
-        image: "https://via.placeholder.com/500x300/283593/FFD700?text=FinTech",
+        image: "/images/solutions/securefinancial.webp",
         link: "/solutions/fintech"
       },
       {
@@ -270,7 +270,7 @@ export default function ServicesPage() {
                 {/* Left Side (Image) */}
                 <div className="w-full md:w-1/2">
                   <img
-                    src={sectionIndex === 0 && index === 0 ? "/images/solutions/cybersecurity.webp" : "/images/placeholder.jpg"}
+                    src={subsection.image}
                     alt="Solution"
                     className="rounded-lg w-full h-auto object-cover"
                   />
