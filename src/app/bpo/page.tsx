@@ -140,9 +140,8 @@ export default function BPOPage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[500px] md:h-[600px] w-full">
+      <section className="relative h-[500px] md:h-[600px] w-full max-w-[1920px] mx-auto overflow-hidden">
         <div className="absolute inset-0 bg-[#0a192f]">
-          {/* Desktop/Landscape Image */}
           <Image
             src="/images/bpo/hero_bpo_desktop.webp"
             alt="BPO Services Hero"
@@ -150,9 +149,8 @@ export default function BPOPage() {
             priority
             className="object-cover object-center hidden md:block"
             quality={90}
-            sizes="(max-width: 768px) 100vw, 100vw"
+            sizes="100vw"
           />
-          {/* Mobile Portrait Image */}
           <Image
             src="/images/bpo/hero_bpo_mobile.webp"
             alt="BPO Services Hero"
@@ -160,26 +158,19 @@ export default function BPOPage() {
             priority
             className="object-cover object-center md:hidden"
             quality={90}
-            sizes="(max-width: 768px) 100vw, 100vw"
+            sizes="100vw"
           />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent" />
         </div>
 
-        {/* Hero Content */}
-        <div className="absolute inset-0 flex items-start justify-start pt-2 md:justify-start md:pt-0">
-          <div
-            className={
-              "container mx-auto px-4 text-white pt-16 md:pt-0 md:max-w-2xl md:ml-16 md:mt-40 bpo-hero-landscape-mt" +
-              (isLandscape ? "" : " text-center md:text-left")
-            }
-            style={isLandscape ? { marginTop: '0.5rem' } : undefined}
-          >
+        <div className="relative h-full container mx-auto px-4 flex flex-col justify-center portrait:justify-start portrait:pt-16 landscape:items-start">
+          <div className="max-w-2xl ml-0 pl-4 sm:pl-8 portrait:ml-6 portrait:mt-0 landscape:mt-8 md:mt-[-150px] portrait:items-start portrait:text-left portrait:pr-8">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.6 }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
-              className="text-2xl sm:text-4xl md:text-6xl landscape:!text-[min(4.5vw,3rem)] font-bold text-[#FFF9C4] mb-2 sm:mb-4 md:mb-6 landscape:mb-3 drop-shadow-lg landscape:leading-tight max-w-lg landscape:text-left"
-              style={isLandscape ? { fontSize: '1.1rem', lineHeight: '1.15', maxWidth: '70vw', textAlign: 'left', marginLeft: 0 } : undefined}
+              className="text-2xl sm:text-4xl md:text-6xl font-bold text-[#FFF9C4] mb-2 sm:mb-4 md:mb-6 drop-shadow-lg leading-tight max-w-lg text-left"
             >
               Empowering Global Businesses with Next-Gen ICT & BPO Solutions
             </motion.h1>
@@ -188,8 +179,7 @@ export default function BPOPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.6 }}
               transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
-              className="text-base sm:text-lg md:text-xl landscape:!text-[min(2.2vw,1.2rem)] text-[#FFF9C4] mb-4 sm:mb-6 md:mb-8 landscape:mb-4 drop-shadow-md landscape:max-w-[90%] max-w-xl landscape:text-left"
-              style={isLandscape ? { fontSize: '0.8rem', lineHeight: '1.25', maxWidth: '70vw', textAlign: 'left', marginLeft: 0 } : undefined}
+              className="text-base sm:text-lg md:text-xl text-[#FFF9C4] mb-4 sm:mb-6 md:mb-8 drop-shadow-md max-w-xl text-left"
             >
               Streamline operations, enhance customer experience, and scale effortlessly with our cutting-edge IT support, automation, and back-office outsourcing services.
             </motion.p>

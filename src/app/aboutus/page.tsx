@@ -88,73 +88,278 @@ export default function AboutUsPage() {
         </div>
       </section>
 
-      {/* Statistics Section (from landing page) */}
-      <section className="py-6 md:py-12 bg-[#f1f5fb]">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-2 xs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6 mb-8 w-full max-w-none justify-center items-center place-items-center">
+      {/* Statistics Section */}
+      <motion.section
+        className="py-6 md:py-12 bg-white"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+      >
+        <div className="container mx-auto px-2 sm:px-4">
+          <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 flex flex-col gap-6 border border-gray-100 max-w-6xl mx-auto">
+            <motion.h2
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.5 }}
+              transition={{ duration: 0.7, ease: 'easeOut' }}
+              className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-[#0a2a4a]"
+            >
+              Key Metrics That Define Us
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.5 }}
+              transition={{ duration: 0.7, delay: 0.15, ease: 'easeOut' }}
+              className="text-lg sm:text-xl text-center text-gray-600 mb-4"
+            >
+              Trusted by thousands across industries and regions.
+            </motion.p>
+            <div className="grid grid-cols-2 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 w-full">
+            {/* Work force */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.6 }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
-              className="text-center p-3 md:p-4 bg-white/50 rounded-lg"
+                className="bg-gradient-to-br from-[#FFFCF5] via-[#FFF9E3] to-[#FFF6CC] border border-yellow-100 rounded-lg p-4 hover:shadow-md hover:scale-[1.02] transition-transform flex flex-col items-center justify-center text-center space-y-2"
             >
-              <div className="text-[#FFD700]">
-                <AnimatedCounter end={40} suffix="+" />
+                <div className="bg-blue-100 p-2 rounded-full w-8 h-8 flex items-center justify-center">
+                <svg className="w-8 h-8 text-blue-700" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <circle cx="7" cy="7" r="3" stroke="currentColor" fill="#e3eafc" />
+                  <circle cx="17" cy="7" r="3" stroke="currentColor" fill="#e3eafc" />
+                  <circle cx="12" cy="17" r="3" stroke="currentColor" fill="#e3eafc" />
+                </svg>
               </div>
-              <div className="text-[#0a2a4a] text-sm md:text-base">Clients Served</div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.6 }}
-              transition={{ duration: 0.8, ease: 'easeOut' }}
-              className="text-center p-3 md:p-4 bg-white/50 rounded-lg"
-            >
-              <div className="text-[#FFD700]">
-                <AnimatedCounter end={15} suffix="+" />
-              </div>
-              <div className="text-[#0a2a4a] text-sm md:text-base">Years in Tech</div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.6 }}
-              transition={{ duration: 0.8, ease: 'easeOut' }}
-              className="text-center p-3 md:p-4 bg-white/50 rounded-lg"
-            >
-              <div className="text-[#FFD700]">
-                <AnimatedCounter end={100000} suffix="+" />
-              </div>
-              <div className="text-[#0a2a4a] text-sm md:text-base">End Users Empowered</div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.6 }}
-              transition={{ duration: 0.8, ease: 'easeOut' }}
-              className="text-center p-3 md:p-4 bg-white/50 rounded-lg"
-            >
-              <div className="text-[#FFD700]">
+                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-[#0a2a4a] leading-tight text-center">
                 <AnimatedCounter end={50} suffix="+" />
               </div>
-              <div className="text-[#0a2a4a] text-sm md:text-base">Employees</div>
+                <div className="text-sm sm:text-base text-gray-500 font-medium">Work force</div>
             </motion.div>
+
+            {/* Certified Professionals */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.6 }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
-              className="text-center p-3 md:p-4 bg-white/50 rounded-lg"
+                className="bg-gradient-to-br from-[#FFFCF5] via-[#FFF9E3] to-[#FFF6CC] border border-yellow-100 rounded-lg p-4 hover:shadow-md hover:scale-[1.02] transition-transform flex flex-col items-center justify-center text-center space-y-2"
             >
-              <div className="text-[#FFD700]">
+                <div className="bg-blue-100 p-2 rounded-full w-8 h-8 flex items-center justify-center">
+                <svg className="w-8 h-8 text-blue-700" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <rect x="4" y="4" width="16" height="16" rx="2" fill="#e3eafc" stroke="currentColor" />
+                  <path d="M8 12h8M8 16h8M8 8h8" stroke="#1976d2" strokeWidth="1.5" />
+                </svg>
+              </div>
+                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-[#0a2a4a] leading-tight text-center">
+                <AnimatedCounter end={30} suffix="+" />
+              </div>
+                <div className="text-sm sm:text-base text-gray-500 font-medium">Certified Professionals</div>
+            </motion.div>
+
+            {/* Satisfied Customers */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.6 }}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
+                className="bg-gradient-to-br from-[#FFFCF5] via-[#FFF9E3] to-[#FFF6CC] border border-yellow-100 rounded-lg p-4 hover:shadow-md hover:scale-[1.02] transition-transform flex flex-col items-center justify-center text-center space-y-2"
+            >
+                <div className="bg-blue-100 p-2 rounded-full w-8 h-8 flex items-center justify-center">
+                <svg className="w-8 h-8 text-blue-700" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <circle cx="12" cy="8" r="4" fill="#e3eafc" stroke="currentColor" />
+                  <path d="M4 20c0-4 8-4 8-4s8 0 8 4" stroke="#1976d2" strokeWidth="1.5" fill="none" />
+                </svg>
+              </div>
+                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-[#0a2a4a] leading-tight text-center">
                 <AnimatedCounter end={100} suffix="+" />
               </div>
-              <div className="text-[#0a2a4a] text-sm md:text-base">Projects Completed</div>
+                <div className="text-sm sm:text-base text-gray-500 font-medium">Satisfied Customers</div>
             </motion.div>
+
+            {/* Awards */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.6 }}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
+                className="bg-gradient-to-br from-[#FFFCF5] via-[#FFF9E3] to-[#FFF6CC] border border-yellow-100 rounded-lg p-4 hover:shadow-md hover:scale-[1.02] transition-transform flex flex-col items-center justify-center text-center space-y-2"
+            >
+                <div className="bg-blue-100 p-2 rounded-full w-8 h-8 flex items-center justify-center">
+                <svg className="w-8 h-8 text-blue-700" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path d="M7 4h10v2a5 5 0 0 1-10 0V4z" fill="#e3eafc" stroke="currentColor" />
+                  <path d="M4 6v2a7 7 0 0 0 7 7h2a7 7 0 0 0 7-7V6" stroke="#1976d2" strokeWidth="1.5" fill="none" />
+                  <rect x="9" y="18" width="6" height="2" rx="1" fill="#e3eafc" stroke="currentColor" />
+                </svg>
+              </div>
+                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-[#0a2a4a] leading-tight text-center">
+                <AnimatedCounter end={8} suffix="+" />
+              </div>
+                <div className="text-sm sm:text-base text-gray-500 font-medium">Awards</div>
+            </motion.div>
+
+            {/* Trainees */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.6 }}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
+                className="bg-gradient-to-br from-[#FFFCF5] via-[#FFF9E3] to-[#FFF6CC] border border-yellow-100 rounded-lg p-4 hover:shadow-md hover:scale-[1.02] transition-transform flex flex-col items-center justify-center text-center space-y-2"
+            >
+                <div className="bg-blue-100 p-2 rounded-full w-8 h-8 flex items-center justify-center">
+                <svg className="w-8 h-8 text-blue-700" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path d="M2 7l10-4 10 4-10 4-10-4z" fill="#e3eafc" stroke="currentColor" />
+                  <path d="M12 11v7" stroke="#1976d2" strokeWidth="1.5" />
+                  <path d="M7 17h10" stroke="#1976d2" strokeWidth="1.5" />
+                </svg>
+              </div>
+                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-[#0a2a4a] leading-tight text-center">
+                <AnimatedCounter end={1000} suffix="+" />
+              </div>
+                <div className="text-sm sm:text-base text-gray-500 font-medium">Trainees</div>
+              </motion.div>
+
+              {/* Network Users */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.6 }}
+                transition={{ duration: 0.8, ease: 'easeOut' }}
+                className="bg-gradient-to-br from-[#FFFCF5] via-[#FFF9E3] to-[#FFF6CC] border border-yellow-100 rounded-lg p-4 hover:shadow-md hover:scale-[1.02] transition-transform flex flex-col items-center justify-center text-center space-y-2"
+              >
+                <div className="bg-blue-100 p-2 rounded-full w-8 h-8 flex items-center justify-center">
+                  <svg className="w-8 h-8 text-blue-700" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#1976d2" strokeWidth="1.5" fill="none" />
+                  </svg>
+                </div>
+                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-[#0a2a4a] leading-tight text-center">
+                  <AnimatedCounter end={300000} suffix="+" />
+                </div>
+                <div className="text-sm sm:text-base text-gray-500 font-medium">Network Users</div>
+              </motion.div>
+
+              {/* DC Facility Users */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.6 }}
+                transition={{ duration: 0.8, ease: 'easeOut' }}
+                className="bg-gradient-to-br from-[#FFFCF5] via-[#FFF9E3] to-[#FFF6CC] border border-yellow-100 rounded-lg p-4 hover:shadow-md hover:scale-[1.02] transition-transform flex flex-col items-center justify-center text-center space-y-2"
+              >
+                <div className="bg-blue-100 p-2 rounded-full w-8 h-8 flex items-center justify-center">
+                  <svg className="w-8 h-8 text-blue-700" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <rect x="4" y="4" width="16" height="16" rx="2" fill="#e3eafc" stroke="currentColor" />
+                    <path d="M8 8h8M8 12h8M8 16h8" stroke="#1976d2" strokeWidth="1.5" />
+                  </svg>
+                </div>
+                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-[#0a2a4a] leading-tight text-center">
+                  <AnimatedCounter end={100000} suffix="+" />
+                </div>
+                <div className="text-sm sm:text-base text-gray-500 font-medium">DC Facility Users</div>
+              </motion.div>
+
+              {/* Secure Email Users */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.6 }}
+                transition={{ duration: 0.8, ease: 'easeOut' }}
+                className="bg-gradient-to-br from-[#FFFCF5] via-[#FFF9E3] to-[#FFF6CC] border border-yellow-100 rounded-lg p-4 hover:shadow-md hover:scale-[1.02] transition-transform flex flex-col items-center justify-center text-center space-y-2"
+              >
+                <div className="bg-blue-100 p-2 rounded-full w-8 h-8 flex items-center justify-center">
+                  <svg className="w-8 h-8 text-blue-700" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke="#1976d2" strokeWidth="1.5" fill="none" />
+                  </svg>
+                </div>
+                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-[#0a2a4a] leading-tight text-center">
+                  <AnimatedCounter end={60000} suffix="+" />
+                </div>
+                <div className="text-sm sm:text-base text-gray-500 font-medium">Secure Email Users</div>
+              </motion.div>
+
+              {/* Private Cloud Users */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.6 }}
+                transition={{ duration: 0.8, ease: 'easeOut' }}
+                className="bg-gradient-to-br from-[#FFFCF5] via-[#FFF9E3] to-[#FFF6CC] border border-yellow-100 rounded-lg p-4 hover:shadow-md hover:scale-[1.02] transition-transform flex flex-col items-center justify-center text-center space-y-2"
+              >
+                <div className="bg-blue-100 p-2 rounded-full w-8 h-8 flex items-center justify-center">
+                  <svg className="w-8 h-8 text-blue-700" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path d="M3 15a4 4 0 004 4h9a5 5 0 005-5v-4a4 4 0 00-4-4h-9a5 5 0 00-5 5v4z" stroke="#1976d2" strokeWidth="1.5" fill="none" />
+                    <path d="M12 12v4M8 14h8" stroke="#1976d2" strokeWidth="1.5" />
+                  </svg>
+                </div>
+                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-[#0a2a4a] leading-tight text-center">
+                  <AnimatedCounter end={80000} suffix="+" />
+                </div>
+                <div className="text-sm sm:text-base text-gray-500 font-medium">Private Cloud Users</div>
+              </motion.div>
+
+              {/* Smart Class Students */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.6 }}
+                transition={{ duration: 0.8, ease: 'easeOut' }}
+                className="bg-gradient-to-br from-[#FFFCF5] via-[#FFF9E3] to-[#FFF6CC] border border-yellow-100 rounded-lg p-4 hover:shadow-md hover:scale-[1.02] transition-transform flex flex-col items-center justify-center text-center space-y-2"
+              >
+                <div className="bg-blue-100 p-2 rounded-full w-8 h-8 flex items-center justify-center">
+                  <svg className="w-8 h-8 text-blue-700" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path d="M12 14l9-5-9-5-9 5 9 5z" fill="#e3eafc" stroke="currentColor" />
+                    <path d="M12 14l9-5-9-5-9 5 9 5z" stroke="#1976d2" strokeWidth="1.5" fill="none" />
+                    <path d="M12 14v6" stroke="#1976d2" strokeWidth="1.5" />
+                  </svg>
+                </div>
+                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-[#0a2a4a] leading-tight text-center">
+                  <AnimatedCounter end={20000} suffix="+" />
+                </div>
+                <div className="text-sm sm:text-base text-gray-500 font-medium">Smart Class Students</div>
+              </motion.div>
+
+              {/* UC Solution Users */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.6 }}
+                transition={{ duration: 0.8, ease: 'easeOut' }}
+                className="bg-gradient-to-br from-[#FFFCF5] via-[#FFF9E3] to-[#FFF6CC] border border-yellow-100 rounded-lg p-4 hover:shadow-md hover:scale-[1.02] transition-transform flex flex-col items-center justify-center text-center space-y-2"
+              >
+                <div className="bg-blue-100 p-2 rounded-full w-8 h-8 flex items-center justify-center">
+                  <svg className="w-8 h-8 text-blue-700" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" stroke="#1976d2" strokeWidth="1.5" fill="none" />
+                  </svg>
+                </div>
+                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-[#0a2a4a] leading-tight text-center">
+                  <AnimatedCounter end={2000} suffix="+" />
+                </div>
+                <div className="text-sm sm:text-base text-gray-500 font-medium">UC Solution Users</div>
+              </motion.div>
+
+              {/* VC Solution Users */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.6 }}
+                transition={{ duration: 0.8, ease: 'easeOut' }}
+                className="bg-gradient-to-br from-[#FFFCF5] via-[#FFF9E3] to-[#FFF6CC] border border-yellow-100 rounded-lg p-4 hover:shadow-md hover:scale-[1.02] transition-transform flex flex-col items-center justify-center text-center space-y-2"
+              >
+                <div className="bg-blue-100 p-2 rounded-full w-8 h-8 flex items-center justify-center">
+                  <svg className="w-8 h-8 text-blue-700" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" stroke="#1976d2" strokeWidth="1.5" fill="none" />
+                  </svg>
+                </div>
+                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-[#0a2a4a] leading-tight text-center">
+                  <AnimatedCounter end={2000} suffix="+" />
+                </div>
+                <div className="text-sm sm:text-base text-gray-500 font-medium">VC Solution Users</div>
+            </motion.div>
+            </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Mission & Vision Section */}
       <section className="py-12 bg-gray-50">

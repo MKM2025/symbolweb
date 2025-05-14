@@ -40,10 +40,10 @@ export default function Footer() {
           </div>
           <div>
             <h4 className="text-lg font-bold mb-4">Contact</h4>
-            <p className="text-gray-400">Email: info@symboltech.com</p>
-            <p className="text-gray-400">Phone: +251-910-822-333</p>
-            <p className="text-gray-400">Phone: +251-911-523-249</p>
-            <p className="text-gray-400">Phone: +251-116-630-664</p>
+            <p className="text-gray-400">Email: info@symboltech.net</p>
+            <p className="text-gray-400">Sales: +251-910-822-333</p>
+            <p className="text-gray-400">CEO: +251-911-523-249</p>
+            <p className="text-gray-400">Support: +251-116-630-664</p>
           </div>
         </div>
       </div>

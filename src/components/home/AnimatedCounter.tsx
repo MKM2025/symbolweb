@@ -51,7 +51,7 @@ export default function AnimatedCounter({ end, duration = 2000, suffix = '' }: A
   }, [isInView, end, duration]);
 
   return (
-    <div ref={countRef} className="text-4xl font-bold text-[#0a2a4a] mb-2">
+    <div ref={countRef}>
       {count.toLocaleString()}{suffix}
     </div>
   );

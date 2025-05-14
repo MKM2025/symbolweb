@@ -43,66 +43,66 @@ export default function Home() {
               cybersecurity defenses and advanced FinTech solutions to cloud transformation and 
               resilient infrastructure, we provide the end-to-end capabilities you need to thrive.
             </p>
-            <div className="grid grid-cols-2 xs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6 mb-8 w-full max-w-none justify-center items-center place-items-center">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-6 mb-8 w-full max-w-none">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false, amount: 0.6 }}
                 transition={{ duration: 0.8, ease: 'easeOut' }}
-                className="text-center p-3 md:p-4 bg-white/50 rounded-lg"
+                className="bg-gradient-to-br from-[#FFF9D4] via-[#FFF9E6] to-[#FFF9F2] rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 flex flex-col items-center justify-center border border-[#FFE5A0]/20"
               >
-                <div className="text-[#FFD700]">
-                  <AnimatedCounter end={40} suffix="+" />
-                </div>
-                <div className="text-[#0a2a4a] text-sm md:text-base">Clients Served</div>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, amount: 0.6 }}
-                transition={{ duration: 0.8, ease: 'easeOut' }}
-                className="text-center p-3 md:p-4 bg-white/50 rounded-lg"
-              >
-                <div className="text-[#FFD700]">
+                <div className="text-2xl md:text-3xl font-bold text-[#0a2a4a] mb-2">
                   <AnimatedCounter end={15} suffix="+" />
                 </div>
-                <div className="text-[#0a2a4a] text-sm md:text-base">Years in Tech</div>
+                <div className="text-[#0a2a4a] text-sm md:text-base font-medium">Years in Tech</div>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false, amount: 0.6 }}
                 transition={{ duration: 0.8, ease: 'easeOut' }}
-                className="text-center p-3 md:p-4 bg-white/50 rounded-lg"
+                className="bg-gradient-to-br from-[#FFF9D4] via-[#FFF9E6] to-[#FFF9F2] rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 flex flex-col items-center justify-center border border-[#FFE5A0]/20"
               >
-                <div className="text-[#FFD700]">
-                  <AnimatedCounter end={100000} suffix="+" />
-                </div>
-                <div className="text-[#0a2a4a] text-sm md:text-base">End Users Empowered</div>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, amount: 0.6 }}
-                transition={{ duration: 0.8, ease: 'easeOut' }}
-                className="text-center p-3 md:p-4 bg-white/50 rounded-lg"
-              >
-                <div className="text-[#FFD700]">
+                <div className="text-2xl md:text-3xl font-bold text-[#0a2a4a] mb-2">
                   <AnimatedCounter end={50} suffix="+" />
                 </div>
-                <div className="text-[#0a2a4a] text-sm md:text-base">Employees</div>
+                <div className="text-[#0a2a4a] text-sm md:text-base font-medium">Work force</div>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false, amount: 0.6 }}
                 transition={{ duration: 0.8, ease: 'easeOut' }}
-                className="text-center p-3 md:p-4 bg-white/50 rounded-lg"
+                className="bg-gradient-to-br from-[#FFF9D4] via-[#FFF9E6] to-[#FFF9F2] rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 flex flex-col items-center justify-center border border-[#FFE5A0]/20"
               >
-                <div className="text-[#FFD700]">
+                <div className="text-2xl md:text-3xl font-bold text-[#0a2a4a] mb-2">
                   <AnimatedCounter end={100} suffix="+" />
                 </div>
-                <div className="text-[#0a2a4a] text-sm md:text-base">Projects Completed</div>
+                <div className="text-[#0a2a4a] text-sm md:text-base font-medium">Satisfied Customers</div>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.6 }}
+                transition={{ duration: 0.8, ease: 'easeOut' }}
+                className="bg-gradient-to-br from-[#FFF9D4] via-[#FFF9E6] to-[#FFF9F2] rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 flex flex-col items-center justify-center border border-[#FFE5A0]/20"
+              >
+                <div className="text-2xl md:text-3xl font-bold text-[#0a2a4a] mb-2">
+                  <AnimatedCounter end={8} suffix="+" />
+                </div>
+                <div className="text-[#0a2a4a] text-sm md:text-base font-medium">Awards</div>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.6 }}
+                transition={{ duration: 0.8, ease: 'easeOut' }}
+                className="bg-gradient-to-br from-[#FFF9D4] via-[#FFF9E6] to-[#FFF9F2] rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 flex flex-col items-center justify-center border border-[#FFE5A0]/20"
+              >
+                <div className="text-2xl md:text-3xl font-bold text-[#0a2a4a] mb-2">
+                  <AnimatedCounter end={300000} suffix="+" />
+                </div>
+                <div className="text-[#0a2a4a] text-sm md:text-base font-medium">Users in Networks we Built</div>
               </motion.div>
             </div>
             <Link 
@@ -139,7 +139,7 @@ export default function Home() {
             {bpoCategories.map((cat) => (
               <Link
                 key={cat.title}
-                href={cat.href}
+                href="/bpo"
                 className="bg-[#0a2a51] text-[#FFE5A0] rounded-lg shadow hover:shadow-lg border border-blue-100 hover:bg-gradient-to-r hover:from-[#BF953F] hover:via-[#FCF6BA] hover:to-[#B38728] hover:text-[#0a2a51] p-3 md:p-4 flex flex-col items-center transition-all duration-200 group cursor-pointer"
               >
                 <span className="text-xl md:text-2xl mb-2 group-hover:text-[#FFE5A0] transition-colors">{cat.icon}</span>
