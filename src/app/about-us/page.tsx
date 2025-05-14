@@ -97,9 +97,9 @@ export default function AboutUsPage() {
               transition={{ duration: 0.8 }}
               className="bg-[#0a2a4a] text-[#BF953F] rounded-2xl p-8 shadow-lg"
             >
-              <h2 className="text-2xl font-bold mb-4">Our Mission</h2>
-              <p className="text-lg leading-relaxed">
-                To empower businesses and institutions across Ethiopia with innovative, reliable, and integrated ICT solutions that drive efficiency, security, and long-term success.
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">Our Mission</h2>
+              <p className="text-lg leading-relaxed text-justify">
+                To empower organizations with AI-driven ICT solutions that accelerate digital transformation, enhance operational efficiency, and ensure robust, future-ready systems. By integrating cutting-edge technologies and ethical business practices, we deliver secure, scalable, and cost-effective services that maximize value for our clients. Together with our trusted partners, we strive to shape Africa's digital landscape and drive sustainable impact across industries.
               </p>
             </motion.div>
 
@@ -110,9 +110,9 @@ export default function AboutUsPage() {
               transition={{ duration: 0.8 }}
               className="bg-[#BF953F] text-[#0a2a4a] rounded-2xl p-8 shadow-lg"
             >
-              <h2 className="text-2xl font-bold mb-4">Our Vision</h2>
-              <p className="text-lg leading-relaxed">
-                To be Ethiopia's most trusted and advanced ICT solution provider—leading the digital transformation of organizations through excellence, integrity, and innovation.
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">Our Vision</h2>
+              <p className="text-lg leading-relaxed text-justify">
+                To be one of Africa's leading ICT solutions provider, pioneering AI-driven digital transformation and setting the benchmark for enterprise IT and cybersecurity. Through innovation, automation, and intelligent systems integration, we empower organizations with secure, scalable, and future-ready technologies that drive sustainable growth.
               </p>
             </motion.div>
           </div>
@@ -133,23 +133,16 @@ export default function AboutUsPage() {
             <p className="text-lg text-gray-700 mb-8 text-center">
               We specialize in delivering reliable, integrated ICT solutions—and we've done it successfully, time and again, for organizations across Ethiopia.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {services.map((service, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="flex items-center space-x-2 text-gray-700"
-                >
-                  <svg className="w-5 h-5 text-[#BF953F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
+                <li key={index} className="flex items-start gap-3 text-gray-700 text-base md:text-lg">
+                  <span className="mt-1 text-[#BF953F]">
+                    <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="inline align-middle"><circle cx="11" cy="11" r="10" stroke="#BF953F" strokeWidth="2" fill="#FFF9C4"/><path d="M7 11l3 3 5-5" stroke="#0a2a4a" strokeWidth="2"/></svg>
+                  </span>
                   <span>{service}</span>
-                </motion.div>
+                </li>
               ))}
-            </div>
+            </ul>
           </motion.div>
         </div>
       </section>
