@@ -77,9 +77,9 @@ export default function Navbar() {
       { name: 'Managed IT Services', href: '/solutions#managed-it' }
     ],
     insights: [
-      { name: 'Blogs', href: '/insights/blogs' },
-      { name: 'Case Studies', href: '/insights/case-studies' },
-      { name: 'White Papers', href: '/insights/white-papers' }
+      { name: 'Blogs', href: '/insights#blogs' },
+      { name: 'Case Studies', href: '/insights#case-studies' },
+      { name: 'White Papers', href: '/insights#white-papers' }
     ]
   };
 

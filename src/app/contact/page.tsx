@@ -1,14 +1,109 @@
 'use client';
-import React from 'react';
+import React, { useState, ChangeEvent, FormEvent } from 'react';
 import { Linkedin, Facebook } from 'lucide-react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
+interface FormData {
+  fullName: string;
+  email: string;
+  phone: string;
+  company: string;
+  service: string;
+  message: string;
+  consent: boolean;
+}
+
 export default function ContactPage() {
+  const [form, setForm] = useState<FormData>({
+    fullName: '',
+    email: '',
+    phone: '',
+    company: '',
+    service: '',
+    message: '',
+    consent: false,
+  });
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState('');
+  const [error, setError] = useState('');
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value, type } = e.target;
+    const checked = (e.target as HTMLInputElement).checked;
+    setForm((prev) => ({
+      ...prev,
+      [name]: type === 'checkbox' ? checked : value,
+    }));
+  };
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setError('');
+    setSuccess('');
+    
+    // Validation
+    if (!form.fullName || !form.email || !form.message || !form.consent) {
+      setError('Please fill in all required fields and agree to the privacy policy.');
+      return;
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(form.email)) {
+      setError('Please enter a valid email address.');
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ...form,
+          message: String(form.message).replace(/[<>]/g, ''), // Basic sanitization
+        }),
+      });
+
+      const data = await res.json();
+      
+      if (!res.ok) {
+        throw new Error(data.error || 'Failed to send message');
+      }
+
+      if (data.success) {
+        setSuccess('Your message has been sent successfully! We will get back to you soon.');
+        setForm({
+          fullName: '',
+          email: '',
+          phone: '',
+          company: '',
+          service: '',
+          message: '',
+          consent: false,
+        });
+      } else {
+        throw new Error(data.error || 'Failed to send message');
+      }
+    } catch (err) {
+      console.error('Contact form error:', err);
+      setError(err instanceof Error ? err.message : 'Failed to send message. Please try again later.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <>
       {/* Hero Section - edge to edge */}
-      <section className="relative w-screen h-[300px] flex items-center justify-start mb-8">
+      <motion.section
+        className="relative w-screen h-[300px] flex items-center justify-start mb-8"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, amount: 0.5 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+      >
         <div className="absolute inset-0 bg-[#0a192f]">
           <Image
             src="/images/contact/hero_contact_desktop.webp"
@@ -47,35 +142,40 @@ export default function ContactPage() {
             Whether it is AI & Automation, Cloud, Cybersecurity, BPO, System Integration, and IT Consulting. Whether you have a project in mind or just need advice, our experts are ready to assist.
           </motion.p>
         </div>
-      </section>
+      </motion.section>
       <main className="min-h-screen bg-white flex flex-col items-center justify-start py-0 sm:px-8">
         {/* Contact Form Section */}
-        <section className="w-full max-w-2xl bg-[#e9eef6] rounded-xl shadow-lg pt-2 pb-6 px-4 sm:pt-4 sm:pb-10 sm:px-8 mb-16">
+        <motion.section
+          className="w-full max-w-2xl bg-[#e9eef6] rounded-xl shadow-lg pt-2 pb-6 px-4 sm:pt-4 sm:pb-10 sm:px-8 mb-16"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+        >
           <h2 className="text-3xl font-bold text-[#0a192f] mb-8 text-center">Contact Us</h2>
-          <form className="flex flex-col gap-6 bg-gray-50 p-6 rounded-lg shadow-[inset_0_2px_4px_rgba(0,0,0,0.1)]" action="mailto:info@symboltech.net" method="POST" encType="text/plain">
+          <form className="flex flex-col gap-6 bg-gray-50 p-6 rounded-lg shadow-[inset_0_2px_4px_rgba(0,0,0,0.1)]" onSubmit={handleSubmit}>
             <div className="flex flex-col gap-4 sm:flex-row sm:gap-6">
               <div className="flex-1 flex flex-col">
                 <label htmlFor="fullName" className="font-semibold text-[#0a192f] mb-1">Full Name<span className="text-red-500">*</span></label>
-                <input type="text" id="fullName" name="fullName" required className="border border-[#0a192f] rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#0a192f]" />
+                <input type="text" id="fullName" name="fullName" required value={form.fullName} onChange={handleChange} className="border border-[#0a192f] rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#0a192f] w-full" />
               </div>
               <div className="flex-1 flex flex-col">
                 <label htmlFor="email" className="font-semibold text-[#0a192f] mb-1">Email Address<span className="text-red-500">*</span></label>
-                <input type="email" id="email" name="email" required className="border border-[#0a192f] rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#0a192f]" />
+                <input type="email" id="email" name="email" required value={form.email} onChange={handleChange} className="border border-[#0a192f] rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#0a192f] w-full" />
               </div>
             </div>
             <div className="flex flex-col gap-4 sm:flex-row sm:gap-6">
               <div className="flex-1 flex flex-col">
                 <label htmlFor="phone" className="font-semibold text-[#0a192f] mb-1">Phone Number</label>
-                <input type="tel" id="phone" name="phone" className="border border-[#0a192f] rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#0a192f]" />
+                <input type="tel" id="phone" name="phone" value={form.phone} onChange={handleChange} className="border border-[#0a192f] rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#0a192f] w-full" />
               </div>
               <div className="flex-1 flex flex-col">
                 <label htmlFor="company" className="font-semibold text-[#0a192f] mb-1">Company Name</label>
-                <input type="text" id="company" name="company" className="border border-[#0a192f] rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#0a192f]" />
+                <input type="text" id="company" name="company" value={form.company} onChange={handleChange} className="border border-[#0a192f] rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#0a192f] w-full" />
               </div>
             </div>
             <div className="flex flex-col">
               <label htmlFor="service" className="font-semibold text-[#0a192f] mb-1">Service of Interest</label>
-              <select id="service" name="service" className="border border-[#0a192f] rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#0a192f]">
+              <select id="service" name="service" value={form.service} onChange={handleChange} className="border border-[#0a192f] rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#0a192f] w-full">
                 <option value="">Select a service</option>
                 <option>AI & Automation</option>
                 <option>Cloud</option>
@@ -87,20 +187,32 @@ export default function ContactPage() {
             </div>
             <div className="flex flex-col">
               <label htmlFor="message" className="font-semibold text-[#0a192f] mb-1">Message<span className="text-red-500">*</span></label>
-              <textarea id="message" name="message" required rows={5} className="border border-[#0a192f] rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#0a192f] resize-none" />
+              <textarea id="message" name="message" required value={form.message} onChange={handleChange} rows={5} className="border border-[#0a192f] rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#0a192f] resize-none w-full" />
             </div>
             <div className="flex items-start gap-2">
-              <input type="checkbox" id="consent" name="consent" required className="mt-1" />
+              <input type="checkbox" id="consent" name="consent" required checked={form.consent} onChange={handleChange} className="mt-1" />
               <label htmlFor="consent" className="text-sm text-[#0a192f]">I agree to the <a href="/privacy" className="underline hover:text-[#0a192f]">Privacy Policy</a> and terms of service.</label>
             </div>
-            <button type="submit" className="mt-2 bg-[#0a192f] text-[#FFD700] font-semibold rounded-lg px-12 py-4 text-lg transition-all duration-200 hover:bg-[#112240] hover:shadow-lg hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#0a192f]">
-              Submit
+            {error && <div className="text-red-600 text-sm mb-2">{error}</div>}
+            {success && <div className="text-green-600 text-sm mb-2">{success}</div>}
+            <button
+              type="submit"
+              className="mt-2 bg-[#0a192f] hover:bg-[#0a192f]/90 text-[#FFD700] font-semibold rounded px-12 py-4 text-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#0a192f] w-full"
+              disabled={loading}
+            >
+              {loading ? 'Sending...' : 'Submit'}
             </button>
           </form>
-        </section>
+        </motion.section>
 
         {/* Email & Call Section */}
-        <section className="w-full max-w-2xl grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16 font-sans">
+        <motion.section
+          className="w-full max-w-2xl grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16 font-sans"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.5 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+        >
           {/* Email Us Box */}
           <div className="flex flex-col items-center text-center bg-[#0a192f] rounded-2xl p-6 shadow-[0_2px_8px_rgba(0,0,0,0.10),_inset_0_2px_8px_rgba(255,255,255,0.10)] border border-[#0a192f] transition-all duration-200 hover:shadow-[0_8px_24px_rgba(0,0,0,0.18),_inset_0_4px_16px_rgba(255,255,255,0.15)] hover:-translate-y-1 bg-gradient-to-br from-[#0a192f] via-[#112240] to-[#0a192f]">
             <div className="text-[#FFF9C4] font-bold tracking-wide text-xl mb-3">Email Us:</div>
@@ -130,7 +242,7 @@ export default function ContactPage() {
               </a>
             </div>
           </div>
-        </section>
+        </motion.section>
       </main>
     </>
   );
