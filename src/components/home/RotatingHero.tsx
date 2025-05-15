@@ -22,8 +22,8 @@ export default function RotatingHero() {
   const heroRef = useRef<HTMLDivElement>(null);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const heroes = [
-    { component: HeroSection, key: 'main' },
     { component: ServicesHero, key: 'services' },
+    { component: HeroSection, key: 'main' },
     { component: InsightsHero, key: 'insights' }
   ];
 
@@ -120,10 +120,10 @@ export default function RotatingHero() {
       {/* Render all hero components, only show the active one */}
       <div className="relative w-full h-full">
         <div className={currentHero === 0 ? 'block' : 'hidden'}>
-          <HeroSection fitMode="cover" isActive={currentHero === 0} />
+          <ServicesHero fitMode="cover" isActive={currentHero === 0} />
         </div>
         <div className={currentHero === 1 ? 'block' : 'hidden'}>
-          <ServicesHero fitMode="cover" isActive={currentHero === 1} />
+          <HeroSection fitMode="cover" isActive={currentHero === 1} />
         </div>
         <div className={currentHero === 2 ? 'block' : 'hidden'}>
           <InsightsHero fitMode="cover" isActive={currentHero === 2} />

@@ -43,7 +43,7 @@ export default function Home() {
               cybersecurity defenses and advanced FinTech solutions to cloud transformation and 
               resilient infrastructure, we provide the end-to-end capabilities you need to thrive.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-6 mb-8 w-full max-w-none">
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-6 mb-8 w-full max-w-none">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -51,6 +51,7 @@ export default function Home() {
                 transition={{ duration: 0.8, ease: 'easeOut' }}
                 className="bg-gradient-to-br from-[#FFF9D4] via-[#FFF9E6] to-[#FFF9F2] rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 flex flex-col items-center justify-center border border-[#FFE5A0]/20"
               >
+                <span className="text-2xl md:text-3xl mb-2">💼</span>
                 <div className="text-2xl md:text-3xl font-bold text-[#0a2a4a] mb-2">
                   <AnimatedCounter end={15} suffix="+" />
                 </div>
@@ -63,6 +64,7 @@ export default function Home() {
                 transition={{ duration: 0.8, ease: 'easeOut' }}
                 className="bg-gradient-to-br from-[#FFF9D4] via-[#FFF9E6] to-[#FFF9F2] rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 flex flex-col items-center justify-center border border-[#FFE5A0]/20"
               >
+                <span className="text-2xl md:text-3xl mb-2">👨‍💻</span>
                 <div className="text-2xl md:text-3xl font-bold text-[#0a2a4a] mb-2">
                   <AnimatedCounter end={50} suffix="+" />
                 </div>
@@ -75,6 +77,7 @@ export default function Home() {
                 transition={{ duration: 0.8, ease: 'easeOut' }}
                 className="bg-gradient-to-br from-[#FFF9D4] via-[#FFF9E6] to-[#FFF9F2] rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 flex flex-col items-center justify-center border border-[#FFE5A0]/20"
               >
+                <span className="text-2xl md:text-3xl mb-2">🤝</span>
                 <div className="text-2xl md:text-3xl font-bold text-[#0a2a4a] mb-2">
                   <AnimatedCounter end={100} suffix="+" />
                 </div>
@@ -87,6 +90,7 @@ export default function Home() {
                 transition={{ duration: 0.8, ease: 'easeOut' }}
                 className="bg-gradient-to-br from-[#FFF9D4] via-[#FFF9E6] to-[#FFF9F2] rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 flex flex-col items-center justify-center border border-[#FFE5A0]/20"
               >
+                <span className="text-2xl md:text-3xl mb-2">🏆</span>
                 <div className="text-2xl md:text-3xl font-bold text-[#0a2a4a] mb-2">
                   <AnimatedCounter end={8} suffix="+" />
                 </div>
@@ -99,6 +103,7 @@ export default function Home() {
                 transition={{ duration: 0.8, ease: 'easeOut' }}
                 className="bg-gradient-to-br from-[#FFF9D4] via-[#FFF9E6] to-[#FFF9F2] rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 flex flex-col items-center justify-center border border-[#FFE5A0]/20"
               >
+                <span className="text-2xl md:text-3xl mb-2">🌐</span>
                 <div className="text-2xl md:text-3xl font-bold text-[#0a2a4a] mb-2">
                   <AnimatedCounter end={300000} suffix="+" />
                 </div>

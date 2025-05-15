@@ -29,15 +29,15 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-bold mb-4">BPO</h4>
             <ul className="space-y-2">
-              <li><Link href="/bpo/software-development" className="text-gray-400 hover:text-[#FFD700]">Software Development</Link></li>
-              <li><Link href="/bpo/web-services" className="text-gray-400 hover:text-[#FFD700]">Web Services</Link></li>
-              <li><Link href="/bpo/devops-infrastructure" className="text-gray-400 hover:text-[#FFD700]">DevOps & Infrastructure</Link></li>
-              <li><Link href="/bpo/technical-support" className="text-gray-400 hover:text-[#FFD700]">Technical Support</Link></li>
-              <li><Link href="/bpo/network-security" className="text-gray-400 hover:text-[#FFD700]">Network & Security</Link></li>
-              <li><Link href="/bpo/ai-automation" className="text-gray-400 hover:text-[#FFD700]">AI & Automation</Link></li>
-              <li><Link href="/bpo/ui-ux-design" className="text-gray-400 hover:text-[#FFD700]">UI/UX Design</Link></li>
-              <li><Link href="/bpo/data-services" className="text-gray-400 hover:text-[#FFD700]">Data Services</Link></li>
-              <li><Link href="/bpo/dedicated-teams" className="text-gray-400 hover:text-[#FFD700]">Dedicated Teams</Link></li>
+              <li><Link href="/bpo#software-development" className="text-gray-400 hover:text-[#FFD700]">Software Development</Link></li>
+              <li><Link href="/bpo#web-services" className="text-gray-400 hover:text-[#FFD700]">Web Services</Link></li>
+              <li><Link href="/bpo#devops-infrastructure" className="text-gray-400 hover:text-[#FFD700]">DevOps & Infrastructure</Link></li>
+              <li><Link href="/bpo#technical-support" className="text-gray-400 hover:text-[#FFD700]">Technical Support</Link></li>
+              <li><Link href="/bpo#network-security" className="text-gray-400 hover:text-[#FFD700]">Network & Security</Link></li>
+              <li><Link href="/bpo#ai-automation" className="text-gray-400 hover:text-[#FFD700]">AI & Automation</Link></li>
+              <li><Link href="/bpo#ui-ux-design" className="text-gray-400 hover:text-[#FFD700]">UI/UX Design</Link></li>
+              <li><Link href="/bpo#data-services" className="text-gray-400 hover:text-[#FFD700]">Data Services</Link></li>
+              <li><Link href="/bpo#dedicated-teams" className="text-gray-400 hover:text-[#FFD700]">Dedicated Teams</Link></li>
             </ul>
           </div>
           <div>

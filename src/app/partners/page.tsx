@@ -100,7 +100,7 @@ export default function PartnersPage() {
                 >
                   {category}
                 </motion.h2>
-                <div className="flex flex-wrap justify-center gap-x-6 gap-y-4">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-4 w-full justify-items-center">
                   {categoryPartners.map((partner) => (
                     <div
                       key={partner.name}
