@@ -12,7 +12,7 @@ interface HeroSectionProps {
 
 export default function HeroSection({ fitMode = 'cover', isActive }: HeroSectionProps) {
   return (
-    <section className="relative w-full h-screen min-h-screen max-h-screen overflow-hidden -mt-[1px] mb-0">
+    <section className="relative w-full h-[100svh] min-h-[100svh] max-h-[100svh] md:h-screen md:min-h-screen md:max-h-screen overflow-hidden -mt-[1px] mb-0">
       <div className="absolute inset-0 bg-[#0a192f]">
         <Image
           src="/images/hero/hero_bpo_desktop.webp"
