@@ -4,7 +4,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import NetworkAnimation from './NetworkAnimation';
 import { motion } from 'framer-motion';
-import { useEffect, useRef } from 'react';
 
 interface HeroSectionProps {
   fitMode?: 'cover' | 'contain';
@@ -12,31 +11,8 @@ interface HeroSectionProps {
 }
 
 export default function HeroSection({ fitMode = 'cover', isActive }: HeroSectionProps) {
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    function setHeight() {
-      if (window.innerWidth < 768 && sectionRef.current) {
-        sectionRef.current.style.height = window.innerHeight + 'px';
-        sectionRef.current.style.minHeight = window.innerHeight + 'px';
-        sectionRef.current.style.maxHeight = window.innerHeight + 'px';
-      } else if (sectionRef.current) {
-        sectionRef.current.style.height = '';
-        sectionRef.current.style.minHeight = '';
-        sectionRef.current.style.maxHeight = '';
-      }
-    }
-    setHeight();
-    window.addEventListener('resize', setHeight);
-    window.addEventListener('orientationchange', setHeight);
-    return () => {
-      window.removeEventListener('resize', setHeight);
-      window.removeEventListener('orientationchange', setHeight);
-    };
-  }, []);
-
   return (
-    <section ref={sectionRef} className="relative w-full h-[100svh] min-h-[100svh] max-h-[100svh] md:h-screen md:min-h-screen md:max-h-screen overflow-hidden -mt-[1px] mb-0">
+    <section className="relative w-full h-[100svh] min-h-[100svh] max-h-[100svh] md:h-screen md:min-h-screen md:max-h-screen overflow-hidden -mt-[1px] mb-0">
       <div className="absolute inset-0 bg-[#0a192f]">
         <Image
           src="/images/hero/hero_bpo_desktop.webp"

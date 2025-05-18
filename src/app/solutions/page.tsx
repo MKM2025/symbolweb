@@ -51,7 +51,7 @@ const solutions = [
       {
         title: "Advanced Protection Against Fraud and Financial Crime",
         description: "Combat increasingly sophisticated financial crime with our multi-layered detection and prevention solutions from Fiserv and Paygilant.",
-        image: "https://via.placeholder.com/500x300/AD1457/FFD700?text=Crime+Prevention",
+        image: "/images/solutions/fraud.webp",
         link: "/solutions/financial-crime"
       }
     ]
@@ -70,7 +70,7 @@ const solutions = [
       {
         title: "Secure, High-Performance Networking for the Connected Enterprise",
         description: "Reliable and secure connectivity is the backbone of your digital operations. Symbol Technologies designs and manages intelligent networking and communication solutions connecting users, applications, and data.",
-        image: "https://via.placeholder.com/500x300/00897B/FFD700?text=Networking",
+        image: "/images/solutions/connectedenterprise.webp",
         link: "/solutions/networking"
       },
       {
