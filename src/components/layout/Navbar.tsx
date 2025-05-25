@@ -84,7 +84,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-[#00101d] z-50">
+    <nav className="fixed top-0 left-0 right-0 bg-[#050c16] z-50">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-[56px] sm:h-[64px] md:h-[96px]">
           {/* Logo */}
@@ -170,11 +170,11 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div 
-        className={`md:hidden bg-[#00101d] transform transition-transform duration-300 ease-in-out ${
+        className={`md:hidden bg-[#050c16] transform transition-transform duration-300 ease-in-out ${
           isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
         } fixed top-14 left-0 right-0 bottom-0 z-40 min-h-screen`}
       >
-        <div className="px-4 pt-2 pb-3 space-y-1 h-full overflow-y-auto bg-[#00101d]">
+        <div className="px-4 pt-2 pb-3 space-y-1 h-full overflow-y-auto bg-[#050c16]">
           <Link 
             href="/" 
             className="block px-3 py-2 text-base font-medium text-white hover:text-[#FFD700]"

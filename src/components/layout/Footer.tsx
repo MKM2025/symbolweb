@@ -50,9 +50,9 @@ export default function Footer() {
             <h4 className="text-lg font-bold mb-2 mt-6">Contact</h4>
             <ul className="space-y-1">
               <li className="text-gray-400">Email: info@symboltech.net</li>
-              <li className="text-gray-400">Sales: +251-910-822-333</li>
-              <li className="text-gray-400">CEO: +251-911-523-249</li>
-              <li className="text-gray-400">Support: +251-116-630-664</li>
+              <li className="text-gray-400">Mobile: +251-910-822-333</li>
+              <li className="text-gray-400">Mobile: +251-911-523-249</li>
+              <li className="text-gray-400">Office: +251-116-630-664</li>
             </ul>
           </div>
           <div>
