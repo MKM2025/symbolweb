@@ -78,8 +78,7 @@ export default function Navbar() {
     ],
     insights: [
       { name: 'Blogs', href: '/insights#blogs' },
-      { name: 'Case Studies', href: '/insights#case-studies' },
-      { name: 'White Papers', href: '/insights#white-papers' }
+      { name: 'Case Studies', href: '/insights#case-studies' }
     ]
   };
 

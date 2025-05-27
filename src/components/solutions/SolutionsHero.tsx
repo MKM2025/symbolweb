@@ -34,15 +34,22 @@ export default function SolutionsHero({ fitMode = 'cover' }: SolutionsHeroProps)
         />
       </div>
 
-      {/* Content Container */}
-      <div className="relative h-full container mx-auto px-4 flex flex-col justify-center portrait:justify-start portrait:pt-16 landscape:items-start">
-        <div className="max-w-2xl ml-0 pl-4 sm:pl-8 portrait:ml-6 portrait:mt-0 landscape:mt-8 md:mt-[-150px] portrait:items-start portrait:text-left portrait:pr-8">
-          <h1 className="text-2xl sm:text-4xl md:text-6xl landscape:!text-[min(4.5vw,3rem)] font-bold text-[#FFF9C4] mb-2 sm:mb-4 md:mb-6 landscape:mb-3 drop-shadow-lg landscape:leading-tight max-w-lg landscape:text-left">
-            Comprehensive ICT Solutions & Turnkey Integration
-          </h1>
-          <p className="text-base sm:text-lg md:text-xl landscape:!text-[min(2.2vw,1.2rem)] text-[#FFF9C4] mb-4 sm:mb-6 md:mb-8 landscape:mb-4 drop-shadow-md landscape:max-w-[90%] max-w-xl landscape:text-left">
-            Empowering businesses with end-to-end technology, infrastructure, and automation — from design to deployment.
-          </p>
+      {/* Mobile portrait: grid with two rows */}
+      <div className="relative h-full w-full grid grid-rows-[90%_10%] md:flex md:flex-col md:justify-center">
+        {/* Upper row: CTA content */}
+        <div className="flex flex-col items-center px-4 row-span-1 md:block h-full pt-2 md:pt-0">
+          <div className="max-w-2xl ml-0 md:ml-12 pl-4 sm:pl-8 portrait:ml-6 portrait:mt-0 landscape:mt-8 md:mt-[-150px] portrait:pr-8 w-full flex flex-col justify-center items-center h-full text-center md:items-start md:text-left md:justify-center">
+            <h1 className="text-[clamp(2rem,8vw,2.8rem)] sm:text-4xl md:text-6xl font-bold text-[#FFF9C4] mb-2 sm:mb-4 md:mb-6 drop-shadow-lg leading-tight w-full text-center md:text-left">
+              Comprehensive ICT Solutions & Turnkey Integration
+            </h1>
+            <p className="text-[clamp(1.2rem,5vw,2rem)] sm:text-2xl md:text-xl text-[#FFF9C4] mb-2 sm:mb-3 md:mb-4 drop-shadow-md font-semibold w-full text-center md:text-left">
+              Empowering businesses with end-to-end technology, infrastructure, and automation — from design to deployment.
+            </p>
+          </div>
+        </div>
+        {/* Bottom row: sliding bar and down arrow (mobile only) */}
+        <div className="flex flex-col items-center justify-end row-span-1 w-full h-full md:hidden">
+          {/* These will be slotted in by RotatingHero, but you can add placeholders or ensure space is reserved here if needed */}
         </div>
       </div>
     </section>
