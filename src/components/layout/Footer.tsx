@@ -22,8 +22,11 @@ export default function Footer() {
               <li><Link href="/solutions#security-solutions" className="text-gray-400 hover:text-[#FFD700]">Security Solutions</Link></li>
               <li><Link href="/solutions#financial-technology" className="text-gray-400 hover:text-[#FFD700]">Financial Technology Solutions</Link></li>
               <li><Link href="/solutions#cloud-infrastructure" className="text-gray-400 hover:text-[#FFD700]">Cloud & Infrastructure</Link></li>
+              <li><Link href="/solutions#business-continuity" className="text-gray-400 hover:text-[#FFD700]">Business Continuity & Resilience</Link></li>
+              <li><Link href="/solutions#grc" className="text-gray-400 hover:text-[#FFD700]">Governance, Risk & Compliance (GRC)</Link></li>
               <li><Link href="/solutions#data-ai" className="text-gray-400 hover:text-[#FFD700]">Data, AI & Intelligence</Link></li>
               <li><Link href="/solutions#managed-it" className="text-gray-400 hover:text-[#FFD700]">Managed IT Services</Link></li>
+              <li><Link href="/solutions#digital-solutions" className="text-gray-400 hover:text-[#FFD700]">Digital Solutions & Training</Link></li>
             </ul>
           </div>
           <div>

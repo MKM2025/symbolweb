@@ -73,8 +73,11 @@ export default function Navbar() {
       { name: 'Security Solutions', href: '/solutions#security-solutions' },
       { name: 'Financial Technology Solutions', href: '/solutions#financial-technology' },
       { name: 'Cloud & Infrastructure', href: '/solutions#cloud-infrastructure' },
+      { name: 'Business Continuity & Resilience', href: '/solutions#business-continuity' },
+      { name: 'Governance, Risk & Compliance (GRC)', href: '/solutions#grc' },
       { name: 'Data, AI & Intelligence', href: '/solutions#data-ai' },
-      { name: 'Managed IT Services', href: '/solutions#managed-it' }
+      { name: 'Managed IT Services', href: '/solutions#managed-it' },
+      { name: 'Digital Solutions & Training', href: '/solutions#digital-solutions' }
     ],
     insights: [
       { name: 'Blogs', href: '/insights#blogs' },

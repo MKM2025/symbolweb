@@ -5,6 +5,18 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Blog } from '@/types/blog';
 import { motion } from 'framer-motion';
+import React from 'react';
+import CaseStudyCard from '@/components/insights/CaseStudyCard';
+
+const caseStudies = [
+  {
+    id: 'advanced_sec',
+    title: 'Symbol Tech Fortifies EthSwitch\'s National Payment Gateway with Advanced Security Solutions',
+    description: 'A strategic initiative empowering EthSwitch to protect its critical operations and customer data, ensuring the integrity and reliability of the nation\'s burgeoning digital payment ecosystem.',
+    thumbnail: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgZmlsbD0iI2YzZjRmNiIvPjx0ZXh0IHg9IjQwMCIgeT0iMzAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IiM2YjcyODAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5FdGhTd2l0Y2ggQ2FzZSBTdHVkeTwvdGV4dD48L3N2Zz4=',
+  },
+  // Additional case studies will be added here
+];
 
 export default function InsightsPage() {
   return (
@@ -59,23 +71,44 @@ export default function InsightsPage() {
           ></motion.span>
         </nav>
       </div>
-      {/* Blogs Section */}
-      <section className="py-12">
-        <div className="container mx-auto px-4">
-          <h2 id="blogs" className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-[#0a2a4a] scroll-mt-20 md:scroll-mt-[96px]">Blogs</h2>
+      {/* Case Studies Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+              Case Studies
+            </h2>
+            <p className="mt-4 text-lg text-gray-600">
+              Explore how we've helped organizations transform their digital infrastructure
+            </p>
+          </div>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white rounded-lg shadow p-6 text-center text-gray-500">Coming soon...</div>
+            {caseStudies.map((caseStudy) => (
+              <CaseStudyCard
+                key={caseStudy.id}
+                id={caseStudy.id}
+                title={caseStudy.title}
+                description={caseStudy.description}
+                thumbnail={caseStudy.thumbnail}
+              />
+            ))}
           </div>
         </div>
       </section>
-      {/* Case Studies Section */}
-      <section className="py-12 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 id="case-studies" className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-[#0a2a4a] scroll-mt-20 md:scroll-mt-[96px]">Case Studies</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* TODO: Add case studies content here */}
-            <div className="bg-white rounded-lg shadow p-6 text-center text-gray-500">Coming soon...</div>
+      {/* Blogs Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+              Latest Insights
+            </h2>
+            <p className="mt-4 text-lg text-gray-600">
+              Stay updated with our latest thoughts and perspectives
+            </p>
           </div>
+          
+          {/* Blog cards will be added here */}
         </div>
       </section>
     </main>
