@@ -7,7 +7,7 @@ import InsightsHero from '../insights/InsightsHero';
 import { useMenu } from '@/context/MenuContext';
 import { motion } from 'framer-motion';
 
-const SLIDE_DURATION = 5000; // 5 seconds
+const SLIDE_DURATION = 8000; // 8 seconds
 const GOLD_GRADIENT = 'bg-gradient-to-r from-[#BF953F] via-[#FCF6BA] to-[#B38728]';
 const INACTIVE_BAR = 'bg-[#E0F7FF]';
 

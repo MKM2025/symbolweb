@@ -1,0 +1,53 @@
+.case-study-html {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #222;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+.case-study-html h1, .case-study-html h2, .case-study-html h3, .case-study-html h4 {
+  color: #0F4761;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+.case-study-html h1 { font-size: 2em; }
+.case-study-html h2 { font-size: 1.5em; }
+.case-study-html h3 { font-size: 1.2em; }
+.case-study-html h4 { font-size: 1.1em; font-style: italic; }
+.case-study-html p {
+  margin-bottom: 1em;
+}
+.case-study-html ul, .case-study-html ol {
+  margin-left: 2em;
+  margin-bottom: 1em;
+}
+.case-study-html li {
+  margin-bottom: 0.5em;
+}
+.case-study-html table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 1em;
+}
+.case-study-html th, .case-study-html td {
+  border: 1px solid #ccc;
+  padding: 0.5em 1em;
+}
+.case-study-html th {
+  background: #f3f4f6;
+  font-weight: bold;
+}
+.case-study-html blockquote {
+  border-left: 4px solid #0F4761;
+  background: #f9fafb;
+  margin: 1em 0;
+  padding: 0.5em 1em;
+  color: #444;
+  font-style: italic;
+}
+.case-study-html strong {
+  font-weight: bold;
+}
+.case-study-html em {
+  font-style: italic;
+} 

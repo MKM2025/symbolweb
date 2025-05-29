@@ -15,6 +15,18 @@ const caseStudies = [
     description: 'A strategic initiative empowering EthSwitch to protect its critical operations and customer data, ensuring the integrity and reliability of the nation\'s burgeoning digital payment ecosystem.',
     thumbnail: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgZmlsbD0iI2YzZjRmNiIvPjx0ZXh0IHg9IjQwMCIgeT0iMzAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IiM2YjcyODAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5FdGhTd2l0Y2ggQ2FzZSBTdHVkeTwvdGV4dD48L3N2Zz4=',
   },
+  {
+    id: 'nib_computing',
+    title: 'NIB Computing Infrastructure Modernization',
+    description: 'A comprehensive infrastructure modernization project that transformed NIB\'s computing capabilities, enhancing performance, security, and scalability.',
+    thumbnail: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgZmlsbD0iI2YzZjRmNiIvPjx0ZXh0IHg9IjQwMCIgeT0iMzAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IiM2YjcyODAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5OSUIgQ2FzZSBTdHVkeTwvdGV4dD48L3N2Zz4=',
+  },
+  {
+    id: 'esl_infrastructure',
+    title: 'ESL Infrastructure Transformation',
+    description: 'A strategic infrastructure transformation project that revolutionized ESL\'s technological capabilities, delivering enhanced performance and operational efficiency.',
+    thumbnail: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgZmlsbD0iI2YzZjRmNiIvPjx0ZXh0IHg9IjQwMCIgeT0iMzAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IiM2YjcyODAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5FU0wgQ2FzZSBTdHVkeTwvdGV4dD48L3N2Zz4=',
+  },
   // Additional case studies will be added here
 ];
 
@@ -72,7 +84,7 @@ export default function InsightsPage() {
         </nav>
       </div>
       {/* Case Studies Section */}
-      <section className="py-16 bg-white">
+      <section id="case-studies" className="py-16 bg-white scroll-mt-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
@@ -82,7 +94,6 @@ export default function InsightsPage() {
               Explore how we've helped organizations transform their digital infrastructure
             </p>
           </div>
-          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {caseStudies.map((caseStudy) => (
               <CaseStudyCard
@@ -97,7 +108,7 @@ export default function InsightsPage() {
         </div>
       </section>
       {/* Blogs Section */}
-      <section className="py-16 bg-gray-50">
+      <section id="blogs" className="py-16 bg-gray-50 scroll-mt-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
@@ -107,7 +118,6 @@ export default function InsightsPage() {
               Stay updated with our latest thoughts and perspectives
             </p>
           </div>
-          
           {/* Blog cards will be added here */}
         </div>
       </section>

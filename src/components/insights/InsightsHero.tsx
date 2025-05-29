@@ -73,10 +73,10 @@ export default function InsightsHero({ fitMode = 'cover', isActive }: InsightsHe
                 Read Our Blogs
               </Link>
               <Link
-                href="/contact"
-                className="inline-block bg-[#0a2a4a] text-[#FFD700] px-6 py-3 rounded-lg text-base font-semibold font-sans shadow-md transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#FFD700] active:scale-95 hover:bg-[#0a2a4a]/90 hover:text-[#FFF9D4] portrait:px-4 portrait:py-2 portrait:text-sm portrait:max-w-xs portrait:w-fit"
+                href="/insights#case-studies"
+                className="inline-block bg-gradient-to-r from-blue-700 via-blue-500 to-blue-400 text-[#FFF9C4] px-6 py-3 rounded-lg text-base font-semibold font-sans shadow-lg hover:from-blue-600 hover:via-blue-400 hover:to-blue-300 hover:scale-105 hover:shadow-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400 active:scale-95 portrait:px-4 portrait:py-2 portrait:text-sm portrait:max-w-xs portrait:w-fit"
               >
-                Talk to Us!
+                Case Studies
               </Link>
             </motion.div>
           </div>
