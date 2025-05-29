@@ -19,13 +19,13 @@ const caseStudies = [
     id: 'nib_computing',
     title: 'NIB Computing Infrastructure Modernization',
     description: 'A comprehensive infrastructure modernization project that transformed NIB\'s computing capabilities, enhancing performance, security, and scalability.',
-    thumbnail: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgZmlsbD0iI2YzZjRmNiIvPjx0ZXh0IHg9IjQwMCIgeT0iMzAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IiM2YjcyODAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5OSUIgQ2FzZSBTdHVkeTwvdGV4dD48L3N2Zz4=',
+    thumbnail: '/case-studies/nib-computing-infrastructure.webp',
   },
   {
-    id: 'esl_infrastructure',
-    title: 'ESL Infrastructure Transformation',
-    description: 'A strategic infrastructure transformation project that revolutionized ESL\'s technological capabilities, delivering enhanced performance and operational efficiency.',
-    thumbnail: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgZmlsbD0iI2YzZjRmNiIvPjx0ZXh0IHg9IjQwMCIgeT0iMzAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IiM2YjcyODAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5FU0wgQ2FzZSBTdHVkeTwvdGV4dD48L3N2Zz4=',
+    id: 'esl',
+    title: 'Data Center & Network Transformation for Ethiopian Shipping and Logistics',
+    description: 'How Symbol Technologies delivered a robust, scalable, and secure ICT infrastructure for Ethiopian Shipping and Logistics, ensuring operational excellence and future-ready documentation.',
+    thumbnail: '', // No image for now
   },
   {
     id: 'ERA',
@@ -37,6 +37,24 @@ const caseStudies = [
     id: 'abay',
     title: 'Abay Digital Transformation Case Study',
     description: 'How Abay Bank leveraged Symbol Tech solutions for digital transformation and operational excellence.',
+    thumbnail: '', // No image for now
+  },
+  {
+    id: 'aau',
+    title: 'Compute & Storage Infrastructure Deployment for Addis Ababa University',
+    description: "How Symbol Technologies delivered a scalable, high-availability compute and storage infrastructure to support AAU's academic, research, and enterprise IT needs.",
+    thumbnail: '', // No image for now
+  },
+  {
+    id: 'adib',
+    title: 'Symbol Technologies Empowers Addis International Bank with Advanced SIEM Solution',
+    description: 'How Symbol Technologies implemented a centralized FortiSIEM platform for AdIB, providing enhanced security visibility, rapid threat detection, and compliance automation.',
+    thumbnail: '', // No image for now
+  },
+  {
+    id: 'moenco',
+    title: 'Unified Communications Solution for MOENCO',
+    description: 'How MOENCO transformed its enterprise communications with a modern Cisco Unified Communications platform, enabling advanced voice, video, and collaboration features.',
     thumbnail: '', // No image for now
   },
   // Additional case studies will be added here

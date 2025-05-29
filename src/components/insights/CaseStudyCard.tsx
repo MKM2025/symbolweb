@@ -13,13 +13,19 @@ export default function CaseStudyCard({ id, title, description, thumbnail }: Cas
   return (
     <Link href={`/insights/case-studies/${id}`} className="group">
       <div className="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
-        <div className="relative h-48 w-full">
-          <Image
-            src={thumbnail}
-            alt={title}
-            fill
-            className="object-cover"
-          />
+        <div className="relative h-48 w-full flex items-center justify-center bg-gray-100">
+          {thumbnail ? (
+            <Image
+              src={thumbnail}
+              alt={title}
+              fill
+              className="object-cover"
+            />
+          ) : (
+            <span className="text-gray-500 text-lg font-semibold text-center w-full">
+              {id === 'adib' ? 'Adib Case Study' : id === 'moenco' ? 'Moenco Case Study' : id === 'aau' ? 'AAU Case Study' : id === 'esl' ? 'ESL Case Study' : `${title.split(' ')[0]} Case Study`}
+            </span>
+          )}
         </div>
         <div className="p-6">
           <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
