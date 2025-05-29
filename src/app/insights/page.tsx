@@ -27,6 +27,18 @@ const caseStudies = [
     description: 'A strategic infrastructure transformation project that revolutionized ESL\'s technological capabilities, delivering enhanced performance and operational efficiency.',
     thumbnail: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgZmlsbD0iI2YzZjRmNiIvPjx0ZXh0IHg9IjQwMCIgeT0iMzAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IiM2YjcyODAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5FU0wgQ2FzZSBTdHVkeTwvdGV4dD48L3N2Zz4=',
   },
+  {
+    id: 'ERA',
+    title: 'ERA Digital Transformation Case Study',
+    description: 'How ERA leveraged Symbol Tech solutions for digital transformation and operational excellence.',
+    thumbnail: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgZmlsbD0iI2YzZjRmNiIvPjx0ZXh0IHg9IjQwMCIgeT0iMzAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IiM2YjcyODAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5FUkEgQ2FzZSBTdHVkeTwvdGV4dD48L3N2Zz4=',
+  },
+  {
+    id: 'abay',
+    title: 'Abay Digital Transformation Case Study',
+    description: 'How Abay Bank leveraged Symbol Tech solutions for digital transformation and operational excellence.',
+    thumbnail: '', // No image for now
+  },
   // Additional case studies will be added here
 ];
 

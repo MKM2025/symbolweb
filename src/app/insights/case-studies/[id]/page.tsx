@@ -31,6 +31,18 @@ const caseStudies = [
     description: 'A strategic infrastructure transformation project that revolutionized ESL\'s technological capabilities, delivering enhanced performance and operational efficiency.',
     thumbnail: '', // No image for now
   },
+  {
+    id: 'ERA',
+    title: 'ERA Digital Transformation Case Study',
+    description: 'How ERA leveraged Symbol Tech solutions for digital transformation and operational excellence.',
+    thumbnail: '', // No image for now
+  },
+  {
+    id: 'abay',
+    title: 'Abay Digital Transformation Case Study',
+    description: 'How Abay Bank leveraged Symbol Tech solutions for digital transformation and operational excellence.',
+    thumbnail: '', // No image for now
+  },
 ];
 
 export default function CaseStudyPage({ params }: CaseStudyPageProps) {
@@ -51,6 +63,12 @@ export default function CaseStudyPage({ params }: CaseStudyPageProps) {
       break;
     case 'esl_infrastructure':
       shortLabel = 'ESL';
+      break;
+    case 'ERA':
+      shortLabel = 'ERA';
+      break;
+    case 'abay':
+      shortLabel = 'Abay';
       break;
     default:
       shortLabel = caseStudy.title;
