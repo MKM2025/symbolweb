@@ -63,7 +63,7 @@ const allSolutions = [
   },
 ];
 
-export default function CloudInfrastructurePage() {
+export default function BusinessContinuityPage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
@@ -71,10 +71,10 @@ export default function CloudInfrastructurePage() {
         <div className="container mx-auto px-4 flex flex-col justify-center h-full">
           <div className="relative z-20 flex flex-col items-center md:items-start justify-center w-full h-full text-center md:text-left max-w-2xl mx-auto md:mx-0 md:pl-4 sm:md:pl-8 md:ml-[60px]">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#FFF9C4] mb-4 mt-[1em] w-full max-w-full md:whitespace-nowrap">
-              Cloud & Infrastructure
+              Business Continuity
             </h1>
             <p className="text-base sm:text-lg md:text-lg text-[#FFF9C4] w-full max-w-full">
-              Modern cloud and infrastructure solutions to build a resilient and scalable digital foundation.
+              Comprehensive solutions to ensure business continuity and rapid recovery from disruptions.
             </p>
           </div>
         </div>
@@ -92,11 +92,11 @@ export default function CloudInfrastructurePage() {
               Financial Technology
             </Link>
             <span className="w-px h-6 bg-[#FFD700] mx-1 inline-block align-middle"></span>
-            <Link href="/solutions/cloud-infrastructure" className="min-w-max text-[#FFD700] font-medium text-xs sm:text-sm md:text-base px-3 py-1 rounded-full bg-[#FFD700]/10">
+            <Link href="/solutions/cloud-infrastructure" className="min-w-max text-white hover:text-[#FFD700] text-xs sm:text-sm md:text-base px-3 py-1 rounded-full bg-white/10 hover:bg-[#FFD700]/10 transition-colors">
               Cloud & Infrastructure
             </Link>
             <span className="w-px h-6 bg-[#FFD700] mx-1 inline-block align-middle"></span>
-            <Link href="/solutions/business-continuity" className="min-w-max text-white hover:text-[#FFD700] text-xs sm:text-sm md:text-base px-3 py-1 rounded-full bg-white/10 hover:bg-[#FFD700]/10 transition-colors">
+            <Link href="/solutions/business-continuity" className="min-w-max text-[#FFD700] font-medium text-xs sm:text-sm md:text-base px-3 py-1 rounded-full bg-[#FFD700]/10">
               Business Continuity
             </Link>
             <span className="w-px h-6 bg-[#FFD700] mx-1 inline-block align-middle"></span>
@@ -120,7 +120,7 @@ export default function CloudInfrastructurePage() {
       </nav>
 
       {/* Main Content */}
-      <section id="solutions" className="py-16 bg-gradient-to-b from-slate-50 to-blue-50">
+      <section id="solutions" className="py-16 bg-gradient-to-b from-slate-50 to-sky-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-2xl shadow-md p-8 md:p-12">
             <motion.div
@@ -131,20 +131,14 @@ export default function CloudInfrastructurePage() {
               className="mb-12"
             >
               <h2 className="text-3xl font-bold text-[#002E6D] mb-6">
-                Modern Cloud & Infrastructure Solutions
+                Maintain Operations and Recover Quickly from Disruptions
               </h2>
               <p className="text-slate-600 leading-relaxed whitespace-pre-line">
-                Symbol Technologies delivers comprehensive cloud and infrastructure solutions designed to modernize your IT environment, enhance performance, and drive business growth. Our expert team helps organizations navigate the complexities of cloud adoption, infrastructure optimization, and digital transformation.
+                Unplanned downtime can cripple your business. Symbol Technologies offers comprehensive Business Continuity Management (BCM) and IT Disaster Recovery (ITDR) solutions designed to minimize disruption, protect critical data, and ensure operational resilience. Through partnerships with industry leaders such as Veeam and Acronis, we deliver robust data protection and rapid recovery capabilities to keep your business running, even during crises.
 
-                Our cloud and infrastructure services include:
-                • Cloud Migration & Strategy
-                • Infrastructure Modernization
-                • Hybrid Cloud Solutions
-                • Cloud Security & Compliance
-                • Performance Optimization
-                • Disaster Recovery & Backup
-                • Infrastructure as Code
-                • Cloud Cost Management
+                We address several key challenges, including protecting against data loss caused by hardware failures, cyberattacks, or natural disasters; minimizing downtime for critical business applications; and meeting stringent recovery time objectives (RTO) and recovery point objectives (RPO). We also support the development and testing of effective BCM and disaster recovery plans, ensure resilience across physical, virtual, and cloud environments, and help organizations manage crises effectively when disruptions occur.
+
+                Our Business Continuity Portfolio includes Business Continuity Management Planning and Advisory, IT Disaster Recovery Solutions (including Disaster Recovery as a Service—DRaaS), Data Backup and Recovery Services powered by Veeam and Acronis, and Crisis Management Frameworks.
               </p>
             </motion.div>
           </div>
@@ -156,7 +150,7 @@ export default function CloudInfrastructurePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl sm:text-3xl font-bold mb-8">Related Solutions</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {allSolutions.filter(s => s.id !== 'cloud-infrastructure').map(solution => (
+            {allSolutions.filter(s => s.id !== 'business-continuity').map(solution => (
               <Link key={solution.id} href={solution.link} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow block group">
                 <h3 className="text-xl font-bold text-[#002E6D] mb-2 group-hover:text-blue-600 transition-colors">{solution.title}</h3>
                 <p className="text-gray-600 mb-3">{solution.description}</p>

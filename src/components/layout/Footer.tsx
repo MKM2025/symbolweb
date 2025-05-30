@@ -19,14 +19,14 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-bold mb-4">Solutions</h4>
             <ul className="space-y-2">
-              <li><Link href="/solutions#security-solutions" className="text-gray-400 hover:text-[#FFD700]">Security Solutions</Link></li>
-              <li><Link href="/solutions#financial-technology" className="text-gray-400 hover:text-[#FFD700]">Financial Technology Solutions</Link></li>
-              <li><Link href="/solutions#cloud-infrastructure" className="text-gray-400 hover:text-[#FFD700]">Cloud & Infrastructure</Link></li>
-              <li><Link href="/solutions#business-continuity" className="text-gray-400 hover:text-[#FFD700]">Business Continuity & Resilience</Link></li>
-              <li><Link href="/solutions#grc" className="text-gray-400 hover:text-[#FFD700]">Governance, Risk & Compliance (GRC)</Link></li>
-              <li><Link href="/solutions#data-ai" className="text-gray-400 hover:text-[#FFD700]">Data, AI & Intelligence</Link></li>
-              <li><Link href="/solutions#managed-it" className="text-gray-400 hover:text-[#FFD700]">Managed IT Services</Link></li>
-              <li><Link href="/solutions#digital-solutions" className="text-gray-400 hover:text-[#FFD700]">Digital Solutions & Training</Link></li>
+              <li><Link href="/solutions/cybersecurity" className="text-gray-400 hover:text-[#FFD700]">Cybersecurity</Link></li>
+              <li><Link href="/solutions/fintech" className="text-gray-400 hover:text-[#FFD700]">Financial Technology</Link></li>
+              <li><Link href="/solutions/cloud-infrastructure" className="text-gray-400 hover:text-[#FFD700]">Cloud & Infrastructure</Link></li>
+              <li><Link href="/solutions/business-continuity" className="text-gray-400 hover:text-[#FFD700]">Business Continuity</Link></li>
+              <li><Link href="/solutions/grc" className="text-gray-400 hover:text-[#FFD700]">Governance, Risk & Compliance</Link></li>
+              <li><Link href="/solutions/data-ai" className="text-gray-400 hover:text-[#FFD700]">Data, AI & Intelligence</Link></li>
+              <li><Link href="/solutions/managed-services" className="text-gray-400 hover:text-[#FFD700]">Managed IT Services</Link></li>
+              <li><Link href="/solutions/digital-training" className="text-gray-400 hover:text-[#FFD700]">Digital Solutions & Training</Link></li>
             </ul>
           </div>
           <div>

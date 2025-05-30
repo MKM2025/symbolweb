@@ -29,6 +29,23 @@ const clientCategories = {
   Others: []
 };
 
+const clientLogos: Record<string, string | undefined> = {
+  'NIB International Bank': '/images/clients/client-logo/nib-bank.svg',
+  'Awash International Bank': '/images/clients/client-logo/awash-bank-logo.svg',
+  'Abay Bank': '/images/clients/client-logo/abay-bank-logo.svg',
+  'Commercial Bank of Ethiopia': '/images/clients/client-logo/cbe.svg',
+  'Ethiopian Insurance Corporation': '/images/clients/client-logo/eic.svg',
+  'Ethswitch': '/images/clients/client-logo/ethswitch.svg',
+  'Premier Switching Solutions (PSS)': '/images/clients/client-logo/pss.svg',
+  'Ethiotelecom': '/images/clients/client-logo/ethio-telecom.svg',
+  'Ethiopian Agricultural Transformation': '/images/clients/client-logo/agricultural-transformation-logo.svg',
+  'Ministry of Revenue': '/images/clients/client-logo/ministry-of-revenue.svg',
+  'Addis Ababa University': '/images/clients/client-logo/aau-logo.svg',
+  'University of Gondar': '/images/clients/client-logo/university-of-gondar.svg',
+  'Jimma University': '/images/clients/client-logo/jimma-university.svg',
+  'Dilla University': '/images/clients/client-logo/dilla.svg',
+};
+
 export default function ClientsPage() {
   return (
     <main className="w-full">
@@ -121,10 +138,22 @@ export default function ClientsPage() {
                           transition={{ duration: 0.7, ease: 'easeOut' }}
                           className="bg-white p-2 sm:p-4 md:p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow min-w-0 flex flex-col items-center justify-center w-full max-w-xs"
                         >
-                          {/* Logo placeholder */}
-                          <div className="h-16 sm:h-24 md:h-32 bg-gray-50 rounded-lg mb-2 sm:mb-4 flex items-center justify-center overflow-hidden w-full">
-                            <span className="text-xs sm:text-sm md:text-base text-gray-400 text-center break-words px-1">Logo Coming Soon</span>
-                          </div>
+                          {/* Logo display */}
+                          {clientLogos[client] ? (
+                            <Image
+                              src={clientLogos[client]}
+                              alt={client + ' logo'}
+                              width={120}
+                              height={80}
+                              className="object-contain h-16 sm:h-24 md:h-32 w-auto mx-auto mb-2 sm:mb-4"
+                              style={{ maxHeight: '8rem', maxWidth: '100%' }}
+                              priority={false}
+                            />
+                          ) : (
+                            <div className="h-16 sm:h-24 md:h-32 bg-gray-50 rounded-lg mb-2 sm:mb-4 flex items-center justify-center overflow-hidden w-full">
+                              <span className="text-xs sm:text-sm md:text-base text-gray-400 text-center break-words px-1">Logo Coming Soon</span>
+                            </div>
+                          )}
                           <h3 className="text-xs sm:text-sm md:text-lg font-medium text-gray-900 text-center break-words px-1 w-full">{client}</h3>
                         </motion.div>
                       ))}

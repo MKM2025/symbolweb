@@ -70,14 +70,14 @@ export default function Navbar() {
 
   const menuItems = {
     solutions: [
-      { name: 'Security Solutions', href: '/solutions#security-solutions' },
-      { name: 'Financial Technology Solutions', href: '/solutions#financial-technology' },
-      { name: 'Cloud & Infrastructure', href: '/solutions#cloud-infrastructure' },
-      { name: 'Business Continuity & Resilience', href: '/solutions#business-continuity' },
-      { name: 'Governance, Risk & Compliance (GRC)', href: '/solutions#grc' },
-      { name: 'Data, AI & Intelligence', href: '/solutions#data-ai' },
-      { name: 'Managed IT Services', href: '/solutions#managed-it' },
-      { name: 'Digital Solutions & Training', href: '/solutions#digital-solutions' }
+      { name: 'Cybersecurity', href: '/solutions/cybersecurity' },
+      { name: 'Financial Technology', href: '/solutions/fintech' },
+      { name: 'Cloud & Infrastructure', href: '/solutions/cloud-infrastructure' },
+      { name: 'Business Continuity', href: '/solutions/business-continuity' },
+      { name: 'Governance, Risk & Compliance', href: '/solutions/grc' },
+      { name: 'Data, AI & Intelligence', href: '/solutions/data-ai' },
+      { name: 'Managed IT Services', href: '/solutions/managed-services' },
+      { name: 'Digital Solutions & Training', href: '/solutions/digital-training' }
     ],
     insights: [
       { name: 'Blogs', href: '/insights#blogs' },
