@@ -15,7 +15,7 @@ export default function InsightsHero({ fitMode = 'cover', isActive }: InsightsHe
       {/* Background Image Container */}
       <div className="absolute inset-0 bg-[#0a192f]">
         <Image
-          src="/images/hero/hero_insights_desktop.webp"
+          src="/images/hero/hero-insights-desktop.webp"
           alt="Insights Hero"
           fill
           priority
