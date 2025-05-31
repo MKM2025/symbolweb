@@ -39,7 +39,7 @@ export default function RootLayout({
         {/* Preload hero images for instant swap */}
         <link rel="preload" as="image" href="/images/hero/hero_bpo_desktop.webp" />
         <link rel="preload" as="image" href="/images/solutions/hero_solutions_desktop.webp" />
-        <link rel="preload" as="image" href="/images/insights/hero_insights_desktop.webp" />
+        <link rel="preload" as="image" href="/images/hero/hero_insights_desktop.webp" />
       </head>
       <body className={`${inter.className} antialiased`}>
         <MenuProvider>
