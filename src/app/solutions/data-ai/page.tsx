@@ -86,6 +86,26 @@ export default function DataAIPage() {
             </p>
           </div>
         </div>
+        {/* Desktop Hero Image */}
+        <Image
+          src="/images/solutions/solution-pages/hero-data-ai-desktop.webp"
+          alt="Data, AI & Intelligence Hero Desktop"
+          fill
+          priority
+          className="object-cover object-center sm:block hidden"
+          quality={90}
+          sizes="(max-width: 768px) 100vw, 100vw"
+        />
+        {/* Mobile Hero Image - Currently not present, add if needed */}
+        <Image
+          src="/images/solutions/solution-pages/hero-data-ai-mobile.webp"
+          alt="Data, AI & Intelligence Hero Mobile"
+          fill
+          priority
+          className="object-cover object-center sm:hidden"
+          quality={90}
+          sizes="(max-width: 768px) 100vw, 100vw"
+        />
       </section>
 
       {/* Sitemap Navigation Bar */}

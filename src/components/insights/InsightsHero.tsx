@@ -25,7 +25,7 @@ export default function InsightsHero({ fitMode = 'cover', isActive }: InsightsHe
         />
         {/* Mobile Image - Only loads on small screens */}
         <Image
-          src="/images/hero/hero_insights_mobile.webp"
+          src="/images/hero/hero-insights-desktop.webp"
           alt="Insights Hero Mobile"
           fill
           priority
