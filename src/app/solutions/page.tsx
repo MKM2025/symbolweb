@@ -10,56 +10,56 @@ const solutions = [
     id: 'cybersecurity',
     title: 'Cybersecurity',
     description: 'Comprehensive security solutions to protect your digital assets and ensure business resilience.',
-    image: '/images/solutions/cybersecurity.webp',
+    image: '/images/solutions/cybersec-preview.webp',
     link: '/solutions/cybersecurity'
   },
   {
     id: 'fintech',
     title: 'Financial Technology',
     description: 'Specialized solutions for financial institutions to enhance security, compliance, and operational efficiency.',
-    image: '/images/solutions/securefinancial.webp',
+    image: '/images/solutions/fintech-preview.webp',
     link: '/solutions/fintech'
   },
   {
     id: 'cloud-infrastructure',
     title: 'Cloud & Infrastructure',
     description: 'Modern cloud and infrastructure solutions to build a resilient and scalable digital foundation.',
-    image: '/images/solutions/connectedenterprise.webp',
+    image: '/images/solutions/cloud-preview.webp',
     link: '/solutions/cloud-infrastructure'
   },
   {
     id: 'business-continuity',
     title: 'Business Continuity',
     description: 'Comprehensive solutions to ensure business continuity and rapid recovery from disruptions.',
-    image: '/images/solutions/continuity.webp',
+    image: '/images/solutions/business-continiuty-preview.webp',
     link: '/solutions/business-continuity'
   },
   {
     id: 'grc',
     title: 'Governance, Risk & Compliance',
     description: 'Integrated solutions for effective governance, risk management, and compliance.',
-    image: '/images/solutions/grc.webp',
+    image: '/images/solutions/government-risk-compliance-preview.webp',
     link: '/solutions/grc'
   },
   {
     id: 'data-ai',
     title: 'Data, AI & Intelligence',
     description: 'Harness the power of data and AI to drive innovation and informed decision-making.',
-    image: '/images/solutions/data-ai.webp',
+    image: '/images/solutions/data-ai-preview.webp',
     link: '/solutions/data-ai'
   },
   {
     id: 'managed-services',
     title: 'Managed IT Services',
     description: 'Comprehensive managed services to optimize operations and focus on innovation.',
-    image: '/images/solutions/managed-services.webp',
+    image: '/images/solutions/managed-it-services-preview.webp',
     link: '/solutions/managed-services'
   },
   {
     id: 'digital-training',
     title: 'Digital Solutions & Training',
     description: 'Empowering your workforce with cutting-edge digital solutions and comprehensive training programs.',
-    image: '/images/solutions/digital-training.webp',
+    image: '/images/solutions/digital-preview.webp',
     link: '/solutions/digital-training'
   }
 ];
