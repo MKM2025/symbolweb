@@ -68,6 +68,20 @@ export default function BusinessContinuityPage() {
     <main className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-[320px] md:h-[400px] w-[750px] md:w-[1920px] max-w-full bg-[#0a192f] flex items-center justify-start mx-auto">
+        <Image
+          src="/images/solutions/solution-pages/hero-business-continiuty-desktop.webp"
+          alt="Business Continuity Hero"
+          fill
+          className="object-cover hidden md:block"
+          priority
+        />
+        <Image
+          src="/images/solutions/solution-pages/hero-business-continiuty-mobile.webp"
+          alt="Business Continuity Hero"
+          fill
+          className="object-cover md:hidden"
+          priority
+        />
         <div className="container mx-auto px-4 flex flex-col justify-center h-full">
           <div className="relative z-20 flex flex-col items-center md:items-start justify-center w-full h-full text-center md:text-left max-w-2xl mx-auto md:mx-0 md:pl-4 sm:md:pl-8 md:ml-[60px]">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#FFF9C4] mb-4 mt-[1em] w-full max-w-full md:whitespace-nowrap">
