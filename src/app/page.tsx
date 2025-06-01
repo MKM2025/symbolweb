@@ -111,7 +111,7 @@ export default function Home() {
               </motion.div>
             </div>
             <Link 
-              href="/aboutus"
+              href="/about-us"
               className="inline-block bg-gradient-to-r from-[#BF953F] via-[#FCF6BA] to-[#B38728] text-[#1a1a1a] px-6 py-3 rounded-lg text-base font-semibold shadow-lg hover:from-[#FFF9D4] hover:via-[#DBA23A] hover:to-[#E6B94F] hover:scale-105 hover:shadow-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#E6B94F] active:scale-95"
             >
               Learn More About Us
