@@ -98,12 +98,26 @@ export default function CybersecurityPage() {
         </div>
         <div className="container mx-auto px-4 flex flex-col justify-center h-full">
           <div className="relative z-20 flex flex-col items-center md:items-start justify-center w-full h-full text-center md:text-left max-w-2xl mx-auto md:mx-0 md:pl-4 sm:md:pl-8 md:ml-[60px]">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#FFF9C4] mb-4 mt-[1em] w-full max-w-full md:whitespace-nowrap">
+            {/* Animate Hero Title */}
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.5 }}
+              className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#FFF9C4] mb-4 mt-[1em] w-full max-w-full md:whitespace-nowrap"
+            >
               Cybersecurity
-            </h1>
-            <p className="text-base sm:text-lg md:text-lg text-[#FFF9C4] w-full max-w-full">
+            </motion.h1>
+            {/* Animate Hero Description */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="text-base sm:text-lg md:text-lg text-[#FFF9C4] w-full max-w-full"
+            >
               Comprehensive security solutions to protect your digital assets and ensure business resilience.
-            </p>
+            </motion.p>
           </div>
         </div>
       </section>
@@ -147,46 +161,399 @@ export default function CybersecurityPage() {
         </div>
       </nav>
 
-      {/* Main Content */}
-      <section id="solutions" className="py-16 bg-gradient-to-b from-slate-50 to-blue-50">
+      {/* Introduction Section */}
+      <section className="py-16 bg-gradient-to-b from-slate-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-2xl shadow-md p-8 md:p-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.5 }}
+            className="bg-white rounded-2xl shadow-md p-8 md:p-12"
+          >
+            <div className="grid md:grid-cols-2 gap-12 items-start">
+              {/* Introduction Text */}
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.5 }}
+                className="space-y-6"
+              >
+                <h2 className="text-3xl font-bold text-[#002E6D] mb-6">Introduction</h2>
+                <p className="text-slate-600 leading-relaxed">
+                  The threat landscape is constantly evolving, demanding a proactive, intelligent, and integrated approach to security. Symbol Technologies provides end-to-end cybersecurity solutions and services designed to protect your critical assets, detect threats early, respond decisively, and ensure compliance. We leverage AI-driven insights, industry-leading technologies from partners like Fortinet, Tenable, Imperva, Rapid7, F5, and Cisco, and the deep expertise of our ST-Cyber SOC team to build resilient security postures for organizations across Africa.
+                </p>
+              </motion.div>
+
+              {/* Image Placeholder */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.5 }}
+                className="relative h-[300px] rounded-xl overflow-hidden"
+              >
+                <Image
+                  src="/images/solutions/solution-pages/cyber-intro.webp"
+                  alt="Cybersecurity Solutions"
+                  fill
+                  priority
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </motion.div>
+            </div>
+
+            {/* Challenges and Portfolio */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="mb-12"
-            >
-              <h2 className="text-3xl font-bold text-[#002E6D] mb-6">
-                Comprehensive Cybersecurity for a Resilient Digital Future
-              </h2>
-              <p className="text-slate-600 leading-relaxed whitespace-pre-line">
-                The threat landscape is constantly evolving, requiring a proactive, intelligent, and integrated approach to security. Symbol Technologies delivers end-to-end cybersecurity solutions and services tailored to protect your critical assets, detect threats early, respond decisively, and ensure regulatory compliance. We harness AI-driven insights, cutting-edge technologies from leading partners such as Fortinet, Tenable, Imperva, Rapid7, F5, and Cisco, and the deep expertise of our ST-Cyber SOC team to help organizations across Africa build resilient and adaptive security postures.
-
-                We address a wide range of cybersecurity challenges. These include the increasing sophistication and frequency of attacks such as ransomware, phishing, and advanced persistent threats (APTs); the expanding attack surfaces resulting from cloud adoption, IoT, and remote work; and the complexity of compliance with regulatory frameworks. We also tackle the global shortage of skilled cybersecurity professionals, the urgent need for 24/7 monitoring and rapid incident response, and the critical importance of protecting sensitive data across hybrid IT environments.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="mb-12"
+              className="mt-12 grid md:grid-cols-2 gap-8"
             >
-              <h2 className="text-3xl font-bold text-[#002E6D] mb-6">
-                Intelligent Security Operations & 24/7 Managed Detection and Response
-              </h2>
-              <p className="text-slate-600 leading-relaxed whitespace-pre-line">
-                Gain continuous visibility and expert oversight of your security posture with our comprehensive Security Operations and Managed Security Services, delivered through the ST-CyberSOC Team. We combine advanced technologies such as SIEM and SOAR with human expertise to provide proactive threat hunting, real-time monitoring, and rapid incident response.
+              {/* Challenges */}
+              <div className="bg-slate-50 rounded-xl p-6">
+                <h3 className="text-xl font-semibold text-[#002E6D] mb-4">Challenges We Address:</h3>
+                <ul className="space-y-3">
+                  {[
+                    'Increasing sophistication and frequency of cyberattacks (ransomware, phishing, APTs).',
+                    'Expanding attack surfaces due to cloud adoption, IoT, and remote work.',
+                    'Complex compliance and regulatory requirements.',
+                    'Shortage of skilled cybersecurity professionals.',
+                    'Need for 24/7 monitoring and rapid incident response.',
+                    'Protecting sensitive data across hybrid environments.'
+                  ].map((challenge, index) => (
+                    <li key={index} className="flex items-start text-slate-600">
+                      <span className="text-[#002E6D] mr-2">•</span>
+                      <span>{challenge}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-                Our Security Operations Center (SOC) Solutions are designed to be fully customizable. We help organizations design, build, operate, and transfer (BOT) Security Operations Centers that are tailored to their unique needs. For clients seeking outsourced security operations, our Managed SOC (SOC-as-a-Service) delivers 24/7 monitoring and alerting, ensuring continuous surveillance of logs and network traffic. We also provide SIEM and SOAR as a service, leveraging powerful platforms for intelligent event correlation, automation, and orchestration. Incident triage and analysis are handled by seasoned experts who investigate and assess potential threats to minimize risks.
-
-                The benefits of our approach include a reduced likelihood of breaches, more efficient remediation processes, improved compliance with standards such as PCI DSS, and enhanced visibility across even the most complex digital environments.
-              </p>
+              {/* Portfolio */}
+              <div className="bg-slate-50 rounded-xl p-6">
+                <h3 className="text-xl font-semibold text-[#002E6D] mb-4">Our Cybersecurity Portfolio:</h3>
+                <ul className="space-y-3">
+                  {[
+                    'Security Operations (SecOps) & Managed Security (MSSP)',
+                    'Exposure & Vulnerability Management',
+                    'Network & Infrastructure Security',
+                    'Cloud Security',
+                    'Application Security',
+                    'Data Security',
+                    'Identity & Access Management (IAM)',
+                    'Endpoint Security',
+                    'Specialized Threat Detection & Prevention'
+                  ].map((item, index) => (
+                    <li key={index} className="flex items-start text-slate-600">
+                      <span className="text-[#002E6D] mr-2">•</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </motion.div>
-          </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Security Operations Section */}
+      <section className="py-16 bg-gradient-to-b from-slate-50 to-blue-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.h2
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.5 }}
+            className="text-3xl font-bold text-[#002E6D] mb-8"
+          >
+            Security Operations (SecOps) & Managed Security (MSSP)
+          </motion.h2>
+          <motion.div
+             initial={{ opacity: 0, y: 20 }}
+             whileInView={{ opacity: 1, y: 0 }}
+             viewport={{ once: false }}
+             transition={{ duration: 0.5, delay: 0.2 }}
+             className="bg-white rounded-2xl shadow-md p-8 md:p-12"
+          >
+            {/* Main Content Area (Headline, Intro, Image) */}
+            <div className="grid md:grid-cols-2 gap-12 items-start">
+              {/* Left Column: Headline and Intro */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.5 }}
+                className="space-y-6"
+              >
+                <h3 className="text-3xl font-bold text-[#002E6D] leading-tight mb-4">
+                  Intelligent Security Operations & 24/7 Managed Detection and Response
+                </h3>
+                <p className="text-slate-600 leading-relaxed">
+                  Gain continuous visibility and expert oversight of your security posture with our comprehensive Security Operations and Managed Security Services, delivered through ST-CyberSOC Team. We combine advanced technologies like SIEM and SOAR with human expertise for proactive threat hunting, real-time monitoring, and rapid incident response.
+                </p>
+              </motion.div>
+
+              {/* Right Column: Image Placeholder */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.5 }}
+                className="relative h-[300px] rounded-xl overflow-hidden"
+              >
+                <Image
+                  src="/images/solutions/solution-pages/cyber-secops.webp"
+                  alt="Security Operations Center"
+                  fill
+                  priority
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Exposure & Vulnerability Management Section */}
+      <section className="py-16 bg-gradient-to-b from-slate-50 to-blue-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.h2
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.5 }}
+            className="text-3xl font-bold text-[#002E6D] mb-8"
+          >
+            Exposure & Vulnerability Management
+          </motion.h2>
+          <motion.div
+             initial={{ opacity: 0, y: 20 }}
+             whileInView={{ opacity: 1, y: 0 }}
+             viewport={{ once: false }}
+             transition={{ duration: 0.5, delay: 0.2 }}
+             className="bg-white rounded-2xl shadow-md p-8 md:p-12"
+          >
+            {/* Main Content Area (Headline, Intro, Image) */}
+            <div className="grid md:grid-cols-2 gap-12 items-start">
+              {/* Left Column: Headline and Intro */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.5 }}
+                className="space-y-6"
+              >
+                <h3 className="text-3xl font-bold text-[#002E6D] leading-tight mb-4">
+                  Proactively Reduce Your Attack Surface
+                </h3>
+                <p className="text-slate-600 leading-relaxed">
+                  Understand and minimize your cyber risk by continuously identifying, prioritizing, and remediating vulnerabilities across your entire digital footprint. Our services leverage leading platforms like Tenable and Rapid7 to provide a unified view of your exposure.
+                </p>
+              </motion.div>
+
+              {/* Right Column: Image Placeholder */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.5 }}
+                className="relative h-[300px] rounded-xl overflow-hidden"
+              >
+                <Image
+                  src="/images/solutions/solution-pages/cyber-proactive.webp"
+                  alt="Exposure & Vulnerability Management"
+                  fill
+                  priority
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </motion.div>
+            </div>
+
+            {/* Key Services & Capabilities */}
+            <div className="mt-12 space-y-8">
+              <div>
+                <h4 className="text-xl font-semibold text-[#002E6D] mb-4">Key Services & Capabilities:</h4>
+                <ul className="space-y-4">
+                  <li className="space-y-2">
+                    <h5 className="font-semibold text-[#002E6D]">Vulnerability Assessment & Management:</h5>
+                    <ul className="space-y-2 text-slate-600">
+                      <li className="flex items-start">
+                        <span className="text-[#002E6D] mr-2">•</span>
+                        <span><strong>Comprehensive Scanning:</strong> Discover vulnerabilities across IT infrastructure, cloud assets, web applications, containers, OT, and IoT devices.</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-[#002E6D] mr-2">•</span>
+                        <span><strong>Risk-Based Prioritization:</strong> Focus remediation efforts on the vulnerabilities posing the greatest threat, considering exploitability and asset criticality.</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-[#002E6D] mr-2">•</span>
+                        <span><strong>Remediation Guidance & Tracking:</strong> Actionable advice and integration with patching/ticketing systems.</span>
+                      </li>
+                    </ul>
+                  </li>
+                  <li className="space-y-2">
+                    <h5 className="font-semibold text-[#002E6D]">Exposure Management:</h5>
+                    <ul className="space-y-2 text-slate-600">
+                      <li className="flex items-start">
+                        <span className="text-[#002E6D] mr-2">•</span>
+                        <span><strong>Unified Attack Surface Visibility:</strong> Consolidate asset and vulnerability data from multiple sources (Tenable One, Rapid7 Insight Platform).</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-[#002E6D] mr-2">•</span>
+                        <span><strong>Attack Path Analysis:</strong> Visualize how attackers could chain vulnerabilities and exposures to reach critical assets.</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-[#002E6D] mr-2">•</span>
+                        <span><strong>Security Posture Benchmarking & Reporting:</strong> Measure and communicate cyber risk effectively to stakeholders.</span>
+                      </li>
+                    </ul>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#002E6D] mr-2">•</span>
+                    <span><strong>External Attack Surface Monitoring (EASM):</strong> Continuous discovery and assessment of your internet-facing assets and associated risks.</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#002E6D] mr-2">•</span>
+                    <span><strong>Penetration Testing & Red Teaming:</strong> Simulate real-world attacks to validate security controls and identify exploitable weaknesses.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Benefits */}
+            <div className="mt-8 space-y-4">
+              <div>
+                 <h4 className="text-xl font-semibold text-[#002E6D] mb-4">Benefits:</h4>
+                 <ul className="space-y-2 text-slate-600">
+                   <li className="flex items-start">
+                     <span className="text-[#002E6D] mr-2">•</span>
+                     <span>Reduced likelihood of breaches.</span>
+                   </li>
+                   <li className="flex items-start">
+                     <span className="text-[#002E6D] mr-2">•</span>
+                     <span>Optimized remediation efforts.</span>
+                   </li>
+                   <li className="flex items-start">
+                     <span className="text-[#002E6D] mr-2">•</span>
+                     <span>Improved compliance posture (e.g., PCI DSS).</span>
+                   </li>
+                   <li className="flex items-start">
+                     <span className="text-[#002E6D] mr-2">•</span>
+                     <span>Enhanced visibility across complex environments.</span>
+                   </li>
+                 </ul>
+              </div>
+            </div>
+
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Network & Infrastructure Security Section */}
+      <section className="py-16 bg-gradient-to-b from-slate-50 to-blue-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.h2
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.5 }}
+            className="text-3xl font-bold text-[#002E6D] mb-8"
+          >
+            Network & Infrastructure Security
+          </motion.h2>
+          <motion.div
+             initial={{ opacity: 0, y: 20 }}
+             whileInView={{ opacity: 1, y: 0 }}
+             viewport={{ once: false }}
+             transition={{ duration: 0.5, delay: 0.2 }}
+             className="bg-white rounded-2xl shadow-md p-8 md:p-12"
+          >
+            {/* Main Content Area (Image on Left, Text on Right) */}
+            <div className="grid md:grid-cols-2 gap-12 items-start">
+              {/* Left Column: Image Placeholder */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.5 }}
+                className="relative h-[300px] rounded-xl overflow-hidden"
+              >
+                <Image
+                  src="/images/solutions/solution-pages/cyber-network.webp"
+                  alt="Network & Infrastructure Security"
+                  fill
+                  priority
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </motion.div>
+
+              {/* Right Column: Headline and Intro */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.5 }}
+                className="space-y-6"
+              >
+                <h3 className="text-3xl font-bold text-[#002E6D] leading-tight mb-4">
+                  Secure Your Digital Foundation with World-Class Network Protection
+                </h3>
+                <p className="text-slate-600 leading-relaxed">
+                  In today's rapidly evolving digital landscape, securing your network and IT infrastructure is no longer optional—it's a mission-critical priority. From increasing cyberattacks to sophisticated internal threats, organizations face mounting challenges in safeguarding their network perimeter, data centers, cloud environments, and remote users.
+                </p>
+                <p className="text-slate-600 leading-relaxed">
+                   At Symbol Technologies, we deliver advanced Network & Infrastructure Security solutions that ensure your organization remains resilient, compliant, and ready to face tomorrow's threats. Leveraging best-in-class technologies and our deep industry expertise, we help you build a secure, scalable, and agile network environment.
+                </p>
+              </motion.div>
+            </div>
+
+            {/* Technology Partners */}
+            <div className="mt-12 space-y-8">
+              <div>
+                <h4 className="text-xl font-semibold text-[#002E6D] mb-4">End-to-End Protection Powered by Industry Leaders</h4>
+                <p className="text-slate-600 leading-relaxed mb-6">
+                  To deliver uncompromising security, we partner with some of the most trusted names in the cybersecurity industry, including:
+                </p>
+                <ul className="space-y-4 text-slate-600">
+                  <li className="flex items-start">
+                    <span className="text-[#002E6D] mr-2">•</span>
+                    <span>
+                      <strong>Fortinet –</strong> Offering high-performance Next-Generation Firewalls (NGFWs), Secure SD-WAN, and FortiGate threat intelligence, Fortinet forms the backbone of our perimeter defense architecture.
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#002E6D] mr-2">•</span>
+                    <span>
+                      <strong>Cisco –</strong> From Cisco Secure Firewalls and Identity Services Engine (ISE) to Cisco Umbrella, we integrate Cisco's robust ecosystem to provide enterprise-grade network visibility and access control.
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#002E6D] mr-2">•</span>
+                    <span>
+                      <strong>F5 Networks –</strong> F5 plays a critical role in securing your application delivery with Advanced Web Application Firewalls (WAFs), Load Balancers, and SSL traffic inspection, ensuring availability, speed, and protection.
+                    </span>
+                  </li>
+                   <li className="flex items-start">
+                    <span className="text-[#002E6D] mr-2">•</span>
+                    <span>
+                      <strong>Imperva –</strong> Known for its strong data and application security, Imperva helps protect your business-critical assets against threats like DDoS, bot attacks, and API exploits.
+                    </span>
+                  </li>
+                </ul>
+                <p className="text-slate-600 leading-relaxed mt-6">
+                   By combining these technologies with our certified engineers and consultants, we offer a layered defense approach that addresses every aspect of your infrastructure security.
+                </p>
+              </div>
+            </div>
+
+          </motion.div>
         </div>
       </section>
 
@@ -195,17 +562,27 @@ export default function CybersecurityPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl sm:text-3xl font-bold mb-8">Related Solutions</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {allSolutions.filter(s => s.id !== 'cybersecurity').map(solution => (
-              <Link key={solution.id} href={solution.link} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow block group">
-                <h3 className="text-xl font-bold text-[#002E6D] mb-2 group-hover:text-blue-600 transition-colors">{solution.title}</h3>
-                <p className="text-gray-600 mb-3">{solution.description}</p>
-                <span className="text-blue-600 group-hover:text-blue-800 font-semibold inline-flex items-center">
-                  Learn More
-                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </span>
-              </Link>
+            {allSolutions.filter(s => s.id !== 'cybersecurity').map((solution, index) => (
+              /* Animate each solution thumbnail */
+              <motion.div
+                 key={solution.id}
+                 initial={{ opacity: 0, y: 20 }}
+                 whileInView={{ opacity: 1, y: 0 }}
+                 viewport={{ once: false }}
+                 transition={{ duration: 0.5, delay: index * 0.1 }}
+                 className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow block group"
+              >
+                <Link href={solution.link} className="block w-full h-full">
+                  <h3 className="text-xl font-bold text-[#002E6D] mb-2 group-hover:text-blue-600 transition-colors">{solution.title}</h3>
+                  <p className="text-gray-600 mb-3">{solution.description}</p>
+                  <span className="text-blue-600 group-hover:text-blue-800 font-semibold inline-flex items-center">
+                    Learn More
+                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </span>
+                </Link>
+              </motion.div>
             ))}
           </div>
         </div>
