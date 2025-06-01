@@ -315,6 +315,85 @@ export default function CybersecurityPage() {
                 />
               </motion.div>
             </div>
+
+            {/* New content added below the main grid */}
+            <div className="mt-12 space-y-8">
+              <div>
+                <h4 className="text-xl font-semibold text-[#002E6D] mb-4">Key Services & Capabilities:</h4>
+                <ul className="space-y-4 text-slate-600 leading-relaxed">
+                  <li>
+                    <h5 className="font-semibold text-[#002E6D]">SOC Solutions:</h5>
+                    <p className="ml-4">Design, build, operate, and transfer (BOT) customized Security Operations Centers tailored to your needs.</p>
+                  </li>
+                  <li className="space-y-2">
+                    <h5 className="font-semibold text-[#002E6D]">Managed SOC (SOCaaS):</h5>
+                    <ul className="space-y-2 ml-4">
+                      <li className="flex items-start">
+                        <span className="text-[#002E6D] mr-2">•</span>
+                        <span>24/7 Monitoring & Alerting: Continuous surveillance of logs and network traffic.</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-[#002E6D] mr-2">•</span>
+                        <span>SIEM/SOAR as a Service: Leveraging platforms for intelligent correlation, automation, and orchestration.</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-[#002E6D] mr-2">•</span>
+                        <span>Incident Triage & Analysis: Expert investigation of potential threats.</span>
+                      </li>
+                    </ul>
+                  </li>
+                  <li className="space-y-2">
+                    <h5 className="font-semibold text-[#002E6D]">Managed Detection & Response (MDR):</h5>
+                    <ul className="space-y-2 ml-4">
+                       <li className="flex items-start">
+                        <span className="text-[#002E6D] mr-2">•</span>
+                        <span>Proactive Threat Hunting: Actively searching for indicators of compromise (IoCs) that evade automated detection.</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-[#002E6D] mr-2">•</span>
+                        <span>Advanced Endpoint/Network/Cloud Monitoring: Utilizing EDR/NDR/XDR principles.</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-[#002E6D] mr-2">•</span>
+                        <span>Guided Response & Remediation: Expert assistance in containing and eradicating threats. (Leveraging partners like Rapid7).</span>
+                      </li>
+                    </ul>
+                  </li>
+                   <li className="flex items-start">
+                    <span className="text-[#002E6D] mr-2">•</span>
+                    <span><strong>Threat Intelligence:</strong> Curated feeds and analysis on relevant threats, vulnerabilities, and attacker tactics.</span>
+                  </li>
+                   <li className="space-y-2">
+                    <h5 className="font-semibold text-[#002E6D]">Incident Response:</h5>
+                    <ul className="space-y-2 ml-4">
+                       <li className="flex items-start">
+                        <span className="text-[#002E6D] mr-2">•</span>
+                        <span>Retainer & Emergency Services (CERT): Rapid deployment of experts to manage active breaches.</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-[#002E6D] mr-2">•</span>
+                        <span>Digital Forensics: Investigation to understand attack vectors and impact.</span>
+                      </li>
+                    </ul>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#002E6D] mr-2"> •</span>
+                    <span><strong>Generative AI for SOC:</strong> Enhancing detection accuracy, speeding up investigations, and automating reporting through AI.</span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Benefits */}
+              <div className="mt-8 space-y-4">
+                <div>
+                   <h4 className="text-xl font-semibold text-[#002E6D] mb-4">Benefits:</h4>
+                   <p className="text-slate-600 leading-relaxed">
+                    Reduced dwell time for threats, faster response, improved security posture, access to expert skills, predictable costs, compliance support.
+                   </p>
+                </div>
+              </div>
+            </div>
+
           </motion.div>
         </div>
       </section>
