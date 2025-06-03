@@ -7,6 +7,21 @@ import { motion } from 'framer-motion';
 
 const bpoCategories = [
   {
+    title: 'Contact Center Services',
+    description: 'Professional, 24/7 multichannel support powered by our in-house Cisco infrastructure and integrated billing system.',
+    href: '/bpo/contact-center',
+    icon: '📞',
+    services: [
+      'Inbound & Outbound Call Handling',
+      'Live Chat & Email Support',
+      'Customer Service & Helpdesk Solutions',
+      'Lead Generation & Appointment Setting',
+      'Technical Support & Issue Resolution',
+      'Available Onsite or Remote Deployment',
+      'Hosted in Our Office with Cisco Contact Center & Billing System'
+    ]
+  },
+  {
     title: 'Software Development',
     description: 'End-to-end software development services with expertise in multiple technologies.',
     href: '/bpo/software-development',

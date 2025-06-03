@@ -76,6 +76,40 @@ export default function DigitalTrainingPage() {
     <main className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-[320px] md:h-[400px] w-[750px] md:w-[1920px] max-w-full bg-[#0a192f] flex items-center justify-start mx-auto">
+        <div className="absolute inset-0">
+          {/* Backup Image */}
+          <Image
+            src="/images/solutions/solution-pages/hero-digital-image-desktop.webp"
+            alt="Digital Solutions & Training Hero"
+            fill
+            priority
+            className="object-cover object-center z-0 hidden md:block"
+            quality={90}
+            sizes="(max-width: 768px) 100vw, 100vw"
+          />
+          {/* Mobile Hero Image */}
+          <Image
+            src="/images/solutions/solution-pages/hero-digital-image-mobile.webp"
+            alt="Digital Solutions & Training Hero Mobile"
+            fill
+            priority
+            className="object-cover object-center z-0 md:hidden"
+            quality={90}
+            sizes="(max-width: 768px) 100vw, 100vw"
+          />
+        </div>
+        {/* Video Hero - Positioned above the image */}
+        <div className="absolute inset-0 z-10 hidden md:block">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="object-cover object-center w-full h-full"
+          >
+            <source src="/images/solutions/solution-pages/hero-digital-video-desktop.mp4" type="video/mp4" />
+          </video>
+        </div>
         <div className="container mx-auto px-4 flex flex-col justify-center h-full">
           <div className="relative z-20 flex flex-col items-center md:items-start justify-center w-full h-full text-center md:text-left max-w-2xl mx-auto md:mx-0 md:pl-4 sm:md:pl-8 md:ml-[60px]">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#FFF9C4] mb-4 mt-[1em] w-full max-w-full md:whitespace-nowrap">

@@ -72,21 +72,91 @@ export default function AboutUsPage() {
       </section>
 
       {/* Introduction Section */}
-      <section className="py-12" style={{ backgroundColor: '#f3f6fb' }}>
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto bg-white rounded-2xl p-8 shadow-lg">
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.2 }}
-              transition={{ duration: 0.8, ease: 'easeOut' }}
-              className="text-lg text-gray-700 leading-relaxed"
-            >
-              Symbol Technologies PLC is a leading Ethiopian ICT company with over a decade of experience delivering end-to-end turnkey technology projects across the country. We've successfully implemented hundreds of solutions in telecom, data infrastructure, power, and security systems—earning the trust of government institutions, universities, financial organizations, and enterprises. Our head office is fully equipped with high-speed internet, modern IP contact center solutions, enterprise-grade server infrastructure, and state-of-the-art video conferencing and training facilities—providing a seamless environment for collaboration, service delivery, and continuous learning.
-            </motion.p>
-          </div>
+      <motion.section 
+        className="py-16 relative overflow-hidden"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: false, amount: 0.3 }}
+        transition={{ duration: 0.8 }}
+      >
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div 
+            className="max-w-5xl mx-auto relative"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.6 }}
+          >
+            {/* Decorative Elements */}
+            <div className="absolute -top-4 -left-4 w-24 h-24 bg-[#FFD700]/10 rounded-full blur-2xl"></div>
+            <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-[#0a2a4a]/50 rounded-full blur-2xl"></div>
+            
+            {/* Main Container */}
+            <div className="relative bg-gradient-to-br from-[#0a192f]/95 to-[#0a2a4a]/95 backdrop-blur-sm rounded-2xl border border-[#FFD700]/20 shadow-2xl overflow-hidden">
+              {/* Animated Border Gradient */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#FFD700]/20 to-transparent animate-gradient-x"></div>
+              
+              <div className="p-8 md:p-12 relative">
+                {/* Inner Glow Effects */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#FFD700]/5 to-transparent opacity-50"></div>
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.1)_0%,transparent_70%)]"></div>
+                
+                <div className="flex flex-col items-center space-y-8 relative z-10">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false, amount: 0.3 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    className="text-center"
+                  >
+                    <motion.h2 
+                      className="text-3xl md:text-4xl font-bold text-[#FFF9C4] mb-4 relative"
+                      initial={{ opacity: 0, x: -50 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.8, ease: "easeOut" }}
+                    >
+                      <span className="relative inline-block">
+                        Our Story
+                        <motion.div
+                          className="absolute -bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-[#FFD700] to-transparent"
+                          initial={{ scaleX: 0 }}
+                          whileInView={{ scaleX: 1 }}
+                          transition={{ duration: 0.8, delay: 0.4 }}
+                        />
+                      </span>
+                    </motion.h2>
+                  </motion.div>
+
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false, amount: 0.3 }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                    className="flex flex-col space-y-6 text-gray-200 text-lg max-w-3xl"
+                  >
+                    <motion.p 
+                      className="leading-relaxed text-justify"
+                      initial={{ opacity: 0, x: 30 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+                    >
+                      Symbol Technologies PLC is a leading Ethiopian ICT company with over a decade of experience delivering end-to-end turnkey technology projects across the country. We've successfully implemented hundreds of solutions in telecom, data infrastructure, power, and security systems—earning the trust of government institutions, universities, financial organizations, and enterprises.
+                    </motion.p>
+                    <motion.p 
+                      className="leading-relaxed text-justify"
+                      initial={{ opacity: 0, x: -30 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+                    >
+                      Our head office is fully equipped with high-speed internet, modern IP contact center solutions, enterprise-grade server infrastructure, and state-of-the-art video conferencing and training facilities—providing a seamless environment for collaboration, service delivery, and continuous learning.
+                    </motion.p>
+                  </motion.div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Statistics Section */}
       <motion.section
@@ -372,22 +442,83 @@ export default function AboutUsPage() {
       </section>
 
       {/* Our People Section */}
-      <section className="py-12 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <motion.div
+      <motion.section 
+        className="py-16 relative overflow-hidden"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: false, amount: 0.3 }}
+        transition={{ duration: 0.8 }}
+      >
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div 
+            className="max-w-5xl mx-auto relative"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.2 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-            className="max-w-4xl mx-auto bg-white rounded-2xl p-8 shadow-lg"
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl font-bold mb-6 text-center text-[#0a2a4a]">Our People</h2>
-            <p className="text-lg text-gray-700 leading-relaxed text-center">
-              Our strength lies in our diverse and experienced team—ICT professionals, certified project managers, and solution architects with proven expertise in national-scale projects. Their dedication continues to set us apart in the marketplace.
-            </p>
+            {/* Decorative Elements */}
+            <div className="absolute -top-4 -left-4 w-24 h-24 bg-[#FFD700]/10 rounded-full blur-2xl"></div>
+            <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-[#0a2a4a]/50 rounded-full blur-2xl"></div>
+            
+            {/* Main Container */}
+            <div className="relative bg-gradient-to-br from-[#0a192f]/95 to-[#0a2a4a]/95 backdrop-blur-sm rounded-2xl border border-[#FFD700]/20 shadow-2xl overflow-hidden">
+              {/* Animated Border Gradient */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#FFD700]/20 to-transparent animate-gradient-x"></div>
+              
+              <div className="p-8 md:p-12 relative">
+                {/* Inner Glow Effects */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#FFD700]/5 to-transparent opacity-50"></div>
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.1)_0%,transparent_70%)]"></div>
+                
+                <div className="flex flex-col items-center space-y-8 relative z-10">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false, amount: 0.3 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    className="text-center"
+                  >
+                    <motion.h2 
+                      className="text-3xl md:text-4xl font-bold text-[#FFF9C4] mb-4 relative"
+                      initial={{ opacity: 0, x: -50 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.8, ease: "easeOut" }}
+                    >
+                      <span className="relative inline-block">
+                        Our People
+                        <motion.div
+                          className="absolute -bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-[#FFD700] to-transparent"
+                          initial={{ scaleX: 0 }}
+                          whileInView={{ scaleX: 1 }}
+                          transition={{ duration: 0.8, delay: 0.4 }}
+                        />
+                      </span>
+                    </motion.h2>
+                  </motion.div>
+
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false, amount: 0.3 }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                    className="flex flex-col space-y-6 text-gray-200 text-lg max-w-3xl"
+                  >
+                    <motion.p 
+                      className="leading-relaxed text-justify"
+                      initial={{ opacity: 0, x: 30 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+                    >
+                      Our strength lies in our diverse and experienced team—ICT professionals, certified project managers, and solution architects with proven expertise in national-scale projects. Their dedication continues to set us apart in the marketplace.
+                    </motion.p>
+                  </motion.div>
+                </div>
+              </div>
+            </div>
           </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Why Choose Us Section */}
       <section className="py-12 bg-white">
@@ -423,6 +554,24 @@ export default function AboutUsPage() {
           </motion.div>
         </div>
       </section>
+
+      <style jsx>{`
+        @keyframes gradient-x {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+        .animate-gradient-x {
+          animation: gradient-x 8s ease infinite;
+          background-size: 200% 200%;
+        }
+      `}</style>
     </main>
   );
 } 

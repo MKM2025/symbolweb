@@ -113,6 +113,70 @@ export default function InsightsPage() {
           ></motion.span>
         </nav>
       </div>
+      {/* Blogs Section */}
+      <section id="blogs" className="py-16 bg-gray-50 scroll-mt-28">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+              Symboltech's Blogs
+            </h2>
+            <p className="mt-4 text-lg text-gray-600">
+              Stay updated with our latest thoughts and perspectives
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {allBlogs.map((blog: Blog) => (
+              <Link key={blog._id} href={`${blog.url}`} className="group">
+                <div className="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105 flex flex-col">
+                  <div className="relative h-48 w-full flex items-center justify-center bg-gray-100">
+                    {blog.image && (
+                      <Image
+                        src={blog.image}
+                        alt={`${blog.title} Thumbnail`}
+                        fill
+                        priority
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      />
+                    )}
+                  </div>
+                  <div className="p-6 flex flex-col justify-between flex-grow">
+                    <div>
+                      <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                        {blog.title}
+                      </h3>
+                      <p className="text-sm text-gray-500 mb-4">
+                        By {blog.author} | {new Date(blog.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                      </p>
+                      {blog.summary && (
+                        <p className="text-gray-600 line-clamp-3">
+                          {blog.summary}
+                        </p>
+                      )}
+                    </div>
+                    <div className="mt-4 flex items-center text-blue-600 group-hover:text-blue-800">
+                      <span className="text-sm font-medium">Read More</span>
+                      <svg
+                        className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M9 5l7 7-7 7"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
       {/* Case Studies Section */}
       <section id="case-studies" className="py-16 bg-white scroll-mt-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -135,20 +199,6 @@ export default function InsightsPage() {
               />
             ))}
           </div>
-        </div>
-      </section>
-      {/* Blogs Section */}
-      <section id="blogs" className="py-16 bg-gray-50 scroll-mt-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
-              Latest Insights
-            </h2>
-            <p className="mt-4 text-lg text-gray-600">
-              Stay updated with our latest thoughts and perspectives
-            </p>
-          </div>
-          {/* Blog cards will be added here */}
         </div>
       </section>
     </main>

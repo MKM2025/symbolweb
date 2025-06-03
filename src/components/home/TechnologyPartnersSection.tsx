@@ -15,6 +15,7 @@ export default function TechnologyPartnersSection() {
     { name: 'Fortinet', logo: '/images/partners/fortinet.png' },
     { name: 'HPE', logo: '/images/partners/hpe.png' },
     { name: 'Microsoft', logo: '/images/partners/microsoft.png' },
+    { name: 'Oracle', logo: '/images/partners/oracle.png' },
     { name: 'VMware', logo: '/images/partners/vmware.png' },
     { name: 'F5', logo: '/images/partners/f5.png' },
     { name: 'Tenable', logo: '/images/partners/tenable.png' },
@@ -22,12 +23,17 @@ export default function TechnologyPartnersSection() {
     { name: 'Veeam', logo: '/images/partners/veeam.png' },
     { name: 'Eaton', logo: '/images/partners/eaton.png' },
     { name: 'Vertiv', logo: '/images/partners/vertiv.png' },
+    { name: 'Nutanix', logo: '/images/partners/nutanix.png' },
     { name: 'Dell', logo: '/images/partners/dell.png' },
     { name: 'Mitel', logo: '/images/partners/mitel.png' },
     { name: 'Arista', logo: '/images/partners/arista.png' },
     { name: 'Rapid7', logo: '/images/partners/rapid7.png' },
     { name: 'Symantec', logo: '/images/partners/symantec.png' },
-    { name: 'ForcePoint', logo: '/images/partners/forcepoint.png' }
+    { name: 'ForcePoint', logo: '/images/partners/forcepoint.png' },
+    { name: 'Thales', logo: '/images/partners/thales.png' },
+    { name: 'ManageEngine', logo: '/images/partners/manageengine.png' },
+    { name: 'Cummins', logo: '/images/partners/cummins.png' },
+    { name: 'Odoo', logo: '/images/partners/odoo.png' },
   ];
 
   const PartnerLogo = ({ partner }: { partner: { name: string; logo: string } }) => {

@@ -10,6 +10,9 @@ const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
   adjustFontFallback: true,
+  preload: true,
+  fallback: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+  variable: '--font-inter',
 })
 
 export const metadata: Metadata = {
@@ -34,7 +37,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className={`scroll-smooth ${inter.variable}`}>
       <head>
         {/* Preload hero images for instant swap */}
         <link rel="preload" as="image" href="/images/hero/hero_bpo_desktop.webp" />

@@ -5,6 +5,13 @@
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .case-study-html {
+    padding: 2rem;
+  }
 }
 
 /* Override Microsoft Word styles */
@@ -16,7 +23,7 @@
   font-size: 1.1rem !important;
   line-height: 1.7 !important;
   margin-bottom: 1em !important;
-  text-align: left !important;
+  text-align: justify !important;
 }
 
 .case-study-html b,
