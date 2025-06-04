@@ -21,7 +21,10 @@ export default function ServicesHero({ fitMode = 'cover', isActive }: ServicesHe
             muted
             loop
             playsInline
+            preload="auto"
             className="object-cover object-center w-full h-full"
+            onError={(e) => console.error('Video error:', e)}
+            onLoadedData={() => console.log('Video loaded successfully')}
           >
             <source src="/images/hero/hero-video-desktop.mp4" type="video/mp4" />
           </video>
@@ -92,7 +95,7 @@ export default function ServicesHero({ fitMode = 'cover', isActive }: ServicesHe
               className="mt-6 flex flex-row gap-4 justify-center md:justify-start w-full"
             >
               <Link
-                href="/services#scroll-target"
+                href="/solutions"
                 className="inline-block bg-gradient-to-r from-[#E6B94F] via-[#FFF9D4] to-[#DBA23A] text-[#1a1a1a] px-4 py-2 rounded-lg font-semibold shadow-md text-sm text-center cursor-pointer transition-all duration-300 hover:from-[#FFF9D4] hover:via-[#DBA23A] hover:to-[#E6B94F] hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#E6B94F] active:scale-95 z-10"
               >
                 Explore Our Solutions
