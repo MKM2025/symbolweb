@@ -14,12 +14,37 @@ export default function ServicesHero({ fitMode = 'cover', isActive }: ServicesHe
     <section className="relative w-full h-screen min-h-screen max-h-screen overflow-hidden -mt-[1px] mb-0">
       {/* Background Image Container */}
       <div className="absolute inset-0 bg-[#0a192f]">
+        {/* Desktop Video */}
+        <div className="hidden md:block absolute inset-0 z-10">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="object-cover object-center w-full h-full"
+          >
+            <source src="/images/hero/hero-video-desktop.mp4" type="video/mp4" />
+          </video>
+        </div>
+        {/* Mobile Video */}
+        <div className="md:hidden absolute inset-0 z-10">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="object-cover object-center w-full h-full"
+          >
+            <source src="/images/hero/hero-video-mobile.mp4" type="video/mp4" />
+          </video>
+        </div>
+        {/* Backup Image for Desktop */}
         <Image
           src="/images/hero/hero_solutions_desktop.webp"
           alt="Solutions Hero"
           fill
           priority
-          className="object-cover object-center"
+          className="object-cover object-center hidden md:block z-0"
           quality={90}
           sizes="(max-width: 768px) 100vw, 100vw"
         />
@@ -29,14 +54,14 @@ export default function ServicesHero({ fitMode = 'cover', isActive }: ServicesHe
           alt="Solutions Hero Mobile"
           fill
           priority
-          className="object-cover object-center sm:hidden"
+          className="object-cover object-center sm:hidden z-0"
           quality={90}
           sizes="(max-width: 768px) 100vw, 100vw"
         />
       </div>
 
       {/* Content Container */}
-      <div className="relative h-full w-full grid grid-rows-[90%_10%] md:flex md:flex-col md:justify-center md:absolute md:top-[25%] md:px-4 md:justify-start md:pt-0">
+      <div className="relative h-full w-full grid grid-rows-[90%_10%] md:flex md:flex-col md:justify-center md:absolute md:top-[25%] md:px-4 md:justify-start md:pt-0 z-20">
         {/* Upper row: CTA content */}
         <div className="flex flex-col items-center px-4 row-span-1 md:block h-full pt-2 md:pt-0">
           <div className="max-w-2xl ml-0 md:ml-12 pl-4 sm:pl-8 portrait:ml-6 portrait:mt-16 landscape:mt-8 lg:mt-[-180px] portrait:items-start portrait:text-left portrait:pr-8 w-full">
@@ -47,7 +72,7 @@ export default function ServicesHero({ fitMode = 'cover', isActive }: ServicesHe
               transition={{ duration: 0.8, ease: 'easeOut' }}
               className="text-[clamp(2rem,8vw,2.8rem)] sm:text-4xl md:text-6xl font-bold text-[#FFF9C4] mb-2 sm:mb-4 md:mb-6 drop-shadow-lg leading-tight w-full text-center md:text-left"
             >
-              Comprehensive ICT Solutions
+              Comprehensive ICT Solutions & Turnkey Integration
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -56,7 +81,7 @@ export default function ServicesHero({ fitMode = 'cover', isActive }: ServicesHe
               transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
               className="text-[clamp(1.2rem,5vw,2rem)] sm:text-2xl md:text-xl text-[#FFF9C4] mb-2 sm:mb-3 md:mb-4 drop-shadow-md font-semibold w-full text-center md:text-left"
             >
-              Symbol Technologies delivers AI-driven, end-to-end digital solutions—from cybersecurity and cloud infrastructure to automation—empowering modern enterprises with agility, resilience, and innovation.
+              Empowering businesses with end-to-end technology, infrastructure, and automation — from design to deployment.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -67,16 +92,10 @@ export default function ServicesHero({ fitMode = 'cover', isActive }: ServicesHe
               className="mt-6 flex flex-row gap-4 justify-center md:justify-start w-full"
             >
               <Link
-                href="/solutions#scroll-target"
-                className="inline-block bg-gradient-to-r from-[#BF953F] via-[#FCF6BA] to-[#B38728] text-[#1a1a1a] px-6 py-3 rounded-lg text-base font-semibold font-sans shadow-lg hover:from-[#FFF9D4] hover:via-[#DBA23A] hover:to-[#E6B94F] hover:scale-105 hover:shadow-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#E6B94F] active:scale-95 portrait:px-4 portrait:py-2 portrait:text-sm portrait:max-w-xs portrait:w-fit"
+                href="/services#scroll-target"
+                className="inline-block bg-gradient-to-r from-[#E6B94F] via-[#FFF9D4] to-[#DBA23A] text-[#1a1a1a] px-4 py-2 rounded-lg font-semibold shadow-md text-sm text-center cursor-pointer transition-all duration-300 hover:from-[#FFF9D4] hover:via-[#DBA23A] hover:to-[#E6B94F] hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#E6B94F] active:scale-95 z-10"
               >
-                Our Solutions
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-block bg-[#0a2a4a] text-[#FFD700] px-6 py-3 rounded-lg text-base font-semibold font-sans shadow-md transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#FFD700] active:scale-95 hover:bg-[#0a2a4a]/90 hover:text-[#FFF9D4] portrait:px-4 portrait:py-2 portrait:text-sm portrait:max-w-xs portrait:w-fit"
-              >
-                Talk to Us!
+                Explore Our Solutions
               </Link>
             </motion.div>
           </div>
