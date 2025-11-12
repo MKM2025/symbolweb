@@ -63,6 +63,114 @@ const allSolutions = [
   },
 ];
 
+type CloudServiceDetail = {
+  slug: string;
+  title: string;
+  eyebrow?: string;
+  headline?: string;
+  summary?: string;
+  description?: string[];
+  image?: string;
+  imageAlt?: string;
+  highlightsTitle?: string;
+  highlights?: string[];
+  closing?: string;
+};
+
+const cloudServiceDetails: CloudServiceDetail[] = [
+  {
+    slug: 'cloud-migration-strategy',
+    title: 'Cloud Migration & Strategy (VMware to OpenStack)',
+    image: '/images/solutions/solution-pages/cloud-migration-strategy.png',
+    imageAlt: 'Illustration representing cloud migration and strategic planning',
+    eyebrow: 'Migrate from VMware to an ultra-reliable cloud management platform, powered by OpenStack, Kubernetes, and Ceph.',
+    headline: 'Seamless Migration from VMware to Open Cloud Infrastructure',
+    summary:
+      'Empower your business with Symbol Technologies’ next-generation cloud transformation services.',
+    description: [
+      'As organizations evolve, agility, reliability, and cost efficiency have become essential. Symbol Technologies now offers a seamless migration service from VMware to an ultra-reliable, open-source cloud management platform—powered by OpenStack, Kubernetes, and Ceph.',
+    ],
+    highlightsTitle: 'Our solution enables enterprises to:',
+    highlights: [
+      'Reduce licensing costs while maintaining enterprise-grade performance.',
+      'Gain full control and flexibility with open cloud technologies.',
+      'Achieve scalability and resilience through containerized and software-defined infrastructure.',
+      'Ensure business continuity with expert-led migration and managed support.',
+    ],
+    closing: 'Whether you are modernizing your data center or building a future-ready private cloud, Symbol Technologies ensures a smooth, secure, and optimized transition tailored to your business.',
+  },
+  {
+    slug: 'infrastructure-modernization',
+    title: 'Infrastructure Modernization',
+    summary:
+      'Refresh legacy infrastructure with cloud-native architectures and automated provisioning.',
+    description: [
+      'Standardize compute, storage, and networking foundations for elasticity and resilience.',
+      'Implement observability practices that keep modern platforms tuned for performance.',
+    ],
+  },
+  {
+    slug: 'hybrid-cloud-solutions',
+    title: 'Hybrid Cloud Solutions',
+    summary:
+      'Blend on-premises and cloud resources with consistent management and policy controls.',
+    description: [
+      'Enable workload portability through container platforms and unified networking fabrics.',
+      'Optimize placement of sensitive workloads while scaling innovation in the public cloud.',
+    ],
+  },
+  {
+    slug: 'cloud-security-compliance',
+    title: 'Cloud Security & Compliance',
+    summary:
+      'Embed zero-trust principles, identity controls, and continuous compliance monitoring.',
+    description: [
+      'Automate guardrails, policy enforcement, and remediation across multi-cloud estates.',
+      'Protect data, workloads, and users with defense-in-depth strategies tailored to your sector.',
+    ],
+  },
+  {
+    slug: 'performance-optimization',
+    title: 'Performance Optimization',
+    summary:
+      'Continuously tune workloads to meet cost, latency, and availability objectives.',
+    description: [
+      'Use analytics, APM tooling, and capacity insights to remediate bottlenecks proactively.',
+      'Establish performance baselines that keep digital experiences responsive and reliable.',
+    ],
+  },
+  {
+    slug: 'disaster-recovery-backup',
+    title: 'Disaster Recovery & Backup',
+    summary:
+      'Architect resilient failover strategies leveraging geo-redundant cloud capabilities.',
+    description: [
+      'Automate backup scheduling, testing, and data lifecycle management across workloads.',
+      'Reduce recovery time objectives with orchestrated playbooks and continuous validation.',
+    ],
+  },
+  {
+    slug: 'infrastructure-as-code',
+    title: 'Infrastructure as Code',
+    summary:
+      'Adopt declarative templates to provision environments consistently and repeatably.',
+    description: [
+      'Integrate CI/CD pipelines that enforce compliance and accelerate infrastructure delivery.',
+      'Version, test, and promote infrastructure changes with modern DevOps workflows.',
+    ],
+  },
+  {
+    slug: 'cloud-cost-management',
+    title: 'Cloud Cost Management',
+    summary:
+      'Gain financial visibility into cloud consumption with granular tagging and reporting.',
+    description: [
+      'Rightsize resources, reserve capacity, and automate policies that curb wasteful spend.',
+      'Align usage with budgets by embedding FinOps practices across engineering teams.',
+    ],
+  },
+];
+
 export default function CloudInfrastructurePage() {
   return (
     <main className="min-h-screen">
@@ -142,26 +250,194 @@ export default function CloudInfrastructurePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="mb-12"
+              className="space-y-10"
             >
-              <h2 className="text-3xl font-bold text-[#002E6D] mb-6">
-                Modern Cloud & Infrastructure Solutions
-              </h2>
-              <p className="text-slate-600 leading-relaxed whitespace-pre-line">
-                Symbol Technologies delivers comprehensive cloud and infrastructure solutions designed to modernize your IT environment, enhance performance, and drive business growth. Our expert team helps organizations navigate the complexities of cloud adoption, infrastructure optimization, and digital transformation.
+              <div>
+                <h2 className="text-3xl font-bold text-[#002E6D] mb-6">
+                  Modern Cloud & Infrastructure Solutions
+                </h2>
+                <p className="text-slate-600 leading-relaxed">
+                  Symbol Technologies delivers comprehensive cloud and infrastructure solutions designed to modernize your IT environment, enhance performance, and drive business growth. Our expert team helps organizations navigate the complexities of cloud adoption, infrastructure optimization, and digital transformation.
+                </p>
+              </div>
 
-                Our cloud and infrastructure services include:
-                • Cloud Migration & Strategy
-                • Infrastructure Modernization
-                • Hybrid Cloud Solutions
-                • Cloud Security & Compliance
-                • Performance Optimization
-                • Disaster Recovery & Backup
-                • Infrastructure as Code
-                • Cloud Cost Management
-              </p>
+              <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(320px,420px)] items-start">
+                <div>
+                  <p className="text-slate-600 font-semibold">
+                    Our cloud and infrastructure services include:
+                  </p>
+                  <ul className="mt-4 space-y-3 text-slate-600 pl-2 sm:pl-4">
+                    {cloudServiceDetails.map(service => (
+                      <li key={service.slug} className="flex items-start gap-4">
+                        <span className="mt-0.5 inline-flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-br from-[#A97810] via-[#F7E6A3] to-[#C6921C] shadow-[0_8px_18px_rgba(201,146,28,0.35)] ring-2 ring-[#F7E6A3]/30">
+                          <svg
+                            className="h-3.5 w-3.5 text-white"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
+                            <path d="M5 13l4 4L19 7" />
+                          </svg>
+                        </span>
+                        <a
+                          href={`#${service.slug}`}
+                          className="text-blue-700 font-semibold underline decoration-2 underline-offset-4 hover:text-[#002E6D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#002E6D] transition-colors"
+                        >
+                          {service.title}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="relative w-full max-w-lg mx-auto lg:mx-0 lg:max-w-none">
+                  <div className="relative rounded-2xl overflow-hidden shadow-md">
+                    <Image
+                      src="/images/solutions/solution-pages/cloud-services.png"
+                      alt="Illustration of cloud infrastructure services"
+                      width={900}
+                      height={700}
+                      className="w-full h-full object-cover"
+                      priority
+                    />
+                  </div>
+                </div>
+              </div>
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Services Detail Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.5 }}
+            className="text-3xl font-bold text-[#002E6D] text-center md:text-left"
+          >
+            Explore Our Cloud Services
+          </motion.h2>
+          {cloudServiceDetails.map((service, index) => {
+            return (
+              <motion.div
+                id={service.slug}
+                key={service.title}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.6, delay: index * 0.05 }}
+                className="bg-white border border-slate-100 rounded-3xl shadow-md hover:shadow-lg transition-shadow p-8 md:p-12 scroll-mt-28 md:scroll-mt-32"
+              >
+                <div className="grid md:grid-cols-2 gap-12 items-start">
+                  <div className="space-y-6 text-slate-600 leading-relaxed">
+                    {service.eyebrow && (
+                      <motion.span
+                        initial={{ opacity: 0, y: 12 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false }}
+                        transition={{ duration: 0.45 }}
+                        className="inline-flex items-center text-sm md:text-base font-semibold text-[#0F3A68]"
+                      >
+                        {service.eyebrow}
+                      </motion.span>
+                    )}
+                    <motion.h3
+                      initial={{ opacity: 0, x: -40 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: false }}
+                      transition={{ duration: 0.5 }}
+                      className="text-2xl md:text-3xl font-semibold text-[#002E6D]"
+                    >
+                      {service.headline ?? service.title}
+                    </motion.h3>
+                    {service.summary && (
+                      <motion.p
+                        initial={{ opacity: 0, y: 16 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false }}
+                        transition={{ duration: 0.45 }}
+                        className="text-base md:text-lg text-slate-600/90"
+                      >
+                        {service.summary}
+                      </motion.p>
+                    )}
+                    {service.description && service.description.length > 0 && (
+                      <div className="space-y-4">
+                        {service.description.map((paragraph: string, idx: number) => (
+                          <motion.p
+                            key={idx}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: false }}
+                            transition={{ duration: 0.45, delay: 0.08 + idx * 0.05 }}
+                            className="text-base md:text-lg text-slate-600"
+                          >
+                            {paragraph}
+                          </motion.p>
+                        ))}
+                      </div>
+                    )}
+                    {service.highlights && service.highlights.length > 0 && (
+                      <motion.ul
+                        initial={{ opacity: 0, y: 24 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false }}
+                        transition={{ duration: 0.45, delay: 0.1 }}
+                        className="space-y-3"
+                      >
+                        {service.highlights.map((item, idx) => (
+                          <li key={idx} className="flex gap-3 items-start">
+                            <span className="mt-1 inline-flex h-2.5 w-2.5 rounded-full bg-gradient-to-br from-[#B3821A] via-[#E8D58C] to-[#7B5A12] shadow-[0_0_8px_rgba(179,130,26,0.35)]"></span>
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </motion.ul>
+                    )}
+                    {service.closing && (
+                      <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false }}
+                        transition={{ duration: 0.45, delay: 0.15 }}
+                        className="text-base md:text-lg text-slate-600"
+                      >
+                        {service.closing}
+                      </motion.p>
+                    )}
+                  </div>
+                <motion.div
+                    initial={{ opacity: 0, x: 40 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: false }}
+                    transition={{ duration: 0.5 }}
+                  className={`relative rounded-xl overflow-hidden ${index === 0 ? 'w-full h-auto bg-transparent' : 'h-[260px] sm:h-[280px] md:h-[300px] bg-gray-100'}`}
+                  style={index === 0 ? { aspectRatio: '1920 / 2500' } : undefined}
+                  >
+                    {service.image ? (
+                      <Image
+                        src={service.image}
+                        alt={service.imageAlt ?? service.title}
+                        fill
+                      className={index === 0 ? 'object-contain' : 'object-cover'}
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        priority={index === 0}
+                      />
+                    ) : (
+                      <span className="absolute inset-0 flex items-center justify-center text-[#002E6D] font-semibold tracking-wide">
+                        Image Placeholder
+                      </span>
+                    )}
+                  </motion.div>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </section>
 
