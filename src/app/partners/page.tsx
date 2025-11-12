@@ -31,6 +31,7 @@ export default function PartnersPage() {
     { name: 'ManageEngine', category: 'Cyber, Data, Cloud & Network Security' },
     { name: 'Cummins', category: 'Power' },
     { name: 'Odoo', category: 'Cloud & Software' },
+    { name: 'FishOS', category: 'Cloud & Software' },
   ];
 
   // Group partners by category

@@ -30,6 +30,7 @@ export default function TechnologyPartnersSection() {
     { name: 'ManageEngine', logo: '/images/partners/manageengine.png' },
     { name: 'Cummins', logo: '/images/partners/cummins.png' },
     { name: 'Odoo', logo: '/images/partners/odoo.png' },
+    { name: 'FishOS', logo: '/images/partners/fishos.png' },
   ];
 
   const PartnerLogo = ({ partner }: { partner: { name: string; logo: string } }) => {
