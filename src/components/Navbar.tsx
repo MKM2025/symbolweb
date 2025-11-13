@@ -42,7 +42,7 @@ function Navbar() {
       { name: 'Partner Program', href: '/partners/program' }
     ],
     insights: [
-      { name: 'Blog', href: '/insights/blog' },
+      { name: 'News & Blogs', href: '/insights/blog' },
       { name: 'Case Studies', href: '/insights/case-studies' },
       { name: 'White Papers', href: '/insights/white-papers' },
       { name: 'News & Events', href: '/insights/news-events' }

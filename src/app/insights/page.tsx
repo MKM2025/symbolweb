@@ -85,7 +85,7 @@ export default function InsightsPage() {
             transition={{ duration: 0.7, delay: 0.05, ease: 'easeOut' }}
             className="px-2 sm:px-4 md:px-8 py-1 sm:py-2 text-base sm:text-lg md:text-xl font-extrabold text-[#FFF9C4] hover:text-blue-300 transition-colors duration-200 whitespace-nowrap cursor-pointer"
           >
-            Blogs
+            News &amp; Blogs
           </motion.a>
           <motion.span
             initial={{ opacity: 0, y: 30 }}
@@ -118,7 +118,7 @@ export default function InsightsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
-              Symboltech's Blogs
+              News &amp; Blogs
             </h2>
             <p className="mt-4 text-lg text-gray-600">
               Stay updated with our latest thoughts and perspectives
