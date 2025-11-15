@@ -80,7 +80,7 @@ export default function Navbar() {
       { name: 'Digital Solutions & Training', href: '/solutions/digital-training' }
     ],
     insights: [
-      { name: 'Blogs', href: '/insights#blogs' },
+      { name: 'News & Blogs', href: '/insights#blogs' },
       { name: 'Case Studies', href: '/insights#case-studies' }
     ]
   };

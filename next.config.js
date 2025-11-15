@@ -1,4 +1,5 @@
 const { withContentlayer } = require('next-contentlayer');
+const webpack = require('webpack');
 const withPWA = require('next-pwa')({
   dest: 'public',
   register: true,
@@ -14,6 +15,20 @@ const nextConfig = {
     unoptimized: false,
     remotePatterns: [],
     domains: ['images.unsplash.com'],
+  },
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        process: require.resolve('process/browser'),
+      };
+      config.plugins.push(
+        new webpack.ProvidePlugin({
+          process: 'process/browser',
+        })
+      );
+    }
+    return config;
   },
 }
 

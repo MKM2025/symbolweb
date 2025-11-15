@@ -1,7 +1,7 @@
 import { allBlogs } from 'contentlayer/generated';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
-import { useMDXComponent } from 'next-contentlayer/hooks';
+import MDXContent from '@/components/insights/MDXContent';
 
 interface BlogPostProps {
   params: {
@@ -16,8 +16,6 @@ export default function BlogPost({ params }: BlogPostProps) {
     notFound();
   }
 
-  const MDXContent = useMDXComponent(post.body.code);
-
   return (
     <main className="container mx-auto px-4 py-16">
       {/* Breadcrumb Navigation */}
@@ -27,7 +25,7 @@ export default function BlogPost({ params }: BlogPostProps) {
           <li><span className="mx-2">/</span></li>
           <li><a href="/insights" className="hover:underline text-blue-700">Insights</a></li>
           <li><span className="mx-2">/</span></li>
-          <li><a href="/insights#blogs" className="hover:underline text-blue-700">Blogs</a></li>
+          <li><a href="/insights#blogs" className="hover:underline text-blue-700">News & Blogs</a></li>
           <li><span className="mx-2">/</span></li>
           <li className="text-gray-700">{post.title}</li>
         </ol>
@@ -59,7 +57,7 @@ export default function BlogPost({ params }: BlogPostProps) {
           </div>
         )}
         <div className="prose prose-base max-w-none prose-headings:font-bold prose-headings:text-gray-900 prose-p:text-gray-700 prose-a:text-blue-600 prose-strong:text-gray-900 prose-ul:text-gray-700 prose-li:text-gray-700">
-          <MDXContent />
+          <MDXContent code={post.body.code} />
         </div>
       </article>
     </main>

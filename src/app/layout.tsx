@@ -39,6 +39,23 @@ export default function RootLayout({
   return (
     <html lang="en" className={`scroll-smooth ${inter.variable}`}>
       <head>
+        {/* Process polyfill for browser */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if (typeof window !== 'undefined' && typeof window.process === 'undefined') {
+                window.process = {
+                  env: {},
+                  browser: true,
+                  version: '',
+                  versions: {},
+                  platform: 'browser',
+                  nextTick: function(fn) { setTimeout(fn, 0); }
+                };
+              }
+            `,
+          }}
+        />
         {/* Preload hero images for instant swap */}
         <link rel="preload" as="image" href="/images/hero/hero_bpo_desktop.webp" />
         <link rel="preload" as="image" href="/images/solutions/hero_solutions_desktop.webp" />
