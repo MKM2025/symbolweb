@@ -124,56 +124,58 @@ export default function InsightsPage() {
               Stay updated with our latest thoughts and perspectives
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {allBlogs.map((blog: Blog) => (
-              <Link key={blog._id} href={`${blog.url}`} className="group">
-                <div className="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105 flex flex-col">
-                  <div className="relative h-48 w-full flex items-center justify-center bg-gray-100">
-                    {blog.image && (
-                      <Image
-                        src={blog.image}
-                        alt={`${blog.title} Thumbnail`}
-                        fill
-                        priority
-                        className="object-cover"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      />
-                    )}
-                  </div>
-                  <div className="p-6 flex flex-col justify-between flex-grow">
-                    <div>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
-                        {blog.title}
-                      </h3>
-                      <p className="text-sm text-gray-500 mb-4">
-                        By {blog.author} | {new Date(blog.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
-                      </p>
-                      {blog.summary && (
-                        <p className="text-gray-600 line-clamp-3">
-                          {blog.summary}
-                        </p>
+          <div className="space-y-6">
+            {allBlogs
+              .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+              .map((blog: Blog) => (
+                <Link key={blog._id} href={`${blog.url}`} className="group block">
+                  <div className="bg-white rounded-lg shadow-md overflow-hidden transition-shadow duration-300 hover:shadow-lg flex flex-col md:flex-row">
+                    <div className="relative w-full md:w-[576px] h-96 md:h-96 flex-shrink-0 bg-gray-100">
+                      {blog.image && (
+                        <Image
+                          src={blog.image}
+                          alt={`${blog.title} Thumbnail`}
+                          fill
+                          priority
+                          className="object-contain"
+                          sizes="(max-width: 768px) 100vw, 576px"
+                        />
                       )}
                     </div>
-                    <div className="mt-4 flex items-center text-blue-600 group-hover:text-blue-800">
-                      <span className="text-sm font-medium">Read More</span>
-                      <svg
-                        className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 5l7 7-7 7"
-                        />
-                      </svg>
+                    <div className="p-6 flex flex-col justify-between flex-grow">
+                      <div>
+                        <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                          {blog.title}
+                        </h3>
+                        <p className="text-sm text-gray-500 mb-3">
+                          By {blog.author} | {new Date(blog.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                        </p>
+                        {blog.summary && (
+                          <p className="text-gray-600 line-clamp-2 mb-4">
+                            {blog.summary}
+                          </p>
+                        )}
+                      </div>
+                      <div className="flex items-center text-blue-600 group-hover:text-blue-800">
+                        <span className="text-sm font-medium">Read More</span>
+                        <svg
+                          className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M9 5l7 7-7 7"
+                          />
+                        </svg>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </Link>
-            ))}
+                </Link>
+              ))}
           </div>
         </div>
       </section>

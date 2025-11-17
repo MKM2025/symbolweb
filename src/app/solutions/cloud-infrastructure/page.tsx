@@ -102,6 +102,8 @@ const cloudServiceDetails: CloudServiceDetail[] = [
   {
     slug: 'infrastructure-modernization',
     title: 'Infrastructure Modernization',
+    image: '/images/solutions/solution-pages/infrastructure-modernization.webp',
+    imageAlt: 'Infrastructure modernization illustration',
     summary:
       'Refresh legacy infrastructure with cloud-native architectures and automated provisioning.',
     description: [
@@ -112,6 +114,8 @@ const cloudServiceDetails: CloudServiceDetail[] = [
   {
     slug: 'hybrid-cloud-solutions',
     title: 'Hybrid Cloud Solutions',
+    image: '/images/solutions/solution-pages/hybrid-cloud-solutions.webp',
+    imageAlt: 'Hybrid cloud solutions illustration',
     summary:
       'Blend on-premises and cloud resources with consistent management and policy controls.',
     description: [
@@ -122,6 +126,8 @@ const cloudServiceDetails: CloudServiceDetail[] = [
   {
     slug: 'cloud-security-compliance',
     title: 'Cloud Security & Compliance',
+    image: '/images/solutions/solution-pages/cloud-security-compliance.webp',
+    imageAlt: 'Cloud security and compliance illustration',
     summary:
       'Embed zero-trust principles, identity controls, and continuous compliance monitoring.',
     description: [
@@ -132,6 +138,8 @@ const cloudServiceDetails: CloudServiceDetail[] = [
   {
     slug: 'performance-optimization',
     title: 'Performance Optimization',
+    image: '/images/solutions/solution-pages/performance-optimization.webp',
+    imageAlt: 'Performance optimization illustration',
     summary:
       'Continuously tune workloads to meet cost, latency, and availability objectives.',
     description: [
@@ -142,6 +150,8 @@ const cloudServiceDetails: CloudServiceDetail[] = [
   {
     slug: 'disaster-recovery-backup',
     title: 'Disaster Recovery & Backup',
+    image: '/images/solutions/solution-pages/disaster-recovery-playbook.webp',
+    imageAlt: 'Disaster recovery and backup illustration',
     summary:
       'Architect resilient failover strategies leveraging geo-redundant cloud capabilities.',
     description: [
@@ -152,6 +162,8 @@ const cloudServiceDetails: CloudServiceDetail[] = [
   {
     slug: 'infrastructure-as-code',
     title: 'Infrastructure as Code',
+    image: '/images/solutions/solution-pages/infrastructure-as-code.webp',
+    imageAlt: 'Infrastructure as Code illustration',
     summary:
       'Adopt declarative templates to provision environments consistently and repeatably.',
     description: [
@@ -162,6 +174,8 @@ const cloudServiceDetails: CloudServiceDetail[] = [
   {
     slug: 'cloud-cost-management',
     title: 'Cloud Cost Management',
+    image: '/images/solutions/solution-pages/cloud-cost-management.webp',
+    imageAlt: 'Cloud cost management illustration',
     summary:
       'Gain financial visibility into cloud consumption with granular tagging and reporting.',
     description: [
@@ -335,7 +349,7 @@ export default function CloudInfrastructurePage() {
                 className="bg-white border border-slate-100 rounded-3xl shadow-md hover:shadow-lg transition-shadow p-8 md:p-12 scroll-mt-28 md:scroll-mt-32"
               >
                 <div className="grid md:grid-cols-2 gap-12 items-start">
-                  <div className="space-y-6 text-slate-600 leading-relaxed">
+                  <div className={`space-y-6 text-slate-600 leading-relaxed ${index % 2 === 1 ? 'md:order-2' : ''}`}>
                     {service.eyebrow && (
                       <motion.span
                         initial={{ opacity: 0, y: 12 }}
@@ -412,11 +426,11 @@ export default function CloudInfrastructurePage() {
                     )}
                   </div>
                 <motion.div
-                    initial={{ opacity: 0, x: 40 }}
+                    initial={{ opacity: 0, x: index % 2 === 0 ? 40 : -40 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: false }}
                     transition={{ duration: 0.5 }}
-                  className={`relative rounded-xl overflow-hidden ${index === 0 ? 'w-full h-auto bg-transparent' : 'h-[260px] sm:h-[280px] md:h-[300px] bg-gray-100'}`}
+                  className={`relative rounded-xl overflow-hidden ${index === 0 ? 'w-full h-auto bg-transparent' : 'h-[260px] sm:h-[280px] md:h-[300px] bg-white'} ${index % 2 === 1 ? 'md:order-1' : ''}`}
                   style={index === 0 ? { aspectRatio: '1920 / 2500' } : undefined}
                   >
                     {service.image ? (
@@ -424,7 +438,7 @@ export default function CloudInfrastructurePage() {
                         src={service.image}
                         alt={service.imageAlt ?? service.title}
                         fill
-                      className={index === 0 ? 'object-contain' : 'object-cover'}
+                        className="object-contain"
                         sizes="(max-width: 768px) 100vw, 50vw"
                         priority={index === 0}
                       />

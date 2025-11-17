@@ -129,7 +129,7 @@ export default function CaseStudyPage({ params }: CaseStudyPageProps) {
   }
 
   return (
-    <div className="flex justify-center items-start min-h-screen bg-gray-50 py-12 px-2">
+    <div className="flex justify-center items-start min-h-screen bg-gray-50 pt-20 sm:pt-24 md:pt-32 pb-12 px-2">
       <div className="w-full max-w-4xl bg-white rounded-2xl shadow-xl px-6 sm:px-10 pt-10 pb-8 flex flex-col">
         {/* Site map / Breadcrumb */}
         <nav className="text-sm text-gray-500 mb-6" aria-label="Breadcrumb">

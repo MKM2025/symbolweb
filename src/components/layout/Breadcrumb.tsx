@@ -7,6 +7,11 @@ export default function Breadcrumb() {
   const pathname = usePathname();
   const paths = pathname.split('/').filter(Boolean);
 
+  // Hide global breadcrumb on blog post pages and case study pages (they have their own)
+  if (pathname.includes('/insights/blogs/') || pathname.includes('/insights/case-studies/')) {
+    return null;
+  }
+
   return (
     <nav className="bg-gray-50 border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
