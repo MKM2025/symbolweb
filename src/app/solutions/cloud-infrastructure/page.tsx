@@ -81,7 +81,7 @@ const cloudServiceDetails: CloudServiceDetail[] = [
   {
     slug: 'cloud-migration-strategy',
     title: 'Cloud Migration & Strategy (VMware to OpenStack)',
-    image: '/images/solutions/solution-pages/cloud-migration-strategy.png',
+    image: '/images/solutions/solution-pages/cloud-migration-strategy.webp',
     imageAlt: 'Illustration representing cloud migration and strategic planning',
     eyebrow: 'Migrate from VMware to an ultra-reliable cloud management platform, powered by OpenStack, Kubernetes, and Ceph.',
     headline: 'Seamless Migration from VMware to Open Cloud Infrastructure',
@@ -310,7 +310,7 @@ export default function CloudInfrastructurePage() {
                 <div className="relative w-full max-w-lg mx-auto lg:mx-0 lg:max-w-none">
                   <div className="relative rounded-2xl overflow-hidden shadow-md">
                     <Image
-                      src="/images/solutions/solution-pages/cloud-services.png"
+                      src="/images/solutions/solution-pages/cloud-services.webp"
                       alt="Illustration of cloud infrastructure services"
                       width={900}
                       height={700}

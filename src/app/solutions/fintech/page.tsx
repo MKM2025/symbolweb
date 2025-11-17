@@ -141,48 +141,153 @@ export default function FintechPage() {
         </div>
       </nav>
 
-      {/* Main Content */}
-      <section id="solutions" className="py-16 bg-gradient-to-b from-slate-50 to-cyan-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-2xl shadow-md p-8 md:p-12">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="mb-12"
-            >
-              <h2 className="text-3xl font-bold text-[#002E6D] mb-6">
-                Secure and Compliant Solutions for the Modern Financial Services Industry
-              </h2>
-              <p className="text-slate-600 leading-relaxed whitespace-pre-line">
-                The financial sector faces unique challenges, including stringent regulations, sophisticated fraud threats, and the growing demand for seamless digital experiences. Symbol Technologies offers specialized solutions and advisory services tailored to these needs. By partnering with industry leaders such as MDS-AFS (Wolters Kluwer, Fiserv) and Paygilant, we empower financial institutions to effectively manage risk, maintain regulatory compliance, prevent financial crime, and optimize overall performance.
+      {/* Services Detail Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.5 }}
+            className="text-3xl font-bold text-[#002E6D] text-center md:text-left"
+          >
+            Explore Our Financial Solutions
+          </motion.h2>
+          
+          {/* Section 1: Secure and Compliant Solutions */}
+          <motion.div
+            id="secure-compliant-solutions"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.6 }}
+            className="bg-white border border-slate-100 rounded-3xl shadow-md hover:shadow-lg transition-shadow p-8 md:p-12 scroll-mt-28 md:scroll-mt-32"
+          >
+            <div className="grid md:grid-cols-2 gap-12 items-start">
+              <div className="space-y-6 text-slate-600 leading-relaxed">
+                <motion.h3
+                  initial={{ opacity: 0, x: -40 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: false }}
+                  transition={{ duration: 0.5 }}
+                  className="text-2xl md:text-3xl font-semibold text-[#002E6D]"
+                >
+                  Secure and Compliant Solutions for the Modern Financial Services Industry
+                </motion.h3>
+                <motion.p
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false }}
+                  transition={{ duration: 0.45 }}
+                  className="text-base md:text-lg text-slate-600/90"
+                >
+                  The financial sector faces unique challenges, including stringent regulations, sophisticated fraud threats, and the growing demand for seamless digital experiences. Symbol Technologies offers specialized solutions and advisory services tailored to these needs. By partnering with industry leaders such as MDS-AFS (Wolters Kluwer, Fiserv) and Paygilant, we empower financial institutions to effectively manage risk, maintain regulatory compliance, prevent financial crime, and optimize overall performance.
+                </motion.p>
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false }}
+                  transition={{ duration: 0.45, delay: 0.08 }}
+                  className="text-base md:text-lg text-slate-600"
+                >
+                  We address a wide range of challenges in the financial industry. These include meeting complex regulatory requirements such as Basel III/IV, IFRS 9/17, and AML/CFT; combating ever-evolving financial crime and fraud tactics; and managing various forms of risk including credit, market, liquidity, and operational risks. Our services also help integrate disparate data sources for accurate reporting and analytics, ensure robust security for sensitive financial data and transactions, and drive efficiency in finance and risk operations.
+                </motion.p>
+              </div>
+              <motion.div
+                initial={{ opacity: 0, x: 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.5 }}
+                className="relative rounded-xl overflow-hidden w-full h-auto bg-white"
+                style={{ aspectRatio: '3000 / 4250' }}
+              >
+                <Image
+                  src="/images/solutions/solution-pages/modern-financial.webp"
+                  alt="Modern financial solutions illustration"
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  priority
+                />
+              </motion.div>
+            </div>
+          </motion.div>
 
-                We address a wide range of challenges in the financial industry. These include meeting complex regulatory requirements such as Basel III/IV, IFRS 9/17, and AML/CFT; combating ever-evolving financial crime and fraud tactics; and managing various forms of risk including credit, market, liquidity, and operational risks. Our services also help integrate disparate data sources for accurate reporting and analytics, ensure robust security for sensitive financial data and transactions, and drive efficiency in finance and risk operations.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="mb-12"
-            >
-              <h2 className="text-3xl font-bold text-[#002E6D] mb-6">
-                Comprehensive Risk Management for Financial Institutions
-              </h2>
-              <p className="text-slate-600 leading-relaxed whitespace-pre-line">
-                Proactively identify, measure, and mitigate financial, operational, and enterprise-wide risks with our integrated solutions and expert advisory services, powered by MDS-AFS and Wolters Kluwer's OneSumX platform.
-
-                Our Enterprise Risk Management (ERM) services help organizations establish robust frameworks and implement comprehensive solutions to manage risks holistically across the enterprise. In the area of Financial Risk Management, we provide targeted services for credit, market, and liquidity risks. For Credit Risk, we offer modeling, assessment, and management solutions that are fully compliant with IFRS 9, supported by MDS-AFS Advisory and the WK OneSumX platform. Market Risk services include tools that enable institutions to measure and manage their exposure to market volatility. For Liquidity Risk and Asset Liability Management (ALM), we deliver solutions designed to ensure liquidity adequacy in line with LCR and NSFR requirements, as well as manage interest rate risk in the banking book (IRRBB), again leveraging MDS-AFS Advisory and OneSumX.
-
-                We also address Operational Risk through Governance, Risk, and Compliance (GRC) solutions. Utilizing WK OneSumX GRC, we help institutions manage risks associated with internal processes, personnel, systems, and external events.
-
-                The benefits of these solutions include significantly reduced fraud losses, enhanced regulatory compliance with AML and CFT standards, improved customer trust, and more efficient, streamlined investigation processes.
-              </p>
-            </motion.div>
-          </div>
+          {/* Section 2: Comprehensive Risk Management */}
+          <motion.div
+            id="risk-management"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.6, delay: 0.05 }}
+            className="bg-white border border-slate-100 rounded-3xl shadow-md hover:shadow-lg transition-shadow p-8 md:p-12 scroll-mt-28 md:scroll-mt-32"
+          >
+            <div className="grid md:grid-cols-2 gap-12 items-start">
+              <motion.div
+                initial={{ opacity: 0, x: 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.5 }}
+                className="relative rounded-xl overflow-hidden w-full h-auto bg-white md:order-1"
+                style={{ aspectRatio: '3000 / 4250' }}
+              >
+                <Image
+                  src="/images/solutions/solution-pages/risk-management.webp"
+                  alt="Risk management illustration"
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </motion.div>
+              <div className="space-y-6 text-slate-600 leading-relaxed md:order-2">
+                <motion.h3
+                  initial={{ opacity: 0, x: -40 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: false }}
+                  transition={{ duration: 0.5 }}
+                  className="text-2xl md:text-3xl font-semibold text-[#002E6D]"
+                >
+                  Comprehensive Risk Management for Financial Institutions
+                </motion.h3>
+                <motion.p
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false }}
+                  transition={{ duration: 0.45 }}
+                  className="text-base md:text-lg text-slate-600/90"
+                >
+                  Proactively identify, measure, and mitigate financial, operational, and enterprise-wide risks with our integrated solutions and expert advisory services, powered by MDS-AFS and Wolters Kluwer's OneSumX platform.
+                </motion.p>
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false }}
+                  transition={{ duration: 0.45, delay: 0.08 }}
+                  className="text-base md:text-lg text-slate-600"
+                >
+                  Our Enterprise Risk Management (ERM) services help organizations establish robust frameworks and implement comprehensive solutions to manage risks holistically across the enterprise. In the area of Financial Risk Management, we provide targeted services for credit, market, and liquidity risks.
+                </motion.p>
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false }}
+                  transition={{ duration: 0.45, delay: 0.15 }}
+                  className="text-base md:text-lg text-slate-600"
+                >
+                  For Credit Risk, we offer modeling, assessment, and management solutions that are fully compliant with IFRS 9, supported by MDS-AFS Advisory and the WK OneSumX platform. Market Risk services include tools that enable institutions to measure and manage their exposure to market volatility. For Liquidity Risk and Asset Liability Management (ALM), we deliver solutions designed to ensure liquidity adequacy in line with LCR and NSFR requirements, as well as manage interest rate risk in the banking book (IRRBB).
+                </motion.p>
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false }}
+                  transition={{ duration: 0.45, delay: 0.2 }}
+                  className="text-base md:text-lg text-slate-600"
+                >
+                  We also address Operational Risk through Governance, Risk, and Compliance (GRC) solutions. Utilizing WK OneSumX GRC, we help institutions manage risks associated with internal processes, personnel, systems, and external events. The benefits of these solutions include significantly reduced fraud losses, enhanced regulatory compliance with AML and CFT standards, improved customer trust, and more efficient, streamlined investigation processes.
+                </motion.p>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
